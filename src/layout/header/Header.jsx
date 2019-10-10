@@ -7,7 +7,7 @@ import { faBell } from '@fortawesome/free-solid-svg-icons';
 class Header extends React.Component {
     render() {
         return (
-            <nav className="main-header navbar navbar-expand navbar-white navbar-light">
+            <nav className="main-header navbar navbar-expand navbar-ads">
                 <ul className="navbar-nav">
                     {/*<img src={require('assets/images/logo-auditoria.png')}
                          alt="AUDITORIA ADS"

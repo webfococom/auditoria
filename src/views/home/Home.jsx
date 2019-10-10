@@ -54,21 +54,23 @@ let campanhas = [
 class Home extends React.Component {
     render() {
         return (
-            <div class="content-header">
-                <div class="container-fluid">
+            <div className="content-header content-ads">
+                <div className="container-fluid">
                     <div className="row">
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="#">Home</a></li>
-                                <li class="breadcrumb-item"><a href="#">Visão Geral</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Painel da Campanha</li>
-                            </ol>
-                        </nav>
+                        <div className="col-lg-12 col-md-12 col-sm-12">
+                            <nav aria-label="breadcrumb">
+                                <ol className="breadcrumb breadcrumb-auditoria">
+                                    <li className="breadcrumb-item"><a href="#">Home</a></li>
+                                    <li className="breadcrumb-item"><a href="#">Visão Geral</a></li>
+                                    <li className="breadcrumb-item active" aria-current="page">Painel da Campanha</li>
+                                </ol>
+                            </nav>
+                        </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12">
-                            <h2 class="m-0 text-dark">Visão Geral</h2>
+                    <div className="row">
+                        <div className="col-lg-12 col-md-12 col-sm-12">
+                            <h2 className="m-0 title-section">Visão Geral</h2>
                         </div>
 
                         <div class="col-lg-3 col-md-3 col-sm-3">
@@ -79,7 +81,7 @@ class Home extends React.Component {
                                 <div class="card-body">
                                     <h2>Nota de Performance</h2>
                                     <p>
-                                        <span>65</span>/100
+                                        <span className="text-destaque">65</span>/100
                                     </p>
                                 </div>
                                 <div class="card-footer">
@@ -137,7 +139,7 @@ class Home extends React.Component {
 
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12">
-                            <h2 class="m-0 text-dark">Campanhas</h2>
+                            <h2 class="m-0 title-section">Campanhas</h2>
                         </div>
                         <div className="col-lg-12 col-md-12 col-sm-12">
                             <div className="card">

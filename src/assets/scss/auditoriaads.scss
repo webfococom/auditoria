@@ -1,0 +1,62 @@
+.navbar-ads {
+  background: $navbar-top-bg;
+}
+
+.sidebar-ads {
+  width: 200px !important;
+  font-family: $title-section-font-family;
+  background: $navbar-bg;
+  color: #fff;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22) !important;
+
+  a.toggle-menu {
+    background: $navbar-ico-bg;
+    color: #fff;
+
+    span {
+      margin-left: 10px;
+    }
+  }
+}
+
+.content-ads{
+  background: $content-bg;
+}
+
+.title-section{
+  font-family: $title-section-font-family;
+  color: $title-section-color;
+  font-size: $title-section-font-size;
+}
+
+.raioX {
+
+}
+
+.text-destaque {
+  color: $color-destaque;
+  font-size: $fontSize-destaque;
+}
+
+.breadcrumb-auditoria {
+  font-size: 14px;
+  color: $title-section-color;
+
+  a {
+    color: $title-section-color;
+  }
+
+  .breadcrumb-item + .breadcrumb-item {
+    padding-left: 0.3rem;
+  }
+
+  .breadcrumb-item + .breadcrumb-item::before {
+    content: "·";
+    font-size: 20px;
+    padding-right: 0.3rem;
+  }
+
+  li.breadcrumb-item {
+
+  }
+}

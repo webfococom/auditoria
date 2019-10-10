@@ -7,9 +7,12 @@ import { faBars, faHome, faBullhorn, faHeartbeat, faChartLine } from '@fortaweso
 class Sidebar extends React.Component {
     render() {
         return (
-            <aside class="main-sidebar sidebar-dark-primary elevation-4">
-                <Link to="/" className="brand-link">
-                    <FontAwesomeIcon icon={faBars} /> <span>Auditoria Ads</span>
+            <aside class="main-sidebar sidebar-collapse sidebar-ads">
+                {/*sidebar-mini layout-fixed sidebar-collapse*/}
+                {/*sidebar-mini layout-fixed sidebar-open*/}
+                <Link to="/" className="brand-link toggle-menu">
+                    <FontAwesomeIcon icon={faBars} />
+                    <span className="name">Auditoria Ads</span>
                 </Link>
 
                 {/*<a href="index3.html" class="brand-link">
