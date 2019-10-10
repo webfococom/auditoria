@@ -1,17 +1,16 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Link } from "react-router-dom";
+import classNames from "classnames";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faQuestion, faCheckCircle } from '@fortawesome/free-solid-svg-icons';
+import { faQuestion, faCheckCircle, faTimesCircle, faCircle } from '@fortawesome/free-solid-svg-icons';
 
 let random = (Math.floor(((Math.random() * (10 - 1)) + 1)) % 2);
-console.log(random);
-
 
 let visaoGeral = {
     performace: Math.floor(Math.random() * (100 - 1)) + 1,
     combinacoes: Math.floor(Math.random() * (5000 - 1)) + 1,
     saldo: Math.floor(Math.random() * (1000 - 1)) + 1,
-    siteOnline: (random == 1) ? true : false
+    siteOnline: (random === 1) ? true : false
 };
 
 let campanhas = [
@@ -63,20 +62,32 @@ let campanhas = [
 ];
 
 var iconSiteOnline = (isOnline) => {
-    if (isOnline) {
+    if (isOnline === true) {
         return (
             <FontAwesomeIcon
                 icon={faCheckCircle}
+                className="ico-green"
             />
         );
     }
 
-    return (<FontAwesomeIcon icon={faCheckCircle} />);
+    return (<FontAwesomeIcon icon={faTimesCircle} className="ico-red" />);
+};
+
+var alertCampanha = (status) => {
+    if (status === 'red') {
+        return (
+            <FontAwesomeIcon
+                icon={faCircle}
+                className="campanha-status red"
+            />
+        );
+    }
+
+    return (<FontAwesomeIcon icon={faCircle} className="campanha-status green" />);
 };
 
 class Home extends React.Component {
-
-
     render() {
         return (
             <div className="content-header content-ads">
@@ -95,7 +106,7 @@ class Home extends React.Component {
 
                     <div className="row">
                         <div className="col-lg-12 col-md-12 col-sm-12">
-                            <h2 className="m-0 title-section">Visão Geral</h2>
+                            <h2 className="title-section">Visão Geral</h2>
                         </div>
 
                         <div className="col-lg-3 col-md-3 col-sm-3">
@@ -166,10 +177,13 @@ class Home extends React.Component {
                                 </div>
 
                                 <div className="card-body">
-                                    {iconSiteOnline(visaoGeral.saldo)}
-                                    <p>
-                                        {(visaoGeral.saldo == true )? 'Site no Ar!' : 'Site fora do Ar!'}
-                                    </p>
+                                    <div className="site-is-online">
+                                        {iconSiteOnline(visaoGeral.saldo)}
+
+                                        <p>
+                                            {(visaoGeral.saldo == true )? 'Site no Ar!' : 'Site fora do Ar!'}
+                                        </p>
+                                    </div>
                                 </div>
                                 <div className="card-footer border-0"></div>
                             </div>
@@ -178,13 +192,13 @@ class Home extends React.Component {
 
                     <div className="row">
                         <div className="col-lg-12 col-md-12 col-sm-12">
-                            <h2 className="m-0 title-section">Campanhas</h2>
+                            <h2 className="title-section">Campanhas</h2>
                         </div>
                         <div className="col-lg-12 col-md-12 col-sm-12">
                             <div className="card">
                                 <div className="card-header border-0"></div>
                                 <div className="card-body">
-                                    <table className="table table-condensed">
+                                    <table className="table table-condensed tabela-campanhas">
                                         <thead>
                                             <tr>
                                                 <th>
@@ -208,6 +222,7 @@ class Home extends React.Component {
                                                 <th>
                                                     <b>alerta</b>
                                                 </th>
+                                                <th></th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -220,7 +235,14 @@ class Home extends React.Component {
                                                     <td>{element.cpc}</td>
                                                     <td>{element.conversoes}</td>
                                                     <td>{element.investimento}</td>
-                                                    <td>{element.alerta}</td>
+                                                    <td>
+                                                        {alertCampanha(element.alerta)}
+                                                    </td>
+                                                    <td>
+                                                        <button className={classNames('btn btn-sm', (element.alerta === 'green') ? 'btn-outline-success' : "btn-outline-danger")}>
+                                                            ir para o painel
+                                                        </button>
+                                                    </td>
                                                 </tr>
                                             )
                                         })}

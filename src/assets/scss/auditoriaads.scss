@@ -19,18 +19,28 @@
   }
 }
 
-.content-ads{
+.content-ads {
   background: $content-bg;
 }
 
-.title-section{
+.title-section {
   font-family: $title-section-font-family;
   color: $title-section-color;
   font-size: $title-section-font-size;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 .raioX {
 
+}
+
+.red{
+  color: $red;
+}
+
+.green {
+  color: $green;
 }
 
 .card-home {
@@ -42,9 +52,51 @@
     font-size: 12px;
   }
 
+  .card-body {
+    padding: 0;
+    min-height: 90px;
+
+    p {
+      margin-bottom: 0;
+    }
+
+    .site-is-online {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      justify-content: center;
+      min-height: 91px;
+
+      .ico-red ,
+      .ico-green{
+        font-size: 36px;
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .card-footer {
+    min-height: 55px;
+    margin-top: 0;
+  }
+
   .destaque {
     color: $color-destaque;
     font-size: $fontSize-destaque;
+  }
+
+  .ico-green {
+    color: $green;
+  }
+
+  .ico-red {
+    color: $red;
+  }
+}
+
+.tabela-campanhas {
+  thead {
+    font-variant: all-small-caps;
   }
 }
 
