@@ -33,9 +33,19 @@
 
 }
 
-.text-destaque {
-  color: $color-destaque;
-  font-size: $fontSize-destaque;
+.card-home {
+  color: $title-section-color;
+  font-size: 21px;
+  text-align: center;
+
+  .card-header {
+    font-size: 12px;
+  }
+
+  .destaque {
+    color: $color-destaque;
+    font-size: $fontSize-destaque;
+  }
 }
 
 .breadcrumb-auditoria {

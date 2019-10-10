@@ -18,7 +18,7 @@ class Base extends React.Component {
             <div className="wrapper">
                 <Header/>
                 <Sidebar/>
-                <div class="content-wrapper">
+                <div className="content-wrapper">
                     <Switch>
                         {routes.map((prop, index) => {
                             return (

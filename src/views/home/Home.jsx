@@ -1,7 +1,18 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faQuestion } from '@fortawesome/free-solid-svg-icons';
+import { faQuestion, faCheckCircle } from '@fortawesome/free-solid-svg-icons';
+
+let random = (Math.floor(((Math.random() * (10 - 1)) + 1)) % 2);
+console.log(random);
+
+
+let visaoGeral = {
+    performace: Math.floor(Math.random() * (100 - 1)) + 1,
+    combinacoes: Math.floor(Math.random() * (5000 - 1)) + 1,
+    saldo: Math.floor(Math.random() * (1000 - 1)) + 1,
+    siteOnline: (random == 1) ? true : false
+};
 
 let campanhas = [
     {
@@ -51,7 +62,21 @@ let campanhas = [
     }
 ];
 
+var iconSiteOnline = (isOnline) => {
+    if (isOnline) {
+        return (
+            <FontAwesomeIcon
+                icon={faCheckCircle}
+            />
+        );
+    }
+
+    return (<FontAwesomeIcon icon={faCheckCircle} />);
+};
+
 class Home extends React.Component {
+
+
     render() {
         return (
             <div className="content-header content-ads">
@@ -73,73 +98,87 @@ class Home extends React.Component {
                             <h2 className="m-0 title-section">Visão Geral</h2>
                         </div>
 
-                        <div class="col-lg-3 col-md-3 col-sm-3">
-                            <div class="card">
-                                <div class="card-header border-0">
-                                    <FontAwesomeIcon icon={faQuestion} />
+                        <div className="col-lg-3 col-md-3 col-sm-3">
+                            <div className="card card-home">
+                                <div className="card-header border-0">
+                                    <FontAwesomeIcon
+                                        icon={faQuestion}
+                                        className="fa-pull-right"
+                                    />
                                 </div>
-                                <div class="card-body">
-                                    <h2>Nota de Performance</h2>
+                                <div className="card-body">
+                                    <p>Nota de Performance</p>
                                     <p>
-                                        <span className="text-destaque">65</span>/100
+                                        <span className="destaque">{visaoGeral.performace}</span>/100
                                     </p>
                                 </div>
-                                <div class="card-footer">
-                                    <button type="button" class="btn btn-outline-success btn-sm float-right">
+                                <div className="card-footer">
+                                    <button type="button" className="btn btn-outline-success btn-sm float-right">
                                         ver raio-x
                                     </button>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col-lg-3 col-md-3 col-sm-3">
-                            <div class="card">
-                                <div class="card-header border-0">
-                                    <FontAwesomeIcon icon={faQuestion} />
+                        <div className="col-lg-3 col-md-3 col-sm-3">
+                            <div className="card card-home">
+                                <div className="card-header border-0">
+                                    <FontAwesomeIcon
+                                        icon={faQuestion}
+                                        className="fa-pull-right"
+                                    />
                                 </div>
-                                <div class="card-body">
-                                    <h2>Combinações Possíveis</h2>
-                                    <p>788</p>
+                                <div className="card-body">
+                                    <p>Combinações Possíveis</p>
+                                    <p className="destaque">{visaoGeral.combinacoes}</p>
                                 </div>
-                                <div class="card-footer">
-                                    <button type="button" class="btn btn-outline-success btn-sm float-right">
+                                <div className="card-footer">
+                                    <button type="button" className="btn btn-outline-success btn-sm float-right">
                                         ver palavras
                                     </button>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col-lg-3 col-md-3 col-sm-3">
-                            <div class="card">
-                                <div class="card-header border-0">
-                                    <FontAwesomeIcon icon={faQuestion} />
+                        <div className="col-lg-3 col-md-3 col-sm-3">
+                            <div className="card card-home">
+                                <div className="card-header border-0">
+                                    <FontAwesomeIcon
+                                        icon={faQuestion}
+                                        className="fa-pull-right"
+                                    />
                                 </div>
-                                <div class="card-body">
-                                    <h2>Saldo Atual</h2>
-                                    <p>R$ 2.500,00</p>
+                                <div className="card-body">
+                                    <p>Saldo Atual</p>
+                                    <p className="destaque">R$ {visaoGeral.saldo}</p>
                                 </div>
-                                <div class="card-footer border-0"></div>
+                                <div className="card-footer border-0"></div>
                             </div>
                         </div>
 
-                        <div class="col-lg-3 col-md-3 col-sm-3">
-                            <div class="card">
-                                <div class="card-header border-0">
-                                    <FontAwesomeIcon icon={faQuestion} />
+                        <div className="col-lg-3 col-md-3 col-sm-3">
+                            <div className="card card-home">
+                                <div className="card-header border-0">
+                                    <FontAwesomeIcon
+                                        icon={faQuestion}
+                                        className="fa-pull-right"
+                                    />
                                 </div>
 
-                                <div class="card-body">
-                                    <h2>Nota de Performance</h2>
-                                    <p>Site no Ar!</p>
+                                <div className="card-body">
+                                    {iconSiteOnline(visaoGeral.saldo)}
+                                    <p>
+                                        {(visaoGeral.saldo == true )? 'Site no Ar!' : 'Site fora do Ar!'}
+                                    </p>
                                 </div>
-                                <div class="card-footer border-0"></div>
+                                <div className="card-footer border-0"></div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12">
-                            <h2 class="m-0 title-section">Campanhas</h2>
+                    <div className="row">
+                        <div className="col-lg-12 col-md-12 col-sm-12">
+                            <h2 className="m-0 title-section">Campanhas</h2>
                         </div>
                         <div className="col-lg-12 col-md-12 col-sm-12">
                             <div className="card">
@@ -172,9 +211,9 @@ class Home extends React.Component {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        {campanhas.map((element) => {
+                                        {campanhas.map((element, key) => {
                                             return (
-                                                <tr>
+                                                <tr key={key}>
                                                     <td>{element.nome}</td>
                                                     <td>{element.impressoes}</td>
                                                     <td>{element.cliques}</td>

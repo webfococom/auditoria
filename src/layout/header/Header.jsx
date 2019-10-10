@@ -11,7 +11,7 @@ class Header extends React.Component {
                 <ul className="navbar-nav">
                     {/*<img src={require('assets/images/logo-auditoria.png')}
                          alt="AUDITORIA ADS"
-                         class="brand-image"
+                         className="brand-image"
                          style={{width: '190px'}} />*/}
 
                     {/*<li className="nav-item">
@@ -51,14 +51,14 @@ class Header extends React.Component {
 
                     {/*
                     <li className="nav-item dropdown">
-                        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-                            <div class="image">
+                        <div className="user-panel mt-3 pb-3 mb-3 d-flex">
+                            <div className="image">
                                 <img src={require('assets/images/user.jpg')}
-                                     class="img-circle elevation-2"
+                                     className="img-circle elevation-2"
                                      alt="José da silva"/>
                             </div>
-                            <div class="info">
-                                <a href="#" class="d-block">José da silva</a>
+                            <div className="info">
+                                <a href="#" className="d-block">José da silva</a>
                             </div>
                         </div>
                     </li>
