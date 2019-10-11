@@ -35,7 +35,7 @@
 
 }
 
-.red{
+.red {
   color: $red;
 }
 
@@ -91,6 +91,44 @@
 
   .ico-red {
     color: $red;
+  }
+}
+
+.view-raio-x {
+  color: $title-section-color;
+
+  .primeiro-bloco {
+    border-right: 1px solid #ccc;
+
+    .status-raio-x {
+      margin: 0 10px;
+    }
+  }
+
+  .content-block {
+    display: flex;
+    justify-content: space-between;
+
+    .block{
+      padding-left: 30px;
+      padding-right: 30px;
+
+      p {
+        margin-bottom: 0;
+      }
+    }
+
+    div[class="block"] {
+      &:first-child {
+        min-width: 206px;
+        border-right: 1px solid #ccc;
+      }
+
+      &:last-child {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
   }
 }
 
