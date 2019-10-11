@@ -13,6 +13,9 @@ let visaoGeral = {
     siteOnline: (random === 1) ? true : false
 };
 
+console.log(random);
+console.log(visaoGeral.siteOnline);
+
 let campanhas = [
     {
         nome: 'Campanha A',
@@ -178,10 +181,9 @@ class Home extends React.Component {
 
                                 <div className="card-body">
                                     <div className="site-is-online">
-                                        {iconSiteOnline(visaoGeral.saldo)}
-
+                                        {iconSiteOnline(visaoGeral.siteOnline)}
                                         <p>
-                                            {(visaoGeral.saldo == true )? 'Site no Ar!' : 'Site fora do Ar!'}
+                                            {(visaoGeral.siteOnline === true) ? 'Site no Ar!' : 'Site fora do Ar!'}
                                         </p>
                                     </div>
                                 </div>

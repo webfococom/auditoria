@@ -97,6 +97,16 @@
 .view-raio-x {
   color: $title-section-color;
 
+  #raioX {
+    margin-bottom: 20px;
+  }
+
+  .performace-ads {
+    text-align: center;
+    color: $color-destaque;
+    font-size: 30px;
+  }
+
   .primeiro-bloco {
     border-right: 1px solid #ccc;
 
