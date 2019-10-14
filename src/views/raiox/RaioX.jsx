@@ -141,7 +141,6 @@ let createChart = (performace) => {
         labels: null,
         datasets: [
             {
-                label: '# of Votes',
                 data: [performace, (100-performace)],
                 backgroundColor: [
                     'rgb(90, 165, 244)',

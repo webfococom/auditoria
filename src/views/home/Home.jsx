@@ -13,9 +13,6 @@ let visaoGeral = {
     siteOnline: (random === 1) ? true : false
 };
 
-console.log(random);
-console.log(visaoGeral.siteOnline);
-
 let campanhas = [
     {
         nome: 'Campanha A',

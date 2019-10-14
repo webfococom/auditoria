@@ -143,6 +143,14 @@
   }
 }
 
+.view-resultados {
+  .content-comparativo-resultados {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
 .tabela-campanhas {
   thead {
     font-variant: all-small-caps;
