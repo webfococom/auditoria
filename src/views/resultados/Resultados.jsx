@@ -1,8 +1,8 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Link } from "react-router-dom";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faQuestion, faCheckCircle, faTimesCircle, faCircle } from '@fortawesome/free-solid-svg-icons';
+import { faQuestion, faEnvelope, faFilePdf, faPrint } from '@fortawesome/free-solid-svg-icons';
 
 let resultados = {
     econometro: 937.23,
@@ -82,9 +82,31 @@ class Resultados extends React.Component {
                     </div>
 
                     <div className="row">
-                        <div className="col-lg-12 col-md-12 col-sm-12">
+                        <div className="col-lg-7 col-md-7 col-sm-12">
                             <h2 className="title-section">Resultados</h2>
                         </div>
+                        <div className="col-lg-5 col-md-5 col-sm-12">
+                            <div className="content-actions-resultados">
+                                <div className="item-action">
+                                    <Link to="/" className="nav-link">
+                                        <FontAwesomeIcon icon={faEnvelope} /> Enviar via email
+                                    </Link>
+                                </div>
+                                <div className="item-action">
+                                    <Link to="/" className="nav-link">
+                                        <FontAwesomeIcon icon={faFilePdf} /> Salvar em PDF
+                                    </Link>
+                                </div>
+                                <div className="item-action">
+                                    <Link to="/" className="nav-link">
+                                        <FontAwesomeIcon icon={faPrint} /> Imprimir
+                                    </Link>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="row">
 
                         <div className="col-lg-4 col-md-4 col-sm-4">
                             <div className="card card-home">
