@@ -1,17 +1,9 @@
-// import Dashboard from "views/Dashboard.jsx";
-// import Icons from "views/Icons.jsx";
-// import Map from "views/Map.jsx";
-// import Notifications from "views/Notifications.jsx";
-// import Rtl from "views/Rtl.jsx";
-// import TableList from "views/TableList.jsx";
-// import Typography from "views/Typography.jsx";
-// import UserProfile from "views/UserProfile.jsx";
-
 import Home from "views/home/Home";
 import Anuncios from "views/anuncios/Anuncios";
 import RaioX from "views/raiox/RaioX";
 import Mixer from "views/mixer/Mixer";
 import Resultados from "views/resultados/Resultados";
+import Painel from "views/campanhas/PainelDaCampanha";
 
 let routes = [
     {
@@ -43,6 +35,12 @@ let routes = [
         path: "/resultados",
         exact: true,
         component: Resultados,
+    },
+    {
+        name: "Painel da campanha",
+        path: "/painel/:campanha",
+        exact: true,
+        component: Painel,
     },
 ];
 

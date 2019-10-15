@@ -164,10 +164,53 @@
     }
   }
 
-  .content-comparativo-resultados {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+}
+
+.content-comparativo-resultados {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  .content-comparativo {
+    font-size: 16px;
+    text-align: center;
+    color: #797e83;
+
+    .text-blue {
+      font-size: 26px;
+      color: $blue;
+    }
+
+    .text-green {
+      color: $green;
+    }
+
+    .comparativo-title {
+      text-transform: uppercase;
+      flex-direction: row;
+      justify-content: space-between;
+      color: #40505e;
+    }
+
+    .info-comparativo {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-bottom: 0;
+      align-items: center;
+    }
+
+    p {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .campanha{
+      p:last-child{
+        font-size: 22px;
+      }
+    }
   }
 }
 

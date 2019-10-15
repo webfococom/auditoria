@@ -16,6 +16,7 @@ let visaoGeral = {
 let campanhas = [
     {
         nome: 'Campanha A',
+        route: 'campanha-a',
         impressoes: 29856,
         cliques: 1897,
         cpc: 0.98,
@@ -25,6 +26,7 @@ let campanhas = [
     },
     {
         nome: 'Campanha B',
+        route: 'campanha-b',
         impressoes: 29856,
         cliques: 1897,
         cpc: 0.98,
@@ -34,6 +36,7 @@ let campanhas = [
     },
     {
         nome: 'Campanha C',
+        route: 'campanha-c',
         impressoes: 29856,
         cliques: 1897,
         cpc: 0.98,
@@ -43,6 +46,7 @@ let campanhas = [
     },
     {
         nome: 'Campanha D',
+        route: 'campanha-d',
         impressoes: 29856,
         cliques: 1897,
         cpc: 0.98,
@@ -52,6 +56,7 @@ let campanhas = [
     },
     {
         nome: 'Campanha E',
+        route: 'campanha-e',
         impressoes: 29856,
         cliques: 1897,
         cpc: 0.98,
@@ -238,9 +243,12 @@ class Home extends React.Component {
                                                         {alertCampanha(element.alerta)}
                                                     </td>
                                                     <td>
-                                                        <button className={classNames('btn btn-sm', (element.alerta === 'green') ? 'btn-outline-success' : "btn-outline-danger")}>
+                                                        <Link to={`/painel/${element.route}`} className={classNames('btn btn-sm', (element.alerta === 'green') ? 'btn-outline-success' : "btn-outline-danger")}>
                                                             ir para o painel
-                                                        </button>
+                                                        </Link>
+                                                        {/*<button className={classNames('btn btn-sm', (element.alerta === 'green') ? 'btn-outline-success' : "btn-outline-danger")}>
+                                                            ir para o painel
+                                                        </button>*/}
                                                     </td>
                                                 </tr>
                                             )
