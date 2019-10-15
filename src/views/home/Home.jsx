@@ -101,9 +101,9 @@ class Home extends React.Component {
                         <div className="col-lg-12 col-md-12 col-sm-12">
                             <nav aria-label="breadcrumb">
                                 <ol className="breadcrumb breadcrumb-auditoria">
-                                    <li className="breadcrumb-item"><a href="#">Home</a></li>
-                                    <li className="breadcrumb-item"><a href="#">Visão Geral</a></li>
-                                    <li className="breadcrumb-item active" aria-current="page">Painel da Campanha</li>
+                                    <li className="breadcrumb-item" aria-current="page">
+                                        <Link to="/">Home</Link>
+                                    </li>
                                 </ol>
                             </nav>
                         </div>

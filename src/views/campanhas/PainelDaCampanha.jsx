@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Switch, Link } from "react-router-dom";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faQuestion, faEdit, faPause, faRobot} from '@fortawesome/free-solid-svg-icons';
+import { faQuestion, faCaretUp, faCaretDown, faPencilAlt, faPause, faRobot} from '@fortawesome/free-solid-svg-icons';
 import Chart from "chart.js";
 
 let comparativo = {
@@ -107,8 +107,15 @@ let createChart = () => {
     });
 };
 
-export default class PainelDaCampanha extends React.Component {
+let getPorcentagem = (porcentagem, status, color) => {
+    return (
+        <span className={`text-${color}`}>
+            {porcentagem}% <FontAwesomeIcon icon={(status ==="up") ? faCaretUp:faCaretDown} />
+        </span>
+    );
+};
 
+export default class PainelDaCampanha extends React.Component {
     componentDidMount() {
         let performace = 67;
         createChart(performace);
@@ -116,62 +123,66 @@ export default class PainelDaCampanha extends React.Component {
 
     render() {
         return (
-            <div className="content-header content-ads view-resultados">
+            <div className="content-header content-ads view-painel-da-campanha">
                 <div className="container-fluid">
-
                     <div className="row">
                         <div className="col-lg-12 col-md-12 col-sm-12">
                             <nav aria-label="breadcrumb">
                                 <ol className="breadcrumb breadcrumb-auditoria">
-                                    <li className="breadcrumb-item"><a href="#">Home</a></li>
-                                    <li className="breadcrumb-item active" aria-current="page">Painel da Campanha</li>
+                                    <li className="breadcrumb-item">
+                                        <Link to="/">Home</Link>
+                                    </li>
+                                    <li className="breadcrumb-item active" aria-current="page">
+                                        Painel da Campanha
+                                    </li>
                                 </ol>
                             </nav>
                         </div>
                     </div>
 
                     <div className="row">
-                        <div className="col-lg-8 col-md-8 col-sm-12">
-                            <h2 className="title-section">Painel da campanha</h2>
-                            <Link to="/" className="nav-link">
-                                <FontAwesomeIcon icon={faRobot} /> Piloto automático
-                            </Link>
+                        <div className="col-lg-7 col-md-7 col-sm-12">
+                            <div className="flex">
+                                <h2 className="title-section">Painel da campanha</h2>
+                                <button className="btn btn-xs btn-piloto-auto">
+                                    <FontAwesomeIcon icon={faRobot} /> Piloto automático
+                                </button>
+                            </div>
                         </div>
-                        <div className="col-lg-4 col-md-4 col-sm-12">
-                            <div className="controll-budget">
+                        <div className="col-lg-5 col-md-5 col-sm-12">
+                            <div className="controll-budget flex">
                                 <div className="content-budget">
-                                    <span>Budget Diário</span>
-                                    <div></div>
-                                    <span>R$ 50,00</span>
+                                    <span className="text">Budget Diário</span>
+                                    <div className="progress">
+                                        <div className="progress-bar"
+                                             role="progressbar"
+                                             style={{width: "25%"}}
+                                             aria-valuenow="25"
+                                             aria-valuemin="0"
+                                             aria-valuemax="100"
+                                        />
+                                    </div>
+                                    <span className="value">R$ 50,00</span>
                                 </div>
                                 <div className="content-actions">
-                                    <ul>
-                                        <li>
-                                            <Link to="/" className="nav-link btn btn-sm">
-                                                <FontAwesomeIcon icon={faEdit} />
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link to="/" className="nav-link btn btn-sm">
-                                                <FontAwesomeIcon icon={faPause} />
-                                            </Link>
-                                        </li>
-                                        <li>
-                                            <Link to="/" className="nav-link btn btn-sm">
-                                                <FontAwesomeIcon icon={faRobot} />
-                                            </Link>
-                                        </li>
-                                    </ul>
+                                    <button className="btn btn-sm">
+                                        <FontAwesomeIcon icon={faPencilAlt} />
+                                    </button>
+                                    <button className="btn btn-sm">
+                                        <FontAwesomeIcon icon={faPause} />
+                                    </button>
+                                    <button className="btn btn-sm">
+                                        <FontAwesomeIcon icon={faRobot} />
+                                    </button>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div className="row">
+                    <section className="row">
                         <div className="col-lg-12 col-md-12 col-sm-12">
                             <div className="card">
-
-                                <div className="card-body content-comparativo-resultados">
+                                <div className="card-body content-comparativo-painel">
                                     <div className="content-comparativo campanha">
                                         <p className="comparativo-title">Nome</p>
                                         <p>{comparativo.nome}</p>
@@ -179,47 +190,47 @@ export default class PainelDaCampanha extends React.Component {
                                     <div className="content-comparativo impressoes">
                                         <p className="comparativo-title">Impressões</p>
                                         <p className="info-comparativo">
-                                            <span className="text-blue">{comparativo.impressoes.valor}</span>
-                                            <span className="text-green">{comparativo.impressoes.porcentagem}%</span>
+                                            {comparativo.impressoes.valor}
+                                            {getPorcentagem(comparativo.impressoes.porcentagem, 'up', 'green')}
                                         </p>
                                         <p>{comparativo.impressoes.mesAnterior}</p>
                                     </div>
                                     <div className="content-comparativo cliques">
                                         <p className="comparativo-title">Cliques</p>
                                         <p className="info-comparativo">
-                                            <span className="text-blue">{comparativo.cliques.valor}</span>
-                                            <span className="text-green">{comparativo.cliques.porcentagem}%</span>
+                                            {comparativo.cliques.valor}
+                                            {getPorcentagem(comparativo.cliques.porcentagem, 'up', 'green')}
                                         </p>
                                         <p>{comparativo.cliques.mesAnterior}</p>
                                     </div>
                                     <div className="content-comparativo cpc">
                                         <p className="comparativo-title">CPC</p>
                                         <p className="info-comparativo">
-                                            <span className="text-blue">{comparativo.cpc.valor}</span>
-                                            <span className="text-green">{comparativo.cpc.porcentagem}%</span>
+                                            {comparativo.cpc.valor}
+                                            {getPorcentagem(comparativo.cliques.porcentagem, 'down', 'green')}
                                         </p>
                                         <p>{comparativo.cpc.mesAnterior}</p>
                                     </div>
                                     <div className="content-comparativo conversoes">
                                         <p className="comparativo-title">Conversões</p>
                                         <p className="info-comparativo">
-                                            <span className="text-blue">{comparativo.conversoes.valor}</span>
-                                            <span className="text-green">{comparativo.conversoes.porcentagem}%</span>
+                                            {comparativo.conversoes.valor}
+                                            {getPorcentagem(comparativo.conversoes.porcentagem, 'up', 'green')}
                                         </p>
                                         <p>{comparativo.conversoes.mesAnterior}</p>
                                     </div>
                                     <div className="content-comparativo investimento">
                                         <p className="comparativo-title">Investimento</p>
                                         <p className="info-comparativo">
-                                            <span className="text-blue">{comparativo.investimento.valor}</span>
-                                            <span className="text-green">{comparativo.investimento.porcentagem}%</span>
+                                            {comparativo.investimento.valor}
+                                            {getPorcentagem(comparativo.investimento.porcentagem, 'up', 'green')}
                                         </p>
                                         <p>{comparativo.investimento.mesAnterior}</p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </section>
 
                     <div className="row">
                         <div className="col-lg-12 col-md-12 col-sm-12">
@@ -257,7 +268,6 @@ export default class PainelDaCampanha extends React.Component {
                                     </div>
                                 </div>
                                 <div className="card-footer">
-
                                     <p>Sugerimos aumento de investimento</p>
                                     <p>Atual: R$30</p>
                                     <p>Sugestão: R$80</p>
@@ -267,34 +277,215 @@ export default class PainelDaCampanha extends React.Component {
                                 </div>
                             </div>
                         </div>
-
-                        <div className="col-lg-5 col-md-5 col-sm-12">
-
-                        </div>
-                        <div className="col-lg-7 col-md-7 col-sm-12">
-
-                        </div>
                     </div>
-
-
 
                     <div className="row">
                         <div className="col-lg-12 col-md-12 col-sm-12">
                             <div className="card">
-                                <table className="table table-condensed tabela-campanhas">
-                                    <thead>
-                                        <tr></tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
+                                <div className="card-header">
+                                    <span>Anúncios</span>
+                                    <button className="btn btn-outline-success btn-sm">
+                                        Ativar piloto automático
+                                    </button>
+                                </div>
+                                <div className="card-body">
+                                    <div className="row">
+                                        <div className="col-lg-6 col-md-6 col-sm-12">
 
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                        </div>
+                                        <div className="col-lg-6 col-md-6 col-sm-12">
+                                            <div className="content">
+                                                <div>
+                                                    <p>Impressões</p>
+                                                    <p>28.856</p>
+                                                    <p>14,87%</p>
+                                                </div>
+                                                <div>
+                                                    <p>CPC</p>
+                                                    <p>R$0.98</p>
+                                                    <p>17,28%</p>
+                                                </div>
+                                                <div>
+                                                    <p>Conversões</p>
+                                                    <p>14.659</p>
+                                                    <p>32,85%</p>
+                                                </div>
+                                            </div>
+                                            <div className="content">
+                                                <div>
+                                                    <p>Sugerimos no mínimo</p>
+                                                    <p>3 anúncios</p>
+                                                </div>
+                                                <div>
+                                                    <button className="btn btn-success">Criar agora</button>
+                                                    <button className="btn btn-success">Ver todos</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
 
+                    <div className="row">{/*2.095.713/19-9*/}
+                        <div className="col-lg-12 col-md-12 col-sm-12">
+                            <div className="card">
+                                <div className="card-header">
+                                    <p>Extensões de anúncios</p>
+                                </div>
+                                <div className="card-body">
+                                    <div className="content-anuncios">
+                                        <div>
+                                            <p>Chamada</p>
+                                        </div>
+                                        <div>
+                                            <p>Mensagem</p>
+                                        </div>
+                                        <div>
+                                            <p>Preço</p>
+                                        </div>
+
+                                        <div>
+                                            <p>Promoção</p>
+                                        </div>
+                                        <div>
+                                            <p>Snippet</p>
+                                        </div>
+                                        <div>
+                                            <p>Sitelink</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="card-footer">
+                                    <button className="btn btn-success btn-sm">
+                                        Configurar
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div className="row">
+                        <div className="col-lg-12 col-md-12 col-sm-12">
+                            <div className="card">
+                                <div className="card-body">
+                                    <p>Sugestões Automáticas de palavras</p>
+
+                                    <div>
+                                        <p>Sugestões para adicionar</p>
+                                        <table className="table table-condensed tabela-campanhas">
+                                            <thead>
+                                                <tr>
+                                                    <td>Nome</td>
+                                                    <td>Grupo</td>
+                                                    <td>Impressões</td>
+                                                    <td>Clique</td>
+                                                    <td>Conversões</td>
+                                                    <td>Custo</td>
+                                                    <td>Ação</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Palavra A</td>
+                                                    <td>X</td>
+                                                    <td>1.897</td>
+                                                    <td>R$0.98</td>
+                                                    <td>14.659</td>
+                                                    <td>14.659</td>
+                                                    <td>
+                                                        <button className="btn btn-success btn-sm">Adicionar</button>
+                                                        <button className="btn btn-outline-danger btn-sm">Negativar</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Palavra B</td>
+                                                    <td>Y</td>
+                                                    <td>1.897</td>
+                                                    <td>R$0.98</td>
+                                                    <td>14.659</td>
+                                                    <td>14.659</td>
+                                                    <td>
+                                                        <button className="btn btn-success btn-sm">Adicionar</button>
+                                                        <button className="btn btn-outline-danger btn-sm">Negativar</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Palavra C</td>
+                                                    <td>Z</td>
+                                                    <td>1.897</td>
+                                                    <td>R$0.98</td>
+                                                    <td>14.659</td>
+                                                    <td>14.659</td>
+                                                    <td>
+                                                        <button className="btn btn-success btn-sm">Adicionar</button>
+                                                        <button className="btn btn-outline-danger btn-sm">Negativar</button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                    <div>
+                                        <p>Sugestões para negativar</p>
+                                        <table className="table table-condensed tabela-campanhas">
+                                            <thead>
+                                                <tr>
+                                                    <td>Nome</td>
+                                                    <td>Grupo</td>
+                                                    <td>Impressões</td>
+                                                    <td>Clique</td>
+                                                    <td>Conversões</td>
+                                                    <td>Custo</td>
+                                                    <td>Ação</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Palavra A</td>
+                                                    <td>X</td>
+                                                    <td>1.897</td>
+                                                    <td>R$0.98</td>
+                                                    <td>14.659</td>
+                                                    <td>14.659</td>
+                                                    <td>
+                                                        <button className="btn btn-danger btn-sm">Negativar</button>
+                                                        <button className="btn btn-outline-success btn-sm">Adicionar</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Palavra B</td>
+                                                    <td>Y</td>
+                                                    <td>1.897</td>
+                                                    <td>R$0.98</td>
+                                                    <td>14.659</td>
+                                                    <td>14.659</td>
+                                                    <td>
+                                                        <button className="btn btn-danger btn-sm">Negativar</button>
+                                                        <button className="btn btn-outline-success btn-sm">Adicionar</button>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Palavra C</td>
+                                                    <td>Z</td>
+                                                    <td>1.897</td>
+                                                    <td>R$0.98</td>
+                                                    <td>14.659</td>
+                                                    <td>14.659</td>
+                                                    <td>
+                                                        <button className="btn btn-danger btn-sm">Negativar</button>
+                                                        <button className="btn btn-outline-success btn-sm">Adicionar</button>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         );

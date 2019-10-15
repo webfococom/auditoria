@@ -2,6 +2,25 @@
   background: $navbar-top-bg;
 }
 
+.breadcrumb-auditoria {
+  font-size: 14px;
+  color: $title-section-color;
+
+  a {
+    color: $title-section-color;
+  }
+
+  .breadcrumb-item + .breadcrumb-item {
+    padding-left: 0.3rem;
+
+    &::before {
+      content: "·";
+      font-size: 19px;
+      padding-right: 0.3rem;
+    }
+  }
+}
+
 .sidebar-ads {
   width: 200px !important;
   font-family: $title-section-font-family;
@@ -35,13 +54,7 @@
 
 }
 
-.red {
-  color: $red;
-}
 
-.green {
-  color: $green;
-}
 
 .card-home {
   color: $title-section-color;
@@ -166,52 +179,102 @@
 
 }
 
+.content-comparativo-painel {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.content-comparativo {
+  font-size: 16px;
+  text-align: center;
+  color: #797e83;
+
+  .text-green {
+    color: $green;
+  }
+
+  .comparativo-title {
+    text-transform: uppercase;
+    flex-direction: row;
+    justify-content: space-between;
+    color: #40505e;
+  }
+
+  .info-comparativo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 0;
+    align-items: center;
+    font-size: 26px;
+    color: $blue;
+
+    span {
+      font-size: 16px;
+    }
+  }
+
+  p {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &.campanha{
+    p:last-child{
+      font-size: 22px;
+    }
+  }
+}
+
+
 .content-comparativo-resultados {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 
-  .content-comparativo {
-    font-size: 16px;
-    text-align: center;
-    color: #797e83;
-
-    .text-blue {
-      font-size: 26px;
-      color: $blue;
-    }
-
-    .text-green {
-      color: $green;
-    }
-
-    .comparativo-title {
-      text-transform: uppercase;
-      flex-direction: row;
-      justify-content: space-between;
-      color: #40505e;
-    }
-
-    .info-comparativo {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      margin-bottom: 0;
-      align-items: center;
-    }
-
-    p {
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-
-    .campanha{
-      p:last-child{
-        font-size: 22px;
-      }
-    }
-  }
+  //.content-comparativo {
+  //  font-size: 16px;
+  //  text-align: center;
+  //  color: #797e83;
+  //
+  //  .text-blue {
+  //    font-size: 26px;
+  //    color: $blue;
+  //  }
+  //
+  //  .text-green {
+  //    color: $green;
+  //  }
+  //
+  //  .comparativo-title {
+  //    text-transform: uppercase;
+  //    flex-direction: row;
+  //    justify-content: space-between;
+  //    color: #40505e;
+  //  }
+  //
+  //  .info-comparativo {
+  //    display: flex;
+  //    flex-direction: row;
+  //    justify-content: space-between;
+  //    margin-bottom: 0;
+  //    align-items: center;
+  //  }
+  //
+  //  p {
+  //    &:last-child {
+  //      margin-bottom: 0;
+  //    }
+  //  }
+  //
+  //  .campanha{
+  //    p:last-child{
+  //      font-size: 22px;
+  //    }
+  //  }
+  //}
 }
 
 .tabela-campanhas {
@@ -220,25 +283,88 @@
   }
 }
 
-.breadcrumb-auditoria {
-  font-size: 14px;
-  color: $title-section-color;
-
-  a {
-    color: $title-section-color;
+.view-painel-da-campanha {
+  div.flex {
+    //align-items: center;
   }
 
-  .breadcrumb-item + .breadcrumb-item {
-    padding-left: 0.3rem;
+  .title-section {
+    font-size: $title-section-font-size;
   }
 
-  .breadcrumb-item + .breadcrumb-item::before {
-    content: "·";
-    font-size: 20px;
-    padding-right: 0.3rem;
+  .btn-piloto-auto {
+    color: $dourado;
+    font-size: 14px;
+
+    &:hover {
+      color: #a57d07;
+    }
   }
 
-  li.breadcrumb-item {
+  .controll-budget {
+    justify-content: space-between;
+    background: $white;
+    border-radius: 5px;
+    padding: 10px;
 
+    .content-budget {
+      display: flex;
+      align-items: center;
+      font-size: 16px;
+      color: $title-section-color;
+      font-weight: bold;
+
+      .progress {
+        width: 100px;
+        margin: 0 10px;
+        background: #d9dee5;
+        height: 24px;
+
+        .progress-bar {
+          background: $blue;
+        }
+      }
+    }
+
+    .content-actions {
+      display: flex;
+      align-items: center;
+
+      button {
+        margin-left: 5px;
+
+        &:nth-child(1n) {
+          color: $green;
+          border-color: $green;
+        }
+
+        &:nth-child(2n) {
+          color: $title-section-color;
+          border-color: $title-section-color;
+        }
+
+        &:nth-child(3n) {
+          color: $dourado;
+          border-color: $dourado;
+        }
+
+        &:hover {
+          &:nth-child(1n) {
+            background: $green;
+            color: $white;
+          }
+
+          &:nth-child(2n) {
+            background: $title-section-color;
+            color: $white;
+          }
+
+          &:nth-child(3n) {
+            background: $dourado;
+            color: $white;
+          }
+        }
+      }
+    }
   }
 }
