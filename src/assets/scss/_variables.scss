@@ -2,6 +2,7 @@ $white: #fff;
 $green: #2abea6;
 $red: #f43b47;
 $gray: #797e83;
+$gray-dark: #40505e;
 $blue: #5aa5e0;
 $dourado: #e0bc5a;
 $navbar-bg: #4f5f6f;
@@ -9,7 +10,7 @@ $navbar-ico-bg: #6a7887;
 $navbar-top-bg: #d7dde4;
 $color-icons-navbar: $green;
 $content-bg: #f0f3f6;
-$title-section-color: #797e83;
+$title-section-color: $gray;
 $title-section-font-size: 42px;
 $title-section-font-family: 'Hind Madurai', sans-serif;
 $color-destaque: $blue;
@@ -26,3 +27,62 @@ $fontSize-destaque: 41px;
 .flex {
   display: flex;
 }
+
+.text-upper{
+  text-transform: uppercase;
+}
+
+.title-card {
+  font-size: 21px;
+  color: $gray;
+  margin-bottom: 0;
+}
+
+.btn-success {
+  color: #ffffff;
+  background-color: $green !important;
+  border-color: $green !important;
+
+  &:hover {
+    color: #ffffff;
+    background-color: darken($green, 15%) !important;
+    border-color: darken($green, 15%) !important;
+  }
+}
+
+.btn-outline-success {
+  color: $green !important;
+  background-color: $white !important;
+  border-color: $white !important;
+
+  &:hover {
+    color: $white !important;
+    background-color: $green !important;
+    border-color: darken($green, 30%) !important;
+  }
+}
+
+.btn-danger {
+  color: $white !important;
+  background-color: $red !important;
+  border-color: $red !important;
+
+  &:hover {
+    color: #ffffff;
+    background-color: darken($red, 30%) !important;
+    border-color: darken($red, 30%) !important;
+  }
+}
+
+.btn-outline-danger {
+  color: $red !important;
+  background-color: $white !important;
+  border-color: $white !important;
+
+  &:hover {
+    color: $white !important;
+    background-color: $red !important;
+    border-color: darken($red, 30%) !important;
+  }
+}
+

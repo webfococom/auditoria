@@ -228,7 +228,6 @@
   }
 }
 
-
 .content-comparativo-resultados {
   display: flex;
   flex-direction: row;
@@ -362,6 +361,202 @@
           &:nth-child(3n) {
             background: $dourado;
             color: $white;
+          }
+        }
+      }
+    }
+  }
+
+  .header-publico-atingido {
+    justify-content: space-between;
+    font-size: 16px;
+    align-items: baseline;
+
+    p {
+      font-weight: bold;
+      color: $gray;
+    }
+
+    span:before {
+      content: "·";
+      margin: 0 0.2rem;
+    }
+  }
+
+  .content-publico-nao-atingido {
+    .header-publico-nao-atingido {
+      justify-content: space-between;
+      font-size: 16px;
+      align-items: baseline;
+
+      font-weight: bold;
+      color: $gray;
+    }
+
+    .info {
+      color: $red;
+      font-size: 26px;
+      display: flex;
+      justify-content: space-between;
+      width: 15vw;
+
+      span {
+        &:nth-child(2n) {
+          &:before {
+            content: "·";
+          }
+        }
+      }
+    }
+
+    .text{
+      color: $gray;
+    }
+
+    .footer-publico-nao-atingido {
+      display: flex;
+      //justify-content: space-between;
+
+      .info {
+        color: $blue;
+
+        span {
+          &:nth-child(2n) {
+            &:before {
+              content: "·";
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .content-extensoes-de-anuncios {
+    .content-anuncios {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      .box-extensao {
+        width: 25vw;
+        border-radius: 5px;
+        text-align: center;
+        text-transform: uppercase;
+        color: $white;
+        padding: 10px;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        .text-extensao {
+          margin: 0 auto;
+        }
+
+      .status-extensao {
+          float: right;
+          font-size: 12px;
+          svg {
+            margin-right: 5px;
+          }
+        }
+
+        &.configurado {
+          background: #1cce61;
+          .status-extensao {
+            svg {
+              color: darken(#1cce61, 20%);
+            }
+          }
+        }
+
+        &.nao-configurado {
+          color: $gray-dark;
+          background: #d9dee5;
+          .status-extensao {
+            color: darken(#d9dee5, 30%);
+          }
+        }
+      }
+    }
+  }
+
+  .content-sugestoes-de-palavras {
+    .card-body {
+      p {
+        font-size: 21px;
+        color: $gray;
+        margin-bottom: 0;
+      }
+
+      table {
+        color: $gray;
+        font-size: 14px;
+
+        tr {
+          td {
+            text-align: center;
+          }
+        }
+
+        thead {
+          font-weight: bold;
+          text-transform: uppercase;
+          color: $gray-dark;
+        }
+
+        tbody {
+          tr {
+            td {
+              &:first-child {
+                font-weight: bold;
+                color: $gray-dark;
+              }
+
+              button {
+                font-size: 10px;
+                &:first-child {
+                  margin-right: 10px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .content-sugestoes-adicionar {
+        table {
+          button {
+            text-transform: uppercase;
+            &.btn-negativar {
+              border: none;
+              color: $green;
+              text-decoration: underline;
+
+              &:hover {
+                background: none !important;
+                color: darken($red, 40%) !important;
+              }
+            }
+          }
+        }
+      }
+
+      .content-sugestoes-negativas {
+        table {
+          button {
+            text-transform: uppercase;
+            &.btn-adicionar {
+              border: none;
+              color: $green;
+              text-decoration: underline;
+
+              &:hover {
+                background: none !important;
+                color: darken($green, 30%) !important;
+              }
+            }
           }
         }
       }

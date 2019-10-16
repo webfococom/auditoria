@@ -1,8 +1,16 @@
 import React from "react";
 import { Route, Switch, Link } from "react-router-dom";
-
+import classNames from "classnames"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faQuestion, faCaretUp, faCaretDown, faPencilAlt, faPause, faRobot} from '@fortawesome/free-solid-svg-icons';
+import {
+    faCheckCircle,
+    faTimesCircle,
+    faCaretUp,
+    faCaretDown,
+    faPencilAlt,
+    faPause,
+    faRobot
+} from '@fortawesome/free-solid-svg-icons';
 import Chart from "chart.js";
 
 let comparativo = {
@@ -58,55 +66,6 @@ let palavrasMovimentadas = [
     },
 ];
 
-let createChart = () => {
-    let ctx = document.getElementById('chart-publico-atingido');
-
-    new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'],
-            datasets: [{
-                label: false,
-                data: [48.2, 79.1, 48.5, 63.7, 74.4, 58, 40.1],
-                backgroundColor: [
-                    '#5aa5e0',
-                    '#5aa5e0',
-                    '#5aa5e0',
-                    '#5aa5e0',
-                    '#5aa5e0',
-                    '#5aa5e0',
-                    '#5aa5e0',
-                ],
-            }]
-        },
-        options: {
-            scales: {
-                xAxes: [{
-                    // barPercentage: 2,
-                    // barThickness: 6,
-                    // maxBarThickness: 8,
-                    // minBarLength: 80,
-                    // gridLines: {
-                    //     offsetGridLines: true
-                    // }
-                }],
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true
-                    }
-                }]
-            }
-            /*scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true
-                    }
-                }]
-            }*/
-        },
-    });
-};
-
 let getPorcentagem = (porcentagem, status, color) => {
     return (
         <span className={`text-${color}`}>
@@ -115,10 +74,119 @@ let getPorcentagem = (porcentagem, status, color) => {
     );
 };
 
+let getExtensoesDeAnuncios = (extensao, configurada) => {
+    return (
+        <div className={classNames("box-extensao", { configurado: configurada, 'nao-configurado': !configurada })}>
+            <span className="text-extensao">{extensao}</span>
+            <div className="status-extensao">
+                <FontAwesomeIcon
+                    icon={(configurada === true) ? faCheckCircle : faTimesCircle}
+                    className="status-raio-x"
+                />
+                <span>{(configurada === true) ? '' : 'Não'} Configurado</span>
+            </div>
+        </div>
+    );
+};
+
+let createChart = () => {
+    new Chart(document.getElementById('chart-publico-atingido'), {
+        type: 'bar',
+        data: {
+            labels: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'],
+            datasets: [{
+                label: false,
+                data: [48.2, 79.1, 48.5, 63.7, 74.4, 58, 40.1],
+                backgroundColor: '#5aa5e0',
+            }]
+        },
+        options: {
+            // tooltips: {
+            //     enabled: true,
+            // },
+            legend: false,
+            scales: {
+                labelString: 'alex',
+                xAxes: [{
+
+                }],
+                yAxes: [{
+                    ticks: {
+                        min: 0,
+                        max: 100,
+                    }
+                }]
+            }
+        }
+    });
+};
+
+let createChartConversoesDevice = () => {
+    new Chart(document.getElementById('chart-conversoes-device'), {
+        type: 'pie',
+        data: {
+            labels: ["Africa", "Asia"],
+            datasets: [{
+                label: "Population (millions)",
+                backgroundColor: ["#3e95cd", "#8e5ea2"],
+                data: [2478, 5267]
+            }]
+        },
+        options: {
+            title: {
+                display: true,
+                text: 'Predicted world population (millions) in 2050'
+            }
+        }
+    });
+};
+
+let createChartConversoesTime = () => {
+    new Chart(document.getElementById('chart-conversoes-time'), {
+        type: 'bar',
+        data: {
+            labels: ["1900", "1950", "1999", "2050"],
+            datasets: [{
+                label: "Europe",
+                type: "line",
+                borderColor: "#8e5ea2",
+                data: [408,547,675,734],
+                fill: false
+            }, {
+                label: "Africa",
+                type: "line",
+                borderColor: "#3e95cd",
+                data: [133,221,783,2478],
+                fill: false
+            }, {
+                label: "Europe",
+                type: "bar",
+                backgroundColor: "rgba(0,0,0,0.2)",
+                data: [408,547,675,734],
+            }, {
+                label: "Africa",
+                type: "bar",
+                backgroundColor: "rgba(0,0,0,0.2)",
+                backgroundColorHover: "#3e95cd",
+                data: [133,221,783,2478]
+            }
+            ]
+        },
+        options: {
+            title: {
+                display: true,
+                text: 'Population growth (millions): Europe & Africa'
+            },
+            legend: { display: false }
+        }
+    });
+};
+
 export default class PainelDaCampanha extends React.Component {
     componentDidMount() {
-        let performace = 67;
-        createChart(performace);
+        createChart(67);
+        createChartConversoesDevice();
+        createChartConversoesTime();
     }
 
     render() {
@@ -232,25 +300,64 @@ export default class PainelDaCampanha extends React.Component {
                         </div>
                     </section>
 
-                    <div className="row">
+                    <section className="row">
                         <div className="col-lg-12 col-md-12 col-sm-12">
                             <div className="card">
                                 <div className="row">
-                                    <div className="col-lg-7 col-md-7 col-sm-12">
-                                        <canvas id="chart-publico-atingido"></canvas>
+                                    <div className="col-lg-6 col-md-6 col-sm-12">
+                                        <div className="card-header border-0">
+                                            <div className="flex header-publico-atingido">
+                                                <p>
+                                                    Público Atingido
+                                                    <span></span>
+                                                    Impressões Realistas
+                                                </p>
+                                                <button className="btn btn-outline-success btn-sm">
+                                                    <FontAwesomeIcon icon={faRobot} /> Ativar o piloto automático
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <div className="card-body">
+                                            <canvas id="chart-publico-atingido"></canvas>
+                                        </div>
                                     </div>
-                                    <div className="col-lg-5 col-md-5 col-sm-12">
-                                        <p>Público Não atingido</p>
-                                        <p>
-                                            <span>40%</span>
-                                            <span>21.239</span>
-                                        </p>
-                                        <p>Que tal aumentar o orçamento diário para alcançar mais pessoas?</p>
+
+                                    <div className="col-lg-6 col-md-6 col-sm-12">
+                                        <div className="content-publico-nao-atingido">
+                                            <div className="card-header border-0">
+                                                <p className="header-publico-nao-atingido">Público Não Atingido</p>
+                                            </div>
+                                            <div className="card-body">
+                                                <p className="info">
+                                                    <span>40%</span>
+                                                    <span></span>
+                                                    <span>21.239</span>
+                                                </p>
+
+                                                <p className="text">Que tal aumentar o orçamento diário para alcançar mais pessoas?</p>
+
+                                                <div>
+
+                                                </div>
+                                            </div>
+                                            <div className="card-footer">
+                                                <div className="footer-publico-nao-atingido">
+                                                    <p className="info">
+                                                        <span>+17%</span>
+                                                        <span></span>
+                                                        <span>9.809</span>
+                                                    </p>
+                                                    <button className="btn btn-success btn-sm">
+                                                        APLICAR
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </section>
 
                     <div className="row">
                         <div className="col-lg-12 col-md-12 col-sm-12">
@@ -263,17 +370,23 @@ export default class PainelDaCampanha extends React.Component {
                                 </div>
                                 <div className="card-body">
                                     <div className="row">
-                                        <div className="col-lg-5 col-md-5 col-sm-12"></div>
-                                        <div className="col-lg-7 col-md-7 col-sm-12"></div>
+                                        <div className="col-lg-5 col-md-5 col-sm-12">
+                                            <canvas id="chart-conversoes-device" />
+                                        </div>
+                                        <div className="col-lg-7 col-md-7 col-sm-12">
+                                            <canvas id="chart-conversoes-time" />
+                                        </div>
                                     </div>
                                 </div>
                                 <div className="card-footer">
-                                    <p>Sugerimos aumento de investimento</p>
-                                    <p>Atual: R$30</p>
-                                    <p>Sugestão: R$80</p>
-                                    <button className="btn btn-success btn-sm">
-                                        Aplicar
-                                    </button>
+                                    <div className="flex">
+                                        <p>Sugerimos aumento de investimento</p>
+                                        <p>Atual: R$30</p>
+                                        <p>Sugestão: R$80</p>
+                                        <button className="btn btn-success btn-sm">
+                                            Aplicar
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -328,54 +441,47 @@ export default class PainelDaCampanha extends React.Component {
                         </div>
                     </div>
 
-                    <div className="row">{/*2.095.713/19-9*/}
+                    <section className="row">
                         <div className="col-lg-12 col-md-12 col-sm-12">
-                            <div className="card">
-                                <div className="card-header">
-                                    <p>Extensões de anúncios</p>
+                            <div className="card content-extensoes-de-anuncios">
+                                <div className="card-header border-0">
+                                    <p className="title-card">Extensões de Anúncios</p>
                                 </div>
                                 <div className="card-body">
                                     <div className="content-anuncios">
-                                        <div>
-                                            <p>Chamada</p>
-                                        </div>
-                                        <div>
-                                            <p>Mensagem</p>
-                                        </div>
-                                        <div>
-                                            <p>Preço</p>
-                                        </div>
 
-                                        <div>
-                                            <p>Promoção</p>
-                                        </div>
-                                        <div>
-                                            <p>Snippet</p>
-                                        </div>
-                                        <div>
-                                            <p>Sitelink</p>
-                                        </div>
+                                        {getExtensoesDeAnuncios("Chamada", true)}
+
+                                        {getExtensoesDeAnuncios("Mensagem", false)}
+
+                                        {getExtensoesDeAnuncios("Preço", true)}
+
+                                        {getExtensoesDeAnuncios("Promoção", true)}
+
+                                        {getExtensoesDeAnuncios("Snippet", true)}
+
+                                        {getExtensoesDeAnuncios("Sitelink", false)}
                                     </div>
                                 </div>
                                 <div className="card-footer">
-                                    <button className="btn btn-success btn-sm">
+                                    <button className="btn btn-success btn-sm float-right">
                                         Configurar
                                     </button>
                                 </div>
                             </div>
-
                         </div>
-                    </div>
+                    </section>
 
-                    <div className="row">
+                    <section className="row">
                         <div className="col-lg-12 col-md-12 col-sm-12">
-                            <div className="card">
+                            <div className="card content-sugestoes-de-palavras">
+                                <div className="card-header border-0">
+                                    <p className="title-card">Sugestões Automáticas de palavras</p>
+                                </div>
                                 <div className="card-body">
-                                    <p>Sugestões Automáticas de palavras</p>
-
-                                    <div>
+                                    <div className="content-sugestoes-adicionar">
                                         <p>Sugestões para adicionar</p>
-                                        <table className="table table-condensed tabela-campanhas">
+                                        <table className="table table-condensed">
                                             <thead>
                                                 <tr>
                                                     <td>Nome</td>
@@ -396,8 +502,12 @@ export default class PainelDaCampanha extends React.Component {
                                                     <td>14.659</td>
                                                     <td>14.659</td>
                                                     <td>
-                                                        <button className="btn btn-success btn-sm">Adicionar</button>
-                                                        <button className="btn btn-outline-danger btn-sm">Negativar</button>
+                                                        <button className="btn btn-success btn-sm btn-adicionar">
+                                                            Adicionar
+                                                        </button>
+                                                        <button className="btn btn-outline-danger btn-sm btn-negativar">
+                                                            Negativar
+                                                        </button>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -408,8 +518,12 @@ export default class PainelDaCampanha extends React.Component {
                                                     <td>14.659</td>
                                                     <td>14.659</td>
                                                     <td>
-                                                        <button className="btn btn-success btn-sm">Adicionar</button>
-                                                        <button className="btn btn-outline-danger btn-sm">Negativar</button>
+                                                        <button className="btn btn-success btn-sm btn-adicionar">
+                                                            Adicionar
+                                                        </button>
+                                                        <button className="btn btn-outline-danger btn-sm btn-negativar">
+                                                            Negativar
+                                                        </button>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -420,17 +534,21 @@ export default class PainelDaCampanha extends React.Component {
                                                     <td>14.659</td>
                                                     <td>14.659</td>
                                                     <td>
-                                                        <button className="btn btn-success btn-sm">Adicionar</button>
-                                                        <button className="btn btn-outline-danger btn-sm">Negativar</button>
+                                                        <button className="btn btn-success btn-sm btn-adicionar">
+                                                            Adicionar
+                                                        </button>
+                                                        <button className="btn btn-outline-danger btn-sm btn-negativar">
+                                                            Negativar
+                                                        </button>
                                                     </td>
                                                 </tr>
                                             </tbody>
                                         </table>
                                     </div>
 
-                                    <div>
-                                        <p>Sugestões para negativar</p>
-                                        <table className="table table-condensed tabela-campanhas">
+                                    <div className="content-sugestoes-negativas">
+                                        <p>Sugestões para Negativar</p>
+                                        <table className="table table-condensed">
                                             <thead>
                                                 <tr>
                                                     <td>Nome</td>
@@ -451,8 +569,12 @@ export default class PainelDaCampanha extends React.Component {
                                                     <td>14.659</td>
                                                     <td>14.659</td>
                                                     <td>
-                                                        <button className="btn btn-danger btn-sm">Negativar</button>
-                                                        <button className="btn btn-outline-success btn-sm">Adicionar</button>
+                                                        <button className="btn btn-danger btn-sm btn-negativar">
+                                                            Negativar
+                                                        </button>
+                                                        <button className="btn btn-outline-success btn-sm btn-adicionar">
+                                                            Adicionar
+                                                        </button>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -463,8 +585,12 @@ export default class PainelDaCampanha extends React.Component {
                                                     <td>14.659</td>
                                                     <td>14.659</td>
                                                     <td>
-                                                        <button className="btn btn-danger btn-sm">Negativar</button>
-                                                        <button className="btn btn-outline-success btn-sm">Adicionar</button>
+                                                        <button className="btn btn-danger btn-sm btn-negativar">
+                                                            Negativar
+                                                        </button>
+                                                        <button className="btn btn-outline-success btn-sm btn-adicionar">
+                                                            Adicionar
+                                                        </button>
                                                     </td>
                                                 </tr>
                                                 <tr>
@@ -475,8 +601,12 @@ export default class PainelDaCampanha extends React.Component {
                                                     <td>14.659</td>
                                                     <td>14.659</td>
                                                     <td>
-                                                        <button className="btn btn-danger btn-sm">Negativar</button>
-                                                        <button className="btn btn-outline-success btn-sm">Adicionar</button>
+                                                        <button className="btn btn-danger btn-sm btn-negativar">
+                                                            Negativar
+                                                        </button>
+                                                        <button className="btn btn-outline-success btn-sm btn-adicionar">
+                                                            Adicionar
+                                                        </button>
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -485,7 +615,7 @@ export default class PainelDaCampanha extends React.Component {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </section>
                 </div>
             </div>
         );
