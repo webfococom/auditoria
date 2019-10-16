@@ -1,5 +1,6 @@
 $white: #fff;
 $green: #2abea6;
+$green-light: #1cce61;
 $red: #f43b47;
 $gray: #797e83;
 $gray-dark: #40505e;
@@ -53,12 +54,11 @@ $fontSize-destaque: 41px;
 .btn-outline-success {
   color: $green !important;
   background-color: $white !important;
-  border-color: $white !important;
+  border-color: $green !important;
 
   &:hover {
     color: $white !important;
     background-color: $green !important;
-    border-color: darken($green, 30%) !important;
   }
 }
 

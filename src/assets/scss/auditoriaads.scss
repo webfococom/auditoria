@@ -431,6 +431,68 @@
     }
   }
 
+  .content-anuncios {
+    .card-header {
+      span {
+        margin-right: 10px;
+      }
+      button {
+        text-transform: uppercase;
+        font-size: 12px;
+      }
+    }
+    .card-body {
+      .content-anuncio {
+
+      }
+      .info-anuncios {
+        display: flex;
+        justify-content: space-between;
+        .info {
+          text-align: center;
+
+          .title {
+            color: $gray-dark;
+            font-weight: bold;
+          }
+          .value {
+            color: $blue;
+            font-size: 26px;
+            margin-bottom: 0;
+          }
+          .percent {
+            color: $green-light;
+          }
+        }
+      }
+      .footer-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        p {
+          font-size: 18px;
+          margin-bottom: 0;
+
+          span {
+            color: $blue;
+            font-weight: bold;
+          }
+        }
+
+        div:last-child {
+          button {
+            font-size: 14px;
+
+            &:first-child {
+              margin-right: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+
   .content-extensoes-de-anuncios {
     .content-anuncios {
       display: flex;
@@ -463,10 +525,10 @@
         }
 
         &.configurado {
-          background: #1cce61;
+          background: $green-light;
           .status-extensao {
             svg {
-              color: darken(#1cce61, 20%);
+              color: darken($green-light, 20%);
             }
           }
         }

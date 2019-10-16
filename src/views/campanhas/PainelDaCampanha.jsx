@@ -394,40 +394,68 @@ export default class PainelDaCampanha extends React.Component {
 
                     <div className="row">
                         <div className="col-lg-12 col-md-12 col-sm-12">
-                            <div className="card">
-                                <div className="card-header">
-                                    <span>Anúncios</span>
+                            <div className="card content-anuncios">
+                                <div className="card-header border-0">
+                                    <span className="title-card">Anúncios</span>
                                     <button className="btn btn-outline-success btn-sm">
-                                        Ativar piloto automático
+                                        <FontAwesomeIcon icon={faRobot} /> Ativar piloto automático
                                     </button>
                                 </div>
+
                                 <div className="card-body">
                                     <div className="row">
-                                        <div className="col-lg-6 col-md-6 col-sm-12">
-
+                                        <div className="col-lg-12 col-md-12 col-sm-12">
+                                            <p>01 / 01</p>
                                         </div>
                                         <div className="col-lg-6 col-md-6 col-sm-12">
-                                            <div className="content">
+                                            <div className="content-anuncio">
+                                                <p></p>
+                                                <p></p>
+                                                <p></p>
                                                 <div>
-                                                    <p>Impressões</p>
-                                                    <p>28.856</p>
-                                                    <p>14,87%</p>
-                                                </div>
-                                                <div>
-                                                    <p>CPC</p>
-                                                    <p>R$0.98</p>
-                                                    <p>17,28%</p>
-                                                </div>
-                                                <div>
-                                                    <p>Conversões</p>
-                                                    <p>14.659</p>
-                                                    <p>32,85%</p>
+                                                    <div>
+                                                        <p></p>
+                                                        <p></p>
+                                                    </div>
+                                                    <div>
+                                                        <p></p>
+                                                        <p></p>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div className="content">
-                                                <div>
-                                                    <p>Sugerimos no mínimo</p>
-                                                    <p>3 anúncios</p>
+                                        </div>
+                                        <div className="col-lg-6 col-md-6 col-sm-12">
+                                            <div className="info-anuncios">
+                                                <div className="info">
+                                                    <p className="title">Impressões</p>
+                                                    <p className="value">28.856</p>
+                                                    <p className="percent">
+                                                        14,87% <FontAwesomeIcon icon={faCaretUp} />
+                                                    </p>
+                                                </div>
+                                                <div className="info">
+                                                    <p className="title">CPC</p>
+                                                    <p className="value">R$0.98</p>
+                                                    <p className="percent">
+                                                        17,28% <FontAwesomeIcon icon={faCaretDown} />
+                                                    </p>
+                                                </div>
+                                                <div className="info">
+                                                    <p className="title">Conversões</p>
+                                                    <p className="value">14.659</p>
+                                                    <p className="percent">
+                                                        32,85% <FontAwesomeIcon icon={faCaretUp} />
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div className="footer-info">
+                                                <div className="">
+                                                    <p>
+                                                        Sugerimos no mínimo <br/>
+                                                        <span className="blue">
+                                                            3 anúncios
+                                                        </span>
+                                                    </p>
                                                 </div>
                                                 <div>
                                                     <button className="btn btn-success">Criar agora</button>
