@@ -125,17 +125,20 @@ let createChartConversoesDevice = () => {
     new Chart(document.getElementById('chart-conversoes-device'), {
         type: 'pie',
         data: {
-            labels: ["Africa", "Asia"],
+            // labels: ["Africa", "Asia"],
+            labels: false,
             datasets: [{
-                label: "Population (millions)",
-                backgroundColor: ["#3e95cd", "#8e5ea2"],
-                data: [2478, 5267]
+                label: false,
+                backgroundColor: ["#5aa5e0", "#1cce61"],
+                data: [75, 25]
             }]
         },
         options: {
+            display: {
+                position: 'top',
+            },
             title: {
                 display: true,
-                text: 'Predicted world population (millions) in 2050'
             }
         }
     });
@@ -359,13 +362,13 @@ export default class PainelDaCampanha extends React.Component {
                         </div>
                     </section>
 
-                    <div className="row">
+                    <section className="row">
                         <div className="col-lg-12 col-md-12 col-sm-12">
-                            <div className="card">
-                                <div className="card-header">
-                                    <span>Conversões</span>
+                            <div className="card content-conversoes">
+                                <div className="card-header border-0">
+                                    <span className="title-card">Conversões</span>
                                     <button className="btn btn-outline-success btn-sm">
-                                        Ativar piloto automático
+                                        <FontAwesomeIcon icon={faRobot} /> Ativar piloto automático
                                     </button>
                                 </div>
                                 <div className="card-body">
@@ -390,9 +393,9 @@ export default class PainelDaCampanha extends React.Component {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </section>
 
-                    <div className="row">
+                    <section className="row">
                         <div className="col-lg-12 col-md-12 col-sm-12">
                             <div className="card content-anuncios">
                                 <div className="card-header border-0">
@@ -467,7 +470,7 @@ export default class PainelDaCampanha extends React.Component {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </section>
 
                     <section className="row">
                         <div className="col-lg-12 col-md-12 col-sm-12">
