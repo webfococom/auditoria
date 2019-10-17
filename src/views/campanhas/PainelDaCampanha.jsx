@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Switch, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import classNames from "classnames"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
@@ -337,7 +337,9 @@ export default class PainelDaCampanha extends React.Component {
                                                     <span>21.239</span>
                                                 </p>
 
-                                                <p className="text">Que tal aumentar o orçamento diário para alcançar mais pessoas?</p>
+                                                <p className="text">
+                                                    Que tal aumentar o orçamento diário para alcançar mais pessoas?
+                                                </p>
 
                                                 <div>
 
@@ -412,17 +414,39 @@ export default class PainelDaCampanha extends React.Component {
                                         </div>
                                         <div className="col-lg-6 col-md-6 col-sm-12">
                                             <div className="content-anuncio">
-                                                <p></p>
-                                                <p></p>
-                                                <p></p>
-                                                <div>
-                                                    <div>
-                                                        <p></p>
-                                                        <p></p>
+                                                <div className="header-anuncio">
+                                                    <p className="title-anuncio">
+                                                        Google Ads | Aumente sua visibilidade‎
+                                                    </p>
+                                                    <p className="url-anuncio">
+                                                        <span>Anúncio</span> ads.google.com/
+                                                    </p>
+                                                </div>
+                                                <div className="body-anuncio">
+                                                    <p>
+                                                        Aumente muito suas chances de ser encontrado por novos clientes com anúncios do Google.
+                                                        Ajuda de especialistas. Impulsione vendas on-line. Anuncia Localmente.
+                                                        Alcance muitas pessoas. Sem investimento mínimo.
+                                                        Apareça Online. Relatórios customizados.
+                                                    </p>
+                                                </div>
+
+                                                <div className="extensoes-anuncio">
+                                                    <div className="info-extensao">
+                                                        <p className="title-extensao">
+                                                            Contas de Administrador
+                                                        </p>
+                                                        <p className="text-extensao">
+                                                            Gerencie todas suas contas em um único painel de controle.
+                                                        </p>
                                                     </div>
-                                                    <div>
-                                                        <p></p>
-                                                        <p></p>
+                                                    <div className="info-extensao">
+                                                        <p className="title-extensao">
+                                                            Planejador Palavras Chave
+                                                        </p>
+                                                        <p className="text-extensao">
+                                                            Encontre as palavras chave mais relevantes para seu negócio.
+                                                        </p>
                                                     </div>
                                                 </div>
                                             </div>

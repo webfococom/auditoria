@@ -437,6 +437,30 @@
         margin-right: 10px;
       }
     }
+    .card-footer {
+      div:first-child {
+        justify-content: flex-end;
+        p {
+          font-size: 14px;
+          margin-bottom: 0;
+          &:nth-of-type(1n) {
+            font-weight: bold;
+            margin-right: 20px;
+          }
+
+          &:nth-of-type(2n) {
+            color: $red;
+          }
+
+          &:nth-of-type(3n) {
+            color: $green-light;
+          }
+        }
+        button {
+          text-transform: uppercase;
+        }
+      }
+    }
   }
 
   .content-anuncios {
@@ -451,7 +475,59 @@
     }
     .card-body {
       .content-anuncio {
+        border: 2px solid #d9dee5;
+        border-radius: 10px;
+        padding: 10px;
 
+        .header-anuncio {
+          &:hover {
+            .title-anuncio {
+              text-decoration: underline;
+            }
+          }
+          .title-anuncio {
+            color: #1a0dab;
+          }
+          .url-anuncio {
+            color: #006621;
+            span {
+              border: 1px solid #006621;
+              border-radius: 5px;
+              padding: 2px;
+            }
+          }
+        }
+        .body-anuncio {
+          color: #545454;
+        }
+
+        .extensoes-anuncio {
+          display: flex;
+          justify-content: space-between;
+
+          .info-extensao {
+            margin-top: 10px;
+
+            &:first-child {
+              margin-left: 20px;
+            }
+
+            .title-extensao {
+              color: #1a0dab;
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+            .text-extensao {
+              color: #545454;
+            }
+          }
+        }
+
+        p {
+          font-size: 14px;
+          margin-bottom: 0;
+        }
       }
       .info-anuncios {
         display: flex;
@@ -476,8 +552,8 @@
       .footer-info {
         display: flex;
         justify-content: space-between;
-        align-items: center;
-
+        align-items: flex-end;
+        margin-top: 30px;
         p {
           font-size: 18px;
           margin-bottom: 0;
@@ -491,6 +567,7 @@
         div:last-child {
           button {
             font-size: 14px;
+            text-transform: uppercase;
 
             &:first-child {
               margin-right: 10px;
@@ -524,7 +601,7 @@
           margin: 0 auto;
         }
 
-      .status-extensao {
+        .status-extensao {
           float: right;
           font-size: 12px;
           svg {
@@ -548,6 +625,11 @@
             color: darken(#d9dee5, 30%);
           }
         }
+      }
+    }
+    .card-footer {
+      button {
+        text-transform: uppercase;
       }
     }
   }

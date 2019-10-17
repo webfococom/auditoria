@@ -77,12 +77,12 @@ $fontSize-destaque: 41px;
 .btn-outline-danger {
   color: $red !important;
   background-color: $white !important;
-  border-color: $white !important;
+  border-color: $red !important;
 
   &:hover {
     color: $white !important;
     background-color: $red !important;
-    border-color: darken($red, 30%) !important;
+    border-color: darken($red, 10%) !important;
   }
 }
 
