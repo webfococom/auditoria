@@ -1,6 +1,5 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
-
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBell } from '@fortawesome/free-solid-svg-icons';
 
@@ -9,16 +8,9 @@ class Header extends React.Component {
         return (
             <nav className="main-header navbar navbar-expand navbar-ads">
                 <ul className="navbar-nav">
-                    {/*<img src={require('assets/images/logo-auditoria.png')}
-                         alt="AUDITORIA ADS"
-                         className="brand-image"
-                         style={{width: '190px'}} />*/}
-
-                    {/*<li className="nav-item">
-                        <a className="nav-link" data-widget="pushmenu" href="#">
-                            <i className="fas fa-bars"></i>
-                        </a>
-                    </li>*/}
+                    <Link to="/">
+                        <img src={require('assets/images/auditoria.png')} />
+                    </Link>
                 </ul>
 
                 <ul className="navbar-nav ml-auto">

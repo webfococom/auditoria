@@ -1,18 +1,35 @@
 import React from "react";
-import { Route, Link } from "react-router-dom";
-
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faHome, faBullhorn, faHeartbeat, faChartLine } from '@fortawesome/free-solid-svg-icons';
 
 class Sidebar extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            sideBarOpen: false
+        };
+
+        this.openCloseMenu = this.handleClick.bind(this);
+    }
+
+    handleClick() {
+        this.setState(state => ({
+            sideBarOpen: !state.sideBarOpen
+        }));
+    }
+
     render() {
         return (
             <aside className="main-sidebar sidebar-collapse sidebar-ads">
                 {/*sidebar-mini layout-fixed sidebar-collapse*/}
                 {/*sidebar-mini layout-fixed sidebar-open*/}
-                <Link to="/" className="brand-link toggle-menu">
+                <Link className="brand-link toggle-menu" onClick={this.openCloseMenu}>
                     <FontAwesomeIcon icon={faBars} />
-                    <span className="name">Auditoria Ads</span>
+                    <span className="name">
+                        Menu
+                    </span>
                 </Link>
 
                 {/*<a href="index3.html" className="brand-link">

@@ -4,6 +4,7 @@ import { createBrowserHistory } from "history";
 import { Router, Route, Switch, Redirect } from "react-router-dom";
 
 import LayoutBase from "./layout/Base";
+import Teste from "layout/auth/Teste";
 
 import "./assets/scss/style.scss";
 // import './index.css';
@@ -15,8 +16,8 @@ const hist = createBrowserHistory();
 ReactDOM.render(
     <Router history={hist}>
         <Switch>
+            <Route path="/login" render={props => <Teste {...props}/>} />
             <Route path="/" render={props => <LayoutBase {...props} />} />
-            {/*<Redirect from="/" to="/admin/dashboard" />*/}
         </Switch>
     </Router>,
     document.getElementById("root")

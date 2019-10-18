@@ -42,17 +42,18 @@ class RaioX extends React.Component {
                 <div className="container-fluid">
                     <div className="row">
                         <div className="col-lg-12 col-md-12 col-sm-12">
+
                             <div className="card">
                                 <div className="card-body">
                                     <form action="" id="form-payment">
                                         <div className="col-lg-6 col-md-6 col-sm-12">
-                                            <input type="hidden" id="brand" name="brand" value="" readOnly />
-                                            <input type="hidden" id="token_card" name="token_card" value="" readOnly />
+                                            <input type="hidden" id="brand" name="brand" defaultValue="" readOnly />
+                                            <input type="hidden" id="token_card" name="token_card" defaultValue="" readOnly />
 
                                             <div className="form-group">
-                                                <label htmlFor="exampleInputEmail1">Número do cartão</label>
+                                                <label htmlFor="card-name">Número do cartão</label>
                                                 <input type="text"
-                                                       value=""
+                                                       defaultValue=""
                                                        className="form-control"
                                                        name="number"
                                                        id="card-number"
@@ -64,7 +65,7 @@ class RaioX extends React.Component {
                                             <div className="form-group">
                                                 <label htmlFor="exampleInputEmail1">Nome</label>
                                                 <input type="text"
-                                                       value=""
+                                                       defaultValue=""
                                                        className="form-control"
                                                        name="card_name"
                                                        placeholder="Informe o nome igual ao que está no cartão"
@@ -77,7 +78,7 @@ class RaioX extends React.Component {
                                                     <div className="form-group">
                                                         <label htmlFor="exampleInputEmail1">Validade</label>
                                                         <input type="text"
-                                                               value=""
+                                                               defaultValue=""
                                                                className="form-control"
                                                                name="expiry"
                                                                placeholder="XX/XXXX"
@@ -89,7 +90,7 @@ class RaioX extends React.Component {
                                                     <div className="form-group">
                                                         <label htmlFor="exampleInputEmail1">Código verificador</label>
                                                         <input type="text"
-                                                               value=""
+                                                               defaultValue=""
                                                                className="form-control"
                                                                name="cvv"
                                                                id="cvv"
