@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Switch, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import classNames from "classnames";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuestion, faCheckCircle, faTimesCircle, faCircle } from '@fortawesome/free-solid-svg-icons';

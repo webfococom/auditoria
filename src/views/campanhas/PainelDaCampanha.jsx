@@ -12,6 +12,7 @@ import {
     faRobot
 } from '@fortawesome/free-solid-svg-icons';
 import Chart from "chart.js";
+import noUiSlider from "nouislider";
 
 let comparativo = {
     nome: 'campanha A',
@@ -87,6 +88,17 @@ let getExtensoesDeAnuncios = (extensao, configurada) => {
             </div>
         </div>
     );
+};
+
+let createSlider = (start, end) => {
+    noUiSlider.create(document.getElementById('slider'), {
+        start: [20, 80],
+        connect: true,
+        range: {
+            'min': 0,
+            'max': 100
+        }
+    });
 };
 
 let createChart = () => {
@@ -187,6 +199,7 @@ let createChartConversoesTime = () => {
 
 export default class PainelDaCampanha extends React.Component {
     componentDidMount() {
+        createSlider();
         createChart(67);
         createChartConversoesDevice();
         createChartConversoesTime();
@@ -341,9 +354,7 @@ export default class PainelDaCampanha extends React.Component {
                                                     Que tal aumentar o orçamento diário para alcançar mais pessoas?
                                                 </p>
 
-                                                <div>
-
-                                                </div>
+                                                <div id="slider"></div>
                                             </div>
                                             <div className="card-footer">
                                                 <div className="footer-publico-nao-atingido">

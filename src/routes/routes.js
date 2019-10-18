@@ -4,6 +4,9 @@ import RaioX from "views/raiox/RaioX";
 import Mixer from "views/mixer/Mixer";
 import Resultados from "views/resultados/Resultados";
 import Painel from "views/campanhas/PainelDaCampanha";
+import Pagamento from "views/payments/Payment";
+import Cadastro from "views/campanhas/PainelDaCampanha";
+import Login from "views/campanhas/PainelDaCampanha";
 
 let routes = [
     {
@@ -42,6 +45,24 @@ let routes = [
         exact: true,
         component: Painel,
     },
+    {
+        name: "Pagamento",
+        path: "/pagamento",
+        exact: true,
+        component: Pagamento,
+    },
+    {
+        name: "Cadastro",
+        path: "/cadastro",
+        exact: true,
+        component: Cadastro,
+    },
+    {
+        name: "Login",
+        path: "/login",
+        exact: true,
+        component: Cadastro,
+    }
 ];
 
 export default routes;
