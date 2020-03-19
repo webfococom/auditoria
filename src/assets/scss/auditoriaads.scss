@@ -1,5 +1,6 @@
 .navbar-ads {
-  background: $navbar-top-bg;
+  // background: $navbar-top-bg;
+  background: #039BE5;
 }
 
 .breadcrumb-auditoria {
@@ -24,12 +25,13 @@
 .sidebar-ads {
   width: 200px !important;
   font-family: $title-section-font-family;
-  background: $navbar-bg;
-  color: #fff;
+  // background: $navbar-bg;
+  // background: $navbar-bg;
+  // color: #fff;
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22) !important;
 
   a.toggle-menu {
-    background: $navbar-ico-bg;
+    // background: $navbar-ico-bg;
     color: #fff;
 
     span {

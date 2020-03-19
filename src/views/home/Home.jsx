@@ -93,6 +93,14 @@ var alertCampanha = (status) => {
 };
 
 class Home extends React.Component {
+    constructor(props){
+        super(props);
+    }
+
+    componentDidMount() {
+        
+    }
+
     render() {
         return (
             <div className="content-header content-ads">
