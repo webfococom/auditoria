@@ -76,12 +76,12 @@ let routes = [
         exact: true,
         component: Cadastro,
     },
-    {
-        name: "Login",
-        path: "/login",
-        exact: true,
-        component: Cadastro,
-    },
+    // {
+    //     name: "Login",
+    //     path: "/login",
+    //     exact: true,
+    //     component: Cadastro,
+    // },
 
 
     {

@@ -4,7 +4,8 @@ import { createBrowserHistory } from "history";
 import { Router, Route, Switch, Redirect } from "react-router-dom";
 
 import LayoutBase from "./layout/Base";
-import Teste from "layout/auth/Teste";
+import Login from "layout/auth/Login";
+import CadastreSe from "layout/auth/CadastreSe";
 
 import "./assets/scss/style.scss";
 // import './index.css';
@@ -16,7 +17,8 @@ const hist = createBrowserHistory();
 ReactDOM.render(
     <Router history={hist}>
         <Switch>
-            <Route path="/login" render={props => <Teste {...props}/>} />
+            <Route path="/login" render={props => <Login {...props}/>} />
+            <Route path="/cadastre-se" render={props => <CadastreSe {...props}/>} />
             <Route path="/" render={props => <LayoutBase {...props} />} />
         </Switch>
     </Router>,
