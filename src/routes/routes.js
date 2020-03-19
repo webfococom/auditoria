@@ -6,7 +6,7 @@ import Resultados from "views/resultados/Resultados";
 import Painel from "views/campanhas/PainelDaCampanha";
 import Pagamento from "views/payments/Payment";
 import Cadastro from "views/campanhas/PainelDaCampanha";
-
+import Bot from "views/bot/Bot";
 import Login from "views/campanhas/PainelDaCampanha";
 
 import GMBIndex from 'views/googleMeuNegocio';
@@ -82,8 +82,12 @@ let routes = [
         exact: true,
         component: Cadastro,
     },
-
-
+    {
+        name: "Bot",
+        path: "/bot",
+        exact: true,
+        component: Bot,
+    },
     {
         name: "Google Meu Negócio",
         path: "/google-meu-negocio",
@@ -177,7 +181,6 @@ let routes = [
         exact: true,
         component: LpNova,
     },
-
 ];
 
 export default routes;
