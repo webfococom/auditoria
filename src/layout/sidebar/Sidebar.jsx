@@ -6,6 +6,7 @@ import {
     faHome, 
     faBullhorn, 
     faHeartbeat, 
+    faRobot,
     faChartLine ,
     faMapMarkedAlt
 } from '@fortawesome/free-solid-svg-icons';
@@ -177,10 +178,23 @@ class Sidebar extends React.Component {
                                     </li>
                                 </ul>
                             </li>
+
+                            {/* CHATBOT */}
                             <li className="nav-item">
-                                <Link to="/bot" className="nav-link">
-                                    <FontAwesomeIcon icon={faHeartbeat} /> <p>Chatbot</p>
-                                </Link>
+                                <p><FontAwesomeIcon icon={faRobot} /> Chatbot</p>
+                                
+                                <ul className="nav nav-pills nav-sidebar flex-column"
+                                    data-widget="treeview-menu"
+                                    role="menu"
+                                    data-accordion="false"
+                                >
+                                    <li className="nav-item">
+                                        <Link to="/bot" className="nav-link">
+                                            <p>Cadastro</p>
+                                        </Link>
+                                    </li>
+                                </ul>
+
                             </li>
                             {/* LANDING PAGES */}
 

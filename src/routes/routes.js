@@ -87,7 +87,7 @@ let routes = [
         path: "/bot",
         exact: true,
         component: Bot,
-    }
+    },
     {
         name: "Google Meu Negócio",
         path: "/google-meu-negocio",
