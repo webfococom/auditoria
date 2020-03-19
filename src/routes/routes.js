@@ -26,6 +26,7 @@ import GADSPilotoAutomatico from "views/googleAds/pilotoAutomatico";
 
 import LPIndex from "views/landingPages";
 import LpNova from "views/landingPages/novaLP";
+import editlp from "views/landingPages/editlp";
 
 let routes = [
     {
@@ -180,6 +181,12 @@ let routes = [
         path: "/landing-pages/nova-lp",
         exact: true,
         component: LpNova,
+    },
+    {
+        name: "Nova Landing Page",
+        path: "/landing-pages/edit-lp",
+        exact: true,
+        component: editlp,
     },
 ];
 
