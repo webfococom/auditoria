@@ -1,7 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faHome, faBullhorn, faHeartbeat, faChartLine } from '@fortawesome/free-solid-svg-icons';
+import { 
+    faBars, 
+    faHome, 
+    faBullhorn, 
+    faHeartbeat, 
+    faChartLine ,
+    faMapMarkedAlt
+} from '@fortawesome/free-solid-svg-icons';
+
+// map-marked-alt
 
 class Sidebar extends React.Component {
     constructor(props) {
@@ -26,10 +35,13 @@ class Sidebar extends React.Component {
                 {/*sidebar-mini layout-fixed sidebar-collapse*/}
                 {/*sidebar-mini layout-fixed sidebar-open*/}
                 <Link className="brand-link toggle-menu" onClick={this.openCloseMenu}>
-                    <FontAwesomeIcon icon={faBars} />
-                    <span className="name">
-                        Menu
-                    </span>
+                    <Link to="/" style={{width: '100%'}}>
+                        <img src={require('assets/images/logo-cielo.png')} style={{width: '100px', justifyItems:'center'}}/>
+                    </Link>
+                    {/* <FontAwesomeIcon icon={faBars} /> */}
+                    {/* <span className="name">
+                        Ads-Hub
+                    </span> */}
                 </Link>
 
                 {/*<a href="index3.html" className="brand-link">
@@ -43,10 +55,137 @@ class Sidebar extends React.Component {
                 <div className="sidebar">
                     <nav className="mt-2">
                         <ul className="nav nav-pills nav-sidebar flex-column"
-                            data-widget="treeview"
+                            data-widget="treeview-menu"
                             role="menu"
                             data-accordion="false">
+                                
+                            {/* GOOGLE MEU NEGOCIO */}
                             <li className="nav-item">
+                                {/* <Link to="/" className="nav-link">
+                                    <FontAwesomeIcon icon={faMapMarkedAlt} /> 
+                                    <p>Google Meu Negócio</p>
+                                </Link> */}
+                                <p>Google Meu Negócio</p>
+                                <ul className="nav nav-pills nav-sidebar flex-column"
+                                    data-widget="treeview-menu"
+                                    role="menu"
+                                    data-accordion="false">
+                                    <li className="nav-item">
+                                        <Link to="/google-meu-negocio" className="nav-link">
+                                            <p>Início</p>
+                                        </Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link to="/google-meu-negocio/postagens" className="nav-link">
+                                            <p>Postagens</p>
+                                        </Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link to="/google-meu-negocio/informacoes" className="nav-link">
+                                            <p>Informações</p>
+                                        </Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link to="/google-meu-negocio/resultados" className="nav-link">
+                                            <p>Resultados</p>
+                                        </Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link to="/google-meu-negocio/avaliacoes" className="nav-link">
+                                            <p>Avaliações</p>
+                                        </Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link to="/google-meu-negocio/mensagens" className="nav-link">
+                                            <p>Mensagens</p>
+                                        </Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link to="/google-meu-negocio/fotos" className="nav-link">
+                                            <p>Fotos</p>
+                                        </Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link to="/google-meu-negocio/produtos" className="nav-link">
+                                            <p>Produtos</p>
+                                        </Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link to="/google-meu-negocio/servicos" className="nav-link">
+                                            <p>Serviços</p>
+                                        </Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link to="/google-meu-negocio/configuracoes" className="nav-link">
+                                            <p>Configurações</p>
+                                        </Link>
+                                    </li>
+                                </ul>
+                            </li>
+                            {/* GOOGLE MEU NEGOCIO */}
+
+                            {/* GOOGLE ADS */}
+                            <li className="nav-item">
+                                {/* <div>
+                                    <FontAwesomeIcon icon={faHome} /> <p>Google Ads</p>
+                                </div> */}
+                                <p>Google Ads</p>
+                                <ul className="nav nav-pills nav-sidebar flex-column"
+                                    data-widget="treeview-menu"
+                                    role="menu"
+                                    data-accordion="false"
+                                >
+                                    <li className="nav-item">
+                                        <Link to="/google-ads" className="nav-link">
+                                            <p>Visão geral</p>
+                                        </Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link to="/google-ads/oportunidades" className="nav-link">
+                                            <p>Oportunidades</p>
+                                        </Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link to="/google-ads/piloto-automatico" className="nav-link">
+                                            <p>Piloto Automático</p>
+                                        </Link>
+                                    </li>
+                                </ul>
+                            </li>
+                            {/* GOOGLE ADS */}
+
+                            {/* LANDING PAGES */}
+                            <li className="nav-item">
+                                {/* <Link to="/" className="nav-link">
+                                    <FontAwesomeIcon icon={faHome} /> <p>Landing Pages</p>
+                                </Link> */}
+                                <p>Landing Pages</p>
+                                <ul className="nav nav-pills nav-sidebar flex-column"
+                                    data-widget="treeview-menu"
+                                    role="menu"
+                                    data-accordion="false"
+                                >
+                                    <li className="nav-item">
+                                        <Link to="/landing-pages" className="nav-link">
+                                            <p>Dashboard</p>
+                                        </Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link to="/landing-pages/nova-lp" className="nav-link">
+                                            <p>Novas landing page</p>
+                                        </Link>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li className="nav-item">
+                                <Link to="/bot" className="nav-link">
+                                    <FontAwesomeIcon icon={faHeartbeat} /> <p>Chatbot</p>
+                                </Link>
+                            </li>
+                            {/* LANDING PAGES */}
+
+
+                            {/* <li className="nav-item">
                                 <Link to="/" className="nav-link">
                                     <FontAwesomeIcon icon={faHome} /> <p>Home</p>
                                 </Link>
@@ -75,11 +214,7 @@ class Sidebar extends React.Component {
                                     <FontAwesomeIcon icon={faChartLine} /> <p>Resultados</p>
                                 </Link>
                             </li>
-                            <li className="nav-item">
-                                <Link to="/bot" className="nav-link">
-                                    <FontAwesomeIcon icon={faHeartbeat} /> <p>Chatbot</p>
-                                </Link>
-                            </li>
+                        </li> */}
                         </ul>
                     </nav>
                 </div>

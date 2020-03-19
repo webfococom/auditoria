@@ -57,7 +57,7 @@ class Base extends React.Component {
                         <Route path="*" component={Error404} />
                     </Switch>
                 </div>
-                <Footer/>
+                {/* <Footer/> */}
             </div>
         );
     }
