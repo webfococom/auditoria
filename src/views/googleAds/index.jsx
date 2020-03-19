@@ -92,7 +92,7 @@ var alertCampanha = (status) => {
     return (<FontAwesomeIcon icon={faCircle} className="campanha-status green" />);
 };
 
-class Home extends React.Component {
+class GoogleAds extends React.Component {
     constructor(props){
         super(props);
     }
@@ -273,4 +273,4 @@ class Home extends React.Component {
     }
 }
 
-export default Home;
+export default GoogleAds;

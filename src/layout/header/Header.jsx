@@ -9,7 +9,7 @@ class Header extends React.Component {
             <nav className="main-header navbar navbar-expand navbar-ads">
                 <ul className="navbar-nav">
                     <Link to="/">
-                        <img src={require('assets/images/auditoria.png')} />
+                        {/* <img src={require('assets/images/auditoria.png')} /> */}
                     </Link>
                 </ul>
 
