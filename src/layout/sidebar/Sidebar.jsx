@@ -75,6 +75,11 @@ class Sidebar extends React.Component {
                                     <FontAwesomeIcon icon={faChartLine} /> <p>Resultados</p>
                                 </Link>
                             </li>
+                            <li className="nav-item">
+                                <Link to="/bot" className="nav-link">
+                                    <FontAwesomeIcon icon={faHeartbeat} /> <p>Chatbot</p>
+                                </Link>
+                            </li>
                         </ul>
                     </nav>
                 </div>

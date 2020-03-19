@@ -6,6 +6,7 @@ import Resultados from "views/resultados/Resultados";
 import Painel from "views/campanhas/PainelDaCampanha";
 import Pagamento from "views/payments/Payment";
 import Cadastro from "views/campanhas/PainelDaCampanha";
+import Bot from "views/bot/Bot";
 import Login from "views/campanhas/PainelDaCampanha";
 
 let routes = [
@@ -62,6 +63,12 @@ let routes = [
         path: "/login",
         exact: true,
         component: Cadastro,
+    },
+    {
+        name: "Bot",
+        path: "/bot",
+        exact: true,
+        component: Bot,
     }
 ];
 
