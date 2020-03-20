@@ -9,6 +9,7 @@ import LayoutBase from "./layout/Base";
 import Login from "layout/auth/Login";
 import CadastreSe from "layout/auth/CadastreSe";
 import "./assets/scss/style.scss";
+import "./assets/js/scripts";
 import * as serviceWorker from './serviceWorker';
 
 const hist = createBrowserHistory();
