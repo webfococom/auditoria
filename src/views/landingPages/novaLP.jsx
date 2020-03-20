@@ -69,7 +69,7 @@ class NovaLandingPage extends React.Component {
                                         
                                       <div class="form-group">
                                         <label for="exampleInputEmail1">Diferenciais</label>
-                                        <input type="text" class="form-control" placeholder="Mensagem Whatsapp"/>
+                                        <input type="text" class="form-control" placeholder="Diferenciais"/>
                                         <small class="form-text text-muted">Insira os diferenciais</small>
                                       </div>
                                       
@@ -139,7 +139,7 @@ class NovaLandingPage extends React.Component {
                               </div>
                          
                             </form>
-                              <Link to={`/landing-pages`} class="btn btn-primary">Criar</Link>
+                              <Link to={`/landing-pages`} class="btn btn-primary ">Criar</Link>
                               <br/>
                               <br/>
                         </div>

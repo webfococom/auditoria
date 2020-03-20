@@ -69,7 +69,7 @@ class EditLandingPage extends React.Component {
                                         
                                       <div class="form-group">
                                         <label for="exampleInputEmail1">Diferenciais</label>
-                                        <input type="text" class="form-control" placeholder="Mensagem Whatsapp"/>
+                                        <input type="text" class="form-control" placeholder="Diferenciais"/>
                                         <small class="form-text text-muted">Insira os diferenciais</small>
                                       </div>
                                       
