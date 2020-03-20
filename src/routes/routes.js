@@ -26,7 +26,11 @@ import GADSPilotoAutomatico from "views/googleAds/pilotoAutomatico";
 
 import LPIndex from "views/landingPages";
 import LpNova from "views/landingPages/novaLP";
-import editlp from "views/landingPages/editlp";
+import LpEdit from "views/landingPages/editLP";
+
+import PRODUTOSIndex from "views/produtos";
+import PRODUTOSNew from "views/produtos/new";
+import PRODUTOSEdit from "views/produtos/edit";
 
 let routes = [
     {
@@ -172,16 +176,34 @@ let routes = [
     },
     {
         name: "Nova Landing Page",
-        path: "/landing-pages/nova-lp",
+        path: "/landing-pages/new",
         exact: true,
         component: LpNova,
     },
     {
         name: "Nova Landing Page",
-        path: "/landing-pages/edit-lp",
+        path: "/landing-pages/edit",
         exact: true,
-        component: editlp,
+        component: LpEdit,
     },
+
+
+    {
+        name: "Produtos",
+        path: "/produtos",
+        exact: true,
+        component: PRODUTOSIndex,
+    },{
+        name: "Novo produto",
+        path: "/produtos/new",
+        exact: true,
+        component: PRODUTOSNew,
+    },{
+        name: "Editar produto",
+        path: "/produtos/edit",
+        exact: true,
+        component: PRODUTOSEdit,
+    }
 ];
 
 export default routes;
