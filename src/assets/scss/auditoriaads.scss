@@ -725,3 +725,258 @@
     }
   }
 }
+
+.sidebar-menu, 
+.main-sidebar .user-panel, 
+.sidebar-menu>li.header {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.sidebar-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar-menu>li {
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.skin-blue .sidebar-menu>li>.treeview-menu {
+  margin: 0 1px;
+  background: #2c3b41;
+}
+
+.sidebar-menu .active>.treeview-menu {
+  display: block;
+}
+
+.treeview>ul.treeview-menu {
+  overflow: hidden;
+  height: auto;
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+
+.treeview-menu {
+  display: none;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  padding-left: 5px;
+}
+
+.treeview-menu>li {
+  margin: 0;
+}
+
+.skin-blue .sidebar-menu .treeview-menu>li>a {
+  color: #8aa4af;
+}
+.skin-blue .sidebar a {
+  color: #b8c7ce;
+}
+.treeview-menu>li>a {
+  padding: 5px 5px 5px 15px;
+  display: block;
+  font-size: 14px;
+}
+.sidebar-menu li>a {
+  position: relative;
+}
+.treeview-menu>li>a>.fa, .treeview-menu>li>a>.glyphicon, .treeview-menu>li>a>.ion {
+  width: 20px;
+}
+.treeview-menu>li {
+  margin: 0;
+}
+.skin-blue .sidebar-menu .treeview-menu>li.active>a, .skin-blue .sidebar-menu .treeview-menu>li>a:hover {
+  color: #fff;
+}
+.skin-blue .sidebar-menu .treeview-menu>li>a {
+  color: #8aa4af;
+}
+.skin-blue .sidebar a {
+  color: #b8c7ce;
+}
+.treeview-menu>li>a {
+  padding: 5px 5px 5px 15px;
+  display: block;
+  font-size: 14px;
+}
+.sidebar-menu li>a {
+  position: relative;
+}
+
+.card-GMB {
+  color: $title-section-color;
+  font-size: 21px;
+  text-align: center;
+
+  .container-info-desempenho {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid #cccccc;
+    padding-bottom: 20px;
+
+    .title-info-desempenho{
+      cursor: pointer;
+
+      &.active{
+        color: #2196F3;
+
+        .value {
+          color: inherit;
+        }
+      }
+      .title {
+        font-size: 14px;
+      }
+      .value {
+        color: #000;
+      }
+    };
+  }
+
+  .container-valores-desempenho {
+    margin: 10px 0;
+
+    ul {
+      list-style: none;
+      text-align: left;
+      font-size: 15px;
+      margin: 0;
+      padding-left: 0px;
+
+      li {
+        padding: 5px 0;
+        color: #000;
+
+        &:first-child{
+          border-bottom: 1px solid #ccc;
+        }
+
+        span {
+          float: right;
+          .red {
+            color: #E53935;
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  .texto-compartilhamento-form {
+    font-size: 16px;
+    text-align: left;
+  }
+
+  .btn-share-form {
+    border-color: #ccc;
+    color: #2196F3;
+
+    &:hover {
+      background-color: #2196F3;
+      color: #fff;
+    }
+  }
+
+  .container-share-company {
+    ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      text-align: left;
+      font-size: 14px;
+
+      li {
+        padding: 10px 0;
+
+        &:not(:last-child) {
+          border-bottom: 1px solid #ccc;
+        }
+      }
+    }
+  }
+
+  .container-fotos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+
+    .item-foto {
+      width: 50%;
+      
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .card-header {
+    color: #000;
+    text-align: left;
+    padding: 10px;
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  .card-body {
+    padding: 10px;
+    min-height: 90px;
+
+    p {
+      margin-bottom: 0;
+    }
+
+    .site-is-online {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      justify-content: center;
+      min-height: 91px;
+
+      .ico-red ,
+      .ico-green{
+        font-size: 36px;
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .card-footer {
+    background-color: inherit;
+    padding: 10px;
+    margin: 0;
+
+    p {
+      margin: 0;
+      padding: 0;
+      text-align: left;
+      font-size: 12px;
+    }
+    // min-height: 55px;
+    // margin-top: 0;
+  }
+
+  .destaque {
+    color: $color-destaque;
+    font-size: $fontSize-destaque;
+  }
+
+  .ico-green {
+    color: $green;
+  }
+
+  .ico-red {
+    color: $red;
+  }
+}
