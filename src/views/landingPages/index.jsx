@@ -9,13 +9,13 @@ import { faQuestion, faCheckCircle, faTimesCircle, faCircle } from '@fortawesome
 let landingpages = [
     {
         nome: 'Maquina de cartão com bobina',
-        route: 'edit-lp',
+        route: 'edit',
         visitas: 1234,
         leads: 1897,
     },
     {
         nome: 'Maquina de cartão sem bobina',
-        route: 'edit-lp',
+        route: 'edit',
         visitas: 29856,
         leads: 2985,
     }
@@ -40,6 +40,9 @@ class LandingPages extends React.Component {
                                 <ol className="breadcrumb breadcrumb-auditoria">
                                     <li className="breadcrumb-item" aria-current="page">
                                         <Link to="/">Home</Link>
+                                    </li>
+                                    <li className="breadcrumb-item" aria-current="page">
+                                        <Link to="/">Landing Page</Link>
                                     </li>
                                 </ol>
                             </nav>
@@ -115,7 +118,7 @@ class LandingPages extends React.Component {
 
                     <div className="row">
                         <div className="col-lg-12 col-md-12 col-sm-12">
-                            <h2 className="title-section">Landing Pages</h2>
+                            <h2 className="subtitle-section">Landing Pages</h2>
                         </div>
                         <div className="col-lg-12 col-md-12 col-sm-12">
                             <div className="card">
@@ -152,6 +155,7 @@ class LandingPages extends React.Component {
                                                         <Link  to={`/landing-pages/${element.route}`}  className="btn btn-outline-success btn-sm btn-negativar">
                                                             Editar
                                                         </Link>&nbsp;
+
                                                         <a target="_blank" href="http://webfocosaopaulo.com.br/adsapp/lp/model1/" className="btn btn-success btn-sm btn-adicionar">
                                                             Visualizar
                                                         </a>
