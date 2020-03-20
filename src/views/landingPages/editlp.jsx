@@ -4,9 +4,9 @@ import classNames from "classnames";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuestion, faCheckCircle, faTimesCircle, faCircle } from '@fortawesome/free-solid-svg-icons';
 
-import "./style.scss";
+import "./assets/css/style.scss";
 
-class NovaLandingPage extends React.Component {
+class EditLandingPage extends React.Component {
     constructor(props){
         super(props);
     }
@@ -39,7 +39,113 @@ class NovaLandingPage extends React.Component {
                             <h2 className="title-section">Editar Landing Page</h2>
                         </div>
 
-                        <iframe src="http://webfocosaopaulo.com.br/adsapp/lp/model1/" class="iframeFlat"></iframe>
+                        <div className="container">
+                            <form>
+
+                             <div className="row">
+                                <div className="col-lg-4 col-md-4 col-sm-4">
+                                        
+                                      <div class="form-group">
+                                        <label for="exampleInputEmail1">Nome</label>
+                                        <input type="text" class="form-control" placeholder="Nome" value="Maquina de cartão com bobina"/>
+                                        <small class="form-text text-muted">Insira um nome para identificação da landing page</small>
+                                      </div>
+
+                                  </div>
+                              </div>
+
+                              <div className="row">
+                               
+                                  <div className="col-lg-4 col-md-4 col-sm-4">
+                                        
+                                      <div class="form-group">
+                                        <label for="exampleInputEmail1">Endereço</label>
+                                        <input type="text" class="form-control" placeholder="Endereço"/>
+                                        <small class="form-text text-muted">Insira um endereço personalizado</small>
+                                      </div>
+                                      
+                                  </div>
+                                  <div className="col-lg-4 col-md-4 col-sm-4">
+                                        
+                                      <div class="form-group">
+                                        <label for="exampleInputEmail1">Diferenciais</label>
+                                        <input type="text" class="form-control" placeholder="Diferenciais"/>
+                                        <small class="form-text text-muted">Insira os diferenciais</small>
+                                      </div>
+                                      
+                                  </div>
+                              </div>
+
+                              <div className="row">
+                                
+                                  <div className="col-lg-8 col-md-8 col-sm-8">
+                                        
+                                      <div class="form-group">
+                                        <label for="exampleInputEmail1">Sobre a empresa</label>                                        
+                                         <textarea class="form-control" name="aboutcompany" rows="3">
+                                         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                         </textarea>
+                                      </div>
+                                      
+                                  </div>
+                              </div>
+
+                              <div class="form-group">
+                                <label for="exampleInputEmail1">Thema</label>
+                                
+                                <div className="row">
+                             
+                                    <div className="col-lg-3 col-md-3 col-sm-3">
+                                        <div className="card card-home">
+                                            <div className="card-header border-0">
+                                                
+                                            </div>
+                                            <div className="card-body">
+                                                <p>Modelo</p>
+                                                <p className="destaque">Lead</p>
+                                                <div class="modellp">
+                                                    <img src={`${process.env.PUBLIC_URL}/landingpage/assets/img/model1.png`}  /> 
+                                                </div>
+                                            </div>
+                                            <div className="card-footer">
+                                                <button type="button" className="btn btn-outline-success btn-sm float-right">
+                                                    Escolher
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="col-lg-3 col-md-3 col-sm-3">
+                                        <div className="card card-home">
+                                            <div className="card-header border-0">
+                                                
+                                            </div>
+                                            <div className="card-body">
+                                                <p>Modelo</p>
+                                                <p className="destaque">Shop</p>
+                                                <div class="modellp">
+                                                    <img src={`${process.env.PUBLIC_URL}/landingpage/assets/img/model2.png`}  /> 
+                                                </div>
+                                            </div>
+                                            <div className="card-footer">
+                                                <button type="button" className="btn btn-outline-success btn-sm float-right">
+                                                    Escolher
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                                <small class="form-text text-muted">Escolha um tema para esta landing page</small>
+                              </div>
+                         
+                            </form>
+                              <Link to={`/landing-pages`} class="btn btn-primary">Criar</Link>
+                              <br/>
+                              <br/>
+                        </div>
+
                     </div>
 
                     
@@ -49,4 +155,4 @@ class NovaLandingPage extends React.Component {
     }
 }
 
-export default NovaLandingPage;
+export default EditLandingPage;
