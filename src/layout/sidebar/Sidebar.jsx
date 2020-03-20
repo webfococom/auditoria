@@ -6,6 +6,7 @@ import {
     faHome, 
     faBullhorn, 
     faHeartbeat, 
+    faRobot,
     faChartLine ,
     faMapMarkedAlt
 } from '@fortawesome/free-solid-svg-icons';
@@ -60,6 +61,35 @@ class Sidebar extends React.Component {
                             data-accordion="false">
                                 
                             {/* GOOGLE MEU NEGOCIO */}
+                            <li class="nav-item has-treeview">
+                            <a href="#" class="nav-link">
+                            <i class="nav-icon fas fa-chart-pie"></i>
+                            <p>
+                            Charts
+                            <i class="right fas fa-angle-left"></i>
+                            </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                            <a href="pages/charts/chartjs.html" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>ChartJS</p>
+                            </a>
+                            </li>
+                            <li class="nav-item">
+                            <a href="pages/charts/flot.html" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Flot</p>
+                            </a>
+                            </li>
+                            <li class="nav-item">
+                            <a href="pages/charts/inline.html" class="nav-link">
+                            <i class="far fa-circle nav-icon"></i>
+                            <p>Inline</p>
+                            </a>
+                            </li>
+                            </ul>
+                            </li>
                             <li className="nav-item">
                                 {/* <Link to="/" className="nav-link">
                                     <FontAwesomeIcon icon={faMapMarkedAlt} /> 
@@ -177,6 +207,24 @@ class Sidebar extends React.Component {
                                     </li>
                                 </ul>
                             </li>
+
+                            {/* CHATBOT */}
+                            <li className="nav-item">
+                                <p><FontAwesomeIcon icon={faRobot} /> Chatbot</p>
+                                
+                                <ul className="nav nav-pills nav-sidebar flex-column"
+                                    data-widget="treeview-menu"
+                                    role="menu"
+                                    data-accordion="false"
+                                >
+                                    <li className="nav-item">
+                                        <Link to="/bot" className="nav-link">
+                                            <p>Cadastro</p>
+                                        </Link>
+                                    </li>
+                                </ul>
+
+                            </li>
                             {/* LANDING PAGES */}
 
 
@@ -208,7 +256,8 @@ class Sidebar extends React.Component {
                                 <Link to="/resultados" className="nav-link">
                                     <FontAwesomeIcon icon={faChartLine} /> <p>Resultados</p>
                                 </Link>
-                            </li> */}
+                            </li>
+                        </li> */}
                         </ul>
                     </nav>
                 </div>

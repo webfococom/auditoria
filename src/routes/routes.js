@@ -6,7 +6,7 @@ import Resultados from "views/resultados/Resultados";
 import Painel from "views/campanhas/PainelDaCampanha";
 import Pagamento from "views/payments/Payment";
 import Cadastro from "views/campanhas/PainelDaCampanha";
-
+import Bot from "views/bot/Bot";
 import Login from "views/campanhas/PainelDaCampanha";
 
 import GMBIndex from 'views/googleMeuNegocio';
@@ -26,6 +26,7 @@ import GADSPilotoAutomatico from "views/googleAds/pilotoAutomatico";
 
 import LPIndex from "views/landingPages";
 import LpNova from "views/landingPages/novaLP";
+import editlp from "views/landingPages/editlp";
 
 let routes = [
     {
@@ -76,14 +77,12 @@ let routes = [
         exact: true,
         component: Cadastro,
     },
-    // {
-    //     name: "Login",
-    //     path: "/login",
-    //     exact: true,
-    //     component: Cadastro,
-    // },
-
-
+    {
+        name: "Bot",
+        path: "/bot",
+        exact: true,
+        component: Bot,
+    },
     {
         name: "Google Meu Negócio",
         path: "/google-meu-negocio",
@@ -177,7 +176,12 @@ let routes = [
         exact: true,
         component: LpNova,
     },
-
+    {
+        name: "Nova Landing Page",
+        path: "/landing-pages/edit-lp",
+        exact: true,
+        component: editlp,
+    },
 ];
 
 export default routes;
