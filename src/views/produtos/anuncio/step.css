@@ -1,0 +1,115 @@
+.stepWrapper{
+	/*border:1px solid red;*/
+	height: 450px
+}
+
+
+cite{
+    display: block;
+    padding: 0px 0px 30px 0px;
+    color: #888;
+}
+
+.vertical-center {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.stepWrapper .multi-step{
+	position: relative;
+	display: table;
+	height: 100%;
+	width: 100%;
+}.stepWrapper .multi-step .stepWrapper .progtrckr{
+	display: table-cell;	
+}.stepWrapper .multi-step .stepContent{
+	display: table-row;
+}.stepWrapper .footer-buttons{
+	display: table-cell;
+}
+
+
+
+.stepWrapper .footer-buttons{
+	width: 100%;
+	position: absolute;
+	bottom: 0px;
+	padding: 10px;
+}.stepWrapper .footer-buttons .btnStep{
+	padding: 10px 20px;
+	background-color: #00AEEF;
+	color: #fff;
+	outline: 0;
+	margin: 0px 5px;
+	border-radius: 2px;
+}.stepWrapper .footer-buttons .btnStep:hover{
+	background-color: #26C1FB;
+}.stepWrapper .footer-buttons .btnStep:active{
+	background-color: #00719B;
+}.stepWrapper .footer-buttons .btnStep[id="prev-button"]{
+	background-color: #aaa;
+}.stepWrapper .footer-buttons .btnStep[id="prev-button"]:hover{
+	background-color: #888;
+}.stepWrapper .footer-buttons .btnStep[id="prev-button"]:active{
+	background-color: #555;
+}
+
+.stepWrapper .stepContent{	
+	height: 100%;
+	padding: 10px;
+}.stepWrapper .stepContent .container{	
+	padding: 40px 20px;
+}
+
+.stepWrapper .progtrckr{
+	display: table;
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+}.stepWrapper .progtrckr li em{
+	display: none;
+}.stepWrapper .progtrckr li{
+	padding: 10px;
+	display: table-cell;
+	border-bottom: 5px solid #aaa;
+	width: 22%;
+}.stepWrapper .progtrckr li.progtrckr-done{
+	color: #aaa;
+	border-bottom: 5px solid #00719B;
+/*}.stepWrapper .progtrckr .progtrckr-done span{*/
+}.stepWrapper .progtrckr li.progtrckr-doing{	
+	color: #00719B;	
+	border-bottom: 5px solid #00719B;
+}.stepWrapper .progtrckr li.progtrckr-todo{	
+	color: #aaa;	
+}
+
+
+.btnAnunciar{
+	padding: 10px 20px;
+	background-color: #2FB500;
+	color: #fff;
+	outline: 0;
+	margin: 0px 5px;
+	border-radius: 2px;
+}.btnAnunciar:hover{
+	background-color: #34C900;
+	color: #fff;
+}.btnAnunciar:active{
+	background-color: #258F00;
+	color: #fff;
+}
+
+
+
+.thumbMiddle {
+	
+}.thumbMiddle img{
+	width:100%;
+	padding:5px;	
+	box-shadow: 0px 0px 9px 0px #ccc;
+	/*border:1px solid #888;*/
+}

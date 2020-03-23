@@ -100,7 +100,7 @@ class LandingPages extends React.Component {
                             <Link to={`/produtos/new`} className="btn btn-success btn-sm btn-adicionar">
                                 Novo Produto
                             </Link>&nbsp;
-                            <Link  className="btn btn-success btn-sm btn-adicionar">
+                            <Link to={`/produtos/anuncio/new`}  className="btn btn-success btn-sm btn-adicionar">
                                 Anunciar
                             </Link>
                         </div>

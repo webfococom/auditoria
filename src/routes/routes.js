@@ -31,6 +31,7 @@ import LpEdit from "views/landingPages/editLP";
 import PRODUTOSIndex from "views/produtos";
 import PRODUTOSNew from "views/produtos/new";
 import PRODUTOSEdit from "views/produtos/edit";
+import PRODUTOSAnuncioNew from "views/produtos/anuncio/new";
 
 let routes = [
     {
@@ -209,6 +210,11 @@ let routes = [
         path: "/produtos/edit",
         exact: true,
         component: PRODUTOSEdit,
+    },{
+        name: "Criar Anúncio",
+        path: "/produtos/anuncio/new",
+        exact: true,
+        component: PRODUTOSAnuncioNew,
     }
 ];
 
