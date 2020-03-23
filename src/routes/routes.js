@@ -10,6 +10,7 @@ import Bot from "views/bot/Bot";
 import Login from "views/campanhas/PainelDaCampanha";
 
 import GMBIndex from 'views/googleMeuNegocio';
+import GMBLocais from 'views/googleMeuNegocio/locais';
 import GMBPostagens from 'views/googleMeuNegocio/postagens';
 import GMBInformacoes from 'views/googleMeuNegocio/informacoes';
 import GMBResultados from 'views/googleMeuNegocio/resultados';
@@ -26,6 +27,11 @@ import GADSPilotoAutomatico from "views/googleAds/pilotoAutomatico";
 
 import LPIndex from "views/landingPages";
 import LpNova from "views/landingPages/novaLP";
+import LpEdit from "views/landingPages/editLP";
+
+import PRODUTOSIndex from "views/produtos";
+import PRODUTOSNew from "views/produtos/new";
+import PRODUTOSEdit from "views/produtos/edit";
 
 let routes = [
     {
@@ -77,12 +83,6 @@ let routes = [
         component: Cadastro,
     },
     {
-        name: "Login",
-        path: "/login",
-        exact: true,
-        component: Cadastro,
-    },
-    {
         name: "Bot",
         path: "/bot",
         exact: true,
@@ -93,6 +93,12 @@ let routes = [
         path: "/google-meu-negocio",
         exact: true,
         component: GMBIndex,
+    },
+    {
+        name: "Locais",
+        path: "/google-meu-negocio/locais",
+        exact: true,
+        component: GMBLocais,
     },
     {
         name: "Postagens",
@@ -177,10 +183,34 @@ let routes = [
     },
     {
         name: "Nova Landing Page",
-        path: "/landing-pages/nova-lp",
+        path: "/landing-pages/new",
         exact: true,
         component: LpNova,
     },
+    {
+        name: "Nova Landing Page",
+        path: "/landing-pages/edit",
+        exact: true,
+        component: LpEdit,
+    },
+
+
+    {
+        name: "Produtos",
+        path: "/produtos",
+        exact: true,
+        component: PRODUTOSIndex,
+    },{
+        name: "Novo produto",
+        path: "/produtos/new",
+        exact: true,
+        component: PRODUTOSNew,
+    },{
+        name: "Editar produto",
+        path: "/produtos/edit",
+        exact: true,
+        component: PRODUTOSEdit,
+    }
 ];
 
 export default routes;

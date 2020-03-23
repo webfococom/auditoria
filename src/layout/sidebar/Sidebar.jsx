@@ -11,8 +11,6 @@ import {
     faMapMarkedAlt
 } from '@fortawesome/free-solid-svg-icons';
 
-// map-marked-alt
-
 class Sidebar extends React.Component {
     constructor(props) {
         super(props);
@@ -74,6 +72,11 @@ class Sidebar extends React.Component {
                                     <li className="nav-item">
                                         <Link to="/google-meu-negocio" className="nav-link">
                                             <p>Início</p>
+                                        </Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link to="/google-meu-negocio/locais" className="nav-link">
+                                            <p>locais</p>
                                         </Link>
                                     </li>
                                     <li className="nav-item">
@@ -160,6 +163,31 @@ class Sidebar extends React.Component {
                                 {/* <Link to="/" className="nav-link">
                                     <FontAwesomeIcon icon={faHome} /> <p>Landing Pages</p>
                                 </Link> */}
+                                <p>Produtos</p>
+                                <ul className="nav nav-pills nav-sidebar flex-column"
+                                    data-widget="treeview-menu"
+                                    role="menu"
+                                    data-accordion="false"
+                                >
+                                    <li className="nav-item">
+                                        <Link to="/produtos" className="nav-link">
+                                            <p>Listagem</p>
+                                        </Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link to="/produtos/new" className="nav-link">
+                                            <p>Cadastrar Protudos</p>
+                                        </Link>
+                                    </li>
+
+                                    
+                                </ul>
+                            </li>
+
+                             <li className="nav-item">
+                                {/* <Link to="/" className="nav-link">
+                                    <FontAwesomeIcon icon={faHome} /> <p>Landing Pages</p>
+                                </Link> */}
                                 <p>Landing Pages</p>
                                 <ul className="nav nav-pills nav-sidebar flex-column"
                                     data-widget="treeview-menu"
@@ -172,7 +200,7 @@ class Sidebar extends React.Component {
                                         </Link>
                                     </li>
                                     <li className="nav-item">
-                                        <Link to="/landing-pages/nova-lp" className="nav-link">
+                                        <Link to="/landing-pages/new" className="nav-link">
                                             <p>Novas landing page</p>
                                         </Link>
                                     </li>

@@ -6,7 +6,7 @@ import { faQuestion, faCheckCircle, faTimesCircle, faCircle } from '@fortawesome
 
 import "./assets/css/style.scss";
 
-class NovaLandingPage extends React.Component {
+class EditLandingPage extends React.Component {
     constructor(props){
         super(props);
     }
@@ -36,7 +36,7 @@ class NovaLandingPage extends React.Component {
 
                     <div className="row">
                         <div className="col-lg-12 col-md-12 col-sm-12">
-                            <h2 className="title-section">Nova Landing Page</h2>
+                            <h2 className="title-section">Editar Landing Page</h2>
                         </div>
 
                         <div className="container">
@@ -47,7 +47,7 @@ class NovaLandingPage extends React.Component {
                                         
                                       <div class="form-group">
                                         <label for="exampleInputEmail1">Nome</label>
-                                        <input type="text" class="form-control" placeholder="Nome"/>
+                                        <input type="text" class="form-control" placeholder="Nome" value="Maquina de cartão com bobina"/>
                                         <small class="form-text text-muted">Insira um nome para identificação da landing page</small>
                                       </div>
 
@@ -82,7 +82,9 @@ class NovaLandingPage extends React.Component {
                                         
                                       <div class="form-group">
                                         <label for="exampleInputEmail1">Sobre a empresa</label>                                        
-                                         <textarea class="form-control" name="aboutcompany" rows="3"></textarea>
+                                         <textarea class="form-control" name="aboutcompany" rows="3">
+                                         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                         </textarea>
                                       </div>
                                       
                                   </div>
@@ -139,7 +141,7 @@ class NovaLandingPage extends React.Component {
                               </div>
                          
                             </form>
-                              <Link to={`/landing-pages`} class="btn btn-primary ">Criar</Link>
+                              <Link to={`/landing-pages`} class="btn btn-primary">Criar</Link>
                               <br/>
                               <br/>
                         </div>
@@ -153,4 +155,4 @@ class NovaLandingPage extends React.Component {
     }
 }
 
-export default NovaLandingPage;
+export default EditLandingPage;
