@@ -10,6 +10,7 @@ import Bot from "views/bot/Bot";
 import Login from "views/campanhas/PainelDaCampanha";
 
 import GMBIndex from 'views/googleMeuNegocio';
+import GMBLocais from 'views/googleMeuNegocio/locais';
 import GMBPostagens from 'views/googleMeuNegocio/postagens';
 import GMBInformacoes from 'views/googleMeuNegocio/informacoes';
 import GMBResultados from 'views/googleMeuNegocio/resultados';
@@ -92,6 +93,12 @@ let routes = [
         path: "/google-meu-negocio",
         exact: true,
         component: GMBIndex,
+    },
+    {
+        name: "Locais",
+        path: "/google-meu-negocio/locais",
+        exact: true,
+        component: GMBLocais,
     },
     {
         name: "Postagens",
