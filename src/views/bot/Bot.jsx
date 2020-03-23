@@ -2,6 +2,7 @@ import React, { Component }  from "react";
 import { ThemeProvider } from "styled-components";
 import PropTypes from "prop-types";
 import ChatBot from "react-simple-chatbot";
+import NumberFormat from 'react-number-format';
 
 // all available props
 const theme = {
@@ -51,7 +52,7 @@ class Review extends Component {
               <td><b>Razão Social:</b> Empresa ltda</td>
             </tr>
             <tr>
-              <td><b>CNPJ:</b> {cnpj.value}</td>
+              <td><b>CNPJ:</b> <NumberFormat value={cnpj.value} displayType={'text'} format="##.###.###/####-##" /> </td>
             </tr>
             <tr>
               <td><b>Endereço:</b> Rua das flores</td>
