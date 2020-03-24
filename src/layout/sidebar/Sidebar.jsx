@@ -158,11 +158,8 @@ class Sidebar extends React.Component {
                             </li>
                             {/* GOOGLE ADS */}
 
-                            {/* LANDING PAGES */}
-                            <li className="nav-item">
-                                {/* <Link to="/" className="nav-link">
-                                    <FontAwesomeIcon icon={faHome} /> <p>Landing Pages</p>
-                                </Link> */}
+                            {/* PRODUTOS */}
+                            <li className="nav-item">                           
                                 <p>Produtos</p>
                                 <ul className="nav nav-pills nav-sidebar flex-column"
                                     data-widget="treeview-menu"
@@ -176,14 +173,13 @@ class Sidebar extends React.Component {
                                     </li>
                                     <li className="nav-item">
                                         <Link to="/produtos/new" className="nav-link">
-                                            <p>Cadastrar Protudos</p>
+                                            <p>Cadastrar Produtos</p>
                                         </Link>
                                     </li>
-
-                                    
                                 </ul>
                             </li>
 
+                            {/* LANDING PAGES */}
                              <li className="nav-item">
                                 {/* <Link to="/" className="nav-link">
                                     <FontAwesomeIcon icon={faHome} /> <p>Landing Pages</p>
