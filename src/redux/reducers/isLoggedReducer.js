@@ -1,7 +1,7 @@
 import { IS_LOGGED } from "../actions/action-types";
 
 const initialState = {
-    status: true
+    status: false
 };
 
 export const isLoggedReducer = (state = initialState, action) => {
