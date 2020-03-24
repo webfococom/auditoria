@@ -6,3 +6,62 @@
 .container-botoes-locais {
     display: flex;
 }
+
+.container-avaliacoes {
+    display: flex;
+
+    .container-stars {
+        justify-content: space-between;
+        width: 60%;
+        align-items: center;
+
+        .info-start {
+            display: flex;
+            align-items: center;
+
+            .number {
+                color: #101010;
+            }
+
+            .start {
+                font-size: 14px;
+                color: #ccc;
+                margin: 0 5px;
+            }
+
+            .progress {
+                width: -webkit-fill-available;
+                border-radius: 5px;
+            }
+        }
+    }
+}
+
+.container-nota {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    width: 40%;
+
+    p.nota {
+        width: 100%;
+        margin: 0;
+        color: #101010;
+        font-size: 40px;
+        display: block;
+    }
+
+    .container-stars{
+        width: 100%;
+        .start {
+            font-size: 14px;
+            color: #ffc107;
+            // margin: 0 5px;
+        }
+    }
+
+    .total-avaliacao {
+
+    }
+}
