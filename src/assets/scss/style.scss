@@ -11269,7 +11269,7 @@ body,
 .hold-transition .control-sidebar,
 .hold-transition .control-sidebar *,
 .hold-transition .main-footer {
-  transition: none !important;
+  //transition: none !important;
 }
 
 .main-header {
@@ -11506,7 +11506,8 @@ body,
 
 .sidebar {
   height: calc(100% - 4rem);
-  overflow-y: auto;
+  overflow-x: hidden;
+  overflow-y: scroll;
   padding-bottom: 0;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
