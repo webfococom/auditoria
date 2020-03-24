@@ -1,0 +1,207 @@
+.accordion {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.sidebar{
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+
+.tabs-panel {
+    display: block;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.tabs-panel:after {
+    clear: both;
+    content: '';
+    display: table;
+}
+
+.tabs-panel--between,
+.tabs-panel--last {
+    /*border-top: 1px solid #eee;*/
+}
+
+.tabs-title {
+    /*background: #EBEBEB;*/
+    color: #888;
+    cursor: pointer;
+    display: block;
+    font-weight: normal !important;
+    padding: 1rem;
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    margin:0px;
+}.tabs-title:hover {
+    color: #00aeef;
+}
+
+.tabs-title--checked {
+    -webkit-transition: background-color 125ms ease-in-out, border-radius 62.5ms ease-in-out;
+    transition: background-color 125ms ease-in-out, border-radius 62.5ms ease-in-out;
+}
+
+.tabs-title--unchecked {
+    -webkit-transition: background-color 125ms ease-in-out, border-radius 125ms ease-in-out 312.5ms;
+    transition: background-color 125ms ease-in-out, border-radius 125ms ease-in-out 312.5ms;
+}
+
+/* fix iOS touch not triggering a click from child elements */
+.tabs-title > * {
+    pointer-events: none;
+}
+
+.tabs-title--first {
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.tabs-animator--last,
+.tabs-content--last,
+.tabs-title--last.tabs-title--no-content,
+.tabs-title--last.tabs-title--unchecked {
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.tabs-title--content {
+
+}.tabs-title--content:before {
+    content: "›";
+    font-size: 1.5em;
+    line-height: 1rem;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    position: absolute;
+    right: 10px;
+    top: 1rem;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: -webkit-transform 375ms ease-in-out;
+    transition: transform 375ms ease-in-out;
+}
+.tabs-title--checked.tabs-title--content:before {
+  -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);  
+}
+
+.tabs-title--checked {
+    /*background: #eee;*/
+    color: #00aeef;
+}
+
+.tabs-title--checked:before {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+
+.tabs-title:active:before,
+[data-state="tabbordion"]:focus ~ .tabs-title:before {
+    color: #00aeef;
+}
+
+.tabs-animator {
+    background-color: #EBEBEB;
+    -webkit-transition: background-color 125ms ease-in-out, height 375ms ease-in-out;
+    transition: background-color 125ms ease-in-out, height 375ms ease-in-out;
+}
+
+.tabs-animator:after {
+    clear: both;
+    content: '';
+    display: block;
+}
+
+.tabs-animator--checked {
+    background-color: #00aeef;
+}
+
+.tabs-content {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #363636;
+    /*display: none;*/
+    float: left;
+    padding: 0 30px;
+    width: 100%;
+    max-height: 0px;
+    overflow: hidden;
+    transition: 600ms !important;
+}
+
+.tabs-content--animated {
+    display: block;
+    opacity: 0;
+    transform: translateY(-50%);
+    -webkit-transition: opacity 375ms ease-in-out, transform 375ms ease-in-out;
+    transition: opacity 375ms ease-in-out, transform 375ms ease-in-out;
+}.tabs-content--checked {
+    /*background-color: #F3F3F3;*/
+    max-height: 2000px;    
+    transition: 1500ms !important;
+}
+
+.tabs-content--marginTop {
+    margin-top: -65535px;
+    transform: translateY(-50%);
+    -webkit-transition: margin-top 375ms ease-in-out, opacity 375ms ease-in-out, transform 375ms ease-in-out;
+    transition: margin-top 375ms ease-in-out, opacity 375ms ease-in-out, transform 375ms ease-in-out;
+}
+
+.tabs-content--checked {
+    display: block;
+    opacity: 1;
+}
+
+.tabs-content--checked.tabs-content--animated {
+    transform: translateY(0);
+}
+
+.tabs-content--checked.tabs-content--marginTop {
+    margin-top: 0;
+}
+
+[data-state="tabbordion"] {
+    clip: rect(0 0 0 0);
+    height: 1px;
+    position: absolute;
+    position: fixed;
+    width: 1px;
+    z-index: -1;
+}
+
+.tabs-content li{
+    border-left: 1px solid #ccc;
+}.tabs-content li:hover a{
+    color: #00aeef !important;
+}
+
+
+.tabs-title svg{
+    vertical-align: middle;
+    width: 30px !important;
+    
+}
+
+.sidebar{
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.sidebar::-webkit-scrollbar {
+        width: 10px;
+    }
+.sidebar::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 0 10px #fff;
+}
+.sidebar::-webkit-scrollbar-thumb {
+    -webkit-box-shadow: inset 0 0 0 10px #aaa;
+}
