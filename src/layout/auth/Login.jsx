@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "assets/scss/auth.scss";
-import { faUser, faLock } from "@fortawesome/free-solid-svg-icons";
+import { faUser, faLock, faAlignCenter } from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 export default class Teste extends React.Component {
@@ -17,9 +17,9 @@ export default class Teste extends React.Component {
                             <p className="user_unregistered-text">
                                 Não se preocupe, criar sua conta é simple e rápido.
                             </p>
-                            <button className="user_unregistered-signup" id="signup-button">
-                                Criar conta
-                            </button>
+                              <Link to="/cadastre-se" className="user_unregistered-signup">
+                                Criar Conta
+                              </Link>
                         </div>
 
                         <div className="user_options-registered">
@@ -29,9 +29,9 @@ export default class Teste extends React.Component {
                             <p className="user_registered-text">
                                 Banjo tote bag bicycle rights, High Life sartorial cray craft beer whatever street art fap.
                             </p>
-                            <button className="user_registered-login" id="login-button">
+                            <Link to="/" className="user_registered-login" id="login-button" >
                                 Entrar
-                            </button>
+                            </Link>
                         </div>
                     </div>
 
