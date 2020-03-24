@@ -11,8 +11,6 @@ import {
     faMapMarkedAlt
 } from '@fortawesome/free-solid-svg-icons';
 
-// map-marked-alt
-
 class Sidebar extends React.Component {
     constructor(props) {
         super(props);
@@ -74,6 +72,11 @@ class Sidebar extends React.Component {
                                     <li className="nav-item">
                                         <Link to="/google-meu-negocio" className="nav-link">
                                             <p>Início</p>
+                                        </Link>
+                                    </li>
+                                    <li className="nav-item">
+                                        <Link to="/google-meu-negocio/locais" className="nav-link">
+                                            <p>locais</p>
                                         </Link>
                                     </li>
                                     <li className="nav-item">

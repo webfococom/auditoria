@@ -2,13 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createBrowserHistory } from "history";
 import { Router, Route, Switch, Redirect } from "react-router-dom";
-
+import $ from 'jquery';
+import Popper from 'popper.js';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
 import LayoutBase from "./layout/Base";
-import Teste from "layout/auth/Teste";
-
+import Login from "layout/auth/Login";
+import CadastreSe from "layout/auth/CadastreSe";
 import "./assets/scss/style.scss";
-// import './index.css';
-// import App from './App';
+import "./assets/js/scripts";
 import * as serviceWorker from './serviceWorker';
 
 const hist = createBrowserHistory();
@@ -16,7 +17,8 @@ const hist = createBrowserHistory();
 ReactDOM.render(
     <Router history={hist}>
         <Switch>
-            <Route path="/login" render={props => <Teste {...props}/>} />
+            <Route path="/login" render={props => <Login {...props}/>} />
+            <Route path="/cadastre-se" render={props => <CadastreSe {...props}/>} />
             <Route path="/" render={props => <LayoutBase {...props} />} />
         </Switch>
     </Router>,
