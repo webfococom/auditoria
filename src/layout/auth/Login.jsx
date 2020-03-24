@@ -1,10 +1,29 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import "assets/scss/auth.scss";
 import { faUser, faLock, faAlignCenter } from "@fortawesome/free-solid-svg-icons";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { logarUsuario } from '../../redux/actions';
 
-export default class Teste extends React.Component {
+class Login extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    componentWillMount() {
+        this.props.logarUsuario(false);
+    }
+
+    goToDash = () => {
+        this.props.logarUsuario(true);
+
+        console.log('vou entrar no dashboard');
+
+        this.props.history.push('/');
+    };
+
     render() {
         return (
             <section className="user">
@@ -57,11 +76,14 @@ export default class Teste extends React.Component {
                                     <button type="button" className="forms_buttons-forgot">
                                         Esqueceu a senha?
                                     </button>
-                                    <Link to="/">
-                                        <button type="button" className="forms_buttons-action">
+                                    {/* <Link to="/"> */}
+                                        <button 
+                                            onClick={this.goToDash}
+                                            type="button" 
+                                            className="forms_buttons-action">
                                             Entrar
                                         </button>
-                                    </Link>
+                                    {/* </Link> */}
                                 </div>
                             </form>
                         </div>
@@ -90,3 +112,14 @@ export default class Teste extends React.Component {
         );
     }
 }
+
+const mapStateToProps = store => ({
+    userLogged: store.isLoggedState.status
+});
+
+const mapDispatchToProps = dispatch => 
+    bindActionCreators({ 
+        logarUsuario 
+    }, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

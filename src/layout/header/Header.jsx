@@ -41,8 +41,7 @@ class Header extends React.Component {
                         </div>
                     </li>
 
-                    {/*
-                    <li className="nav-item dropdown">
+                    {/* <li className="nav-item dropdown">
                         <div className="user-panel mt-3 pb-3 mb-3 d-flex">
                             <div className="image">
                                 <img src={require('assets/images/user.jpg')}
@@ -53,8 +52,7 @@ class Header extends React.Component {
                                 <a href="#" className="d-block">José da silva</a>
                             </div>
                         </div>
-                    </li>
-                    */}
+                    </li> */}                   
 
 
 

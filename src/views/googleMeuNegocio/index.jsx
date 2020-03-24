@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import classNames from "classnames";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMapPin, faShareAlt, faMapMarkerAlt, faCheckCircle, faTimesCircle, faCircle } from '@fortawesome/free-solid-svg-icons';
+import { faShareAlt, faMapMarkerAlt, faStar } from '@fortawesome/free-solid-svg-icons';
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 
 class GoogleMeuNegocio extends React.Component {
@@ -38,6 +38,7 @@ class GoogleMeuNegocio extends React.Component {
 
                     <div className="row">
                         <div className="col-lg-6 col-md-6 col-sm-6">
+
                             <div className="card card-GMB">
                                 <div className="card-header border-0">
                                     <p>Sua empresa está no google</p>
@@ -72,27 +73,7 @@ class GoogleMeuNegocio extends React.Component {
                                 </div>
                                 {/* <div className="card-footer"></div> */}
                             </div>
-                        </div>
 
-                        <div className="col-lg-6 col-md-6 col-sm-6">
-                            <div className="card card-GMB">
-                                <div className="card-header border-0">
-                                    <p>Receba mais avaliações</p>
-                                </div>
-                                <div className="card-body">
-                                    <p className="texto-compartilhamento-form">Compartilhe o perfil da sua empresa e receba novas avaliações dos clientes</p>
-                                </div>
-                                <div className="card-footer">
-                                    <button type="button" className="btn btn-share-form btn-sm float-left">
-                                        Compart. form. de avaliação
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="row">
-                        <div className="col-lg-6 col-md-6 col-sm-6">
                             <div className="card card-GMB">
                                 <div className="card-header border-0">
                                     <p>Desempenho</p>
@@ -126,10 +107,73 @@ class GoogleMeuNegocio extends React.Component {
                                     </p>
                                 </div>
                             </div>
-                            
+
+                            <div className="card card-GMB">
+                                <div className="card-header border-0">
+                                    <p>Avaliações mais recentes</p>
+                                </div>
+                                <div className="card-body">
+                                    <div className="container-start" style={{width: "80%"}}>
+                                        <div style={{display: 'flex'}}>
+                                        {/* <div> */}
+                                            <div>5</div>
+                                            <div>
+                                                <FontAwesomeIcon icon={faStar} color="#ccc"/>
+                                            </div>
+                                            <div>
+                                                <div class="progress">
+                                                    <div class="progress-bar" role="progressbar" style={{width: "59%"}} aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div style={{display: 'flex'}}>
+                                            <div>4</div>
+                                            <div>
+                                                <FontAwesomeIcon icon={faStar} color="#ccc"/>
+                                            </div>
+                                        </div>
+                                        <div style={{display: 'flex'}}>
+                                            <div>3</div>
+                                            <div>
+                                                <FontAwesomeIcon icon={faStar} color="#ccc"/>
+                                            </div>
+                                        </div>
+                                        <div style={{display: 'flex'}}>
+                                            <div>2</div>
+                                            <div>
+                                                <FontAwesomeIcon icon={faStar} color="#ccc"/>
+                                            </div>
+                                        </div>
+                                        <div style={{display: 'flex'}}>
+                                            <div>1</div>
+                                            <div>
+                                                <FontAwesomeIcon icon={faStar} color="#ccc"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p>4.9</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
                         <div className="col-lg-6 col-md-6 col-sm-6">
+                        
+                            <div className="card card-GMB">
+                                <div className="card-header border-0">
+                                    <p>Receba mais avaliações</p>
+                                </div>
+                                <div className="card-body">
+                                    <p className="texto-compartilhamento-form">Compartilhe o perfil da sua empresa e receba novas avaliações dos clientes</p>
+                                </div>
+                                <div className="card-footer">
+                                    <button type="button" className="btn btn-share-form btn-sm float-left">
+                                        Compart. form. de avaliação
+                                    </button>
+                                </div>
+                            </div>
+                        
                             <div className="card card-GMB">
                                 <div className="card-header border-0">
                                     <p>Fotos mais recentes dos clientes</p>
@@ -156,10 +200,9 @@ class GoogleMeuNegocio extends React.Component {
                                     </Link>
                                 </div>
                             </div>
+                        
                         </div>
-                    </div>
-
-                    
+                    </div>                    
                 </div>
             </div>
         );
