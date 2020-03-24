@@ -113,47 +113,92 @@ class GoogleMeuNegocio extends React.Component {
                                     <p>Avaliações mais recentes</p>
                                 </div>
                                 <div className="card-body">
-                                    <div className="container-start" style={{width: "80%"}}>
-                                        <div style={{display: 'flex'}}>
-                                        {/* <div> */}
-                                            <div>5</div>
-                                            <div>
-                                                <FontAwesomeIcon icon={faStar} color="#ccc"/>
+                                    <div className="container-avaliacoes">
+                                        <div className="container-stars">
+                                            <div className="info-start">
+                                                <span className="number">5</span>
+                                                <FontAwesomeIcon icon={faStar} className="start"/>
+                                                <div className="progress">
+                                                    <div 
+                                                        className="progress-bar bg-warning" 
+                                                        role="progressbar" 
+                                                        style={{width: "97%"}} 
+                                                        aria-valuenow="97" 
+                                                        aria-valuemin="0" 
+                                                        aria-valuemax="100"
+                                                    />
+                                                </div>
                                             </div>
-                                            <div>
-                                                <div class="progress">
-                                                    <div class="progress-bar" role="progressbar" style={{width: "59%"}} aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+                                            <div className="info-start">
+                                                <span className="number">4</span>
+                                                <FontAwesomeIcon icon={faStar} className="start"/>
+                                                <div className="progress">
+                                                    <div 
+                                                        className="progress-bar bg-warning" 
+                                                        role="progressbar" 
+                                                        style={{width: "36%"}} 
+                                                        aria-valuenow="36" 
+                                                        aria-valuemin="0" 
+                                                        aria-valuemax="100"
+                                                    />
+                                                </div>
+                                            </div>
+                                            <div className="info-start">
+                                                <span className="number">3</span>
+                                                <FontAwesomeIcon icon={faStar} className="start"/>
+                                                <div className="progress">
+                                                    <div 
+                                                        className="progress-bar bg-warning" 
+                                                        role="progressbar" 
+                                                        style={{width: "6%"}} 
+                                                        aria-valuenow="6" 
+                                                        aria-valuemin="0" 
+                                                        aria-valuemax="100"
+                                                    />
+                                                </div>
+                                            </div>
+                                            <div className="info-start">
+                                                <span className="number">2</span>
+                                                <FontAwesomeIcon icon={faStar} className="start"/>
+                                                <div className="progress">
+                                                    <div 
+                                                        className="progress-bar bg-warning" 
+                                                        role="progressbar" 
+                                                        style={{width: "3%"}} 
+                                                        aria-valuenow="3" 
+                                                        aria-valuemin="0" 
+                                                        aria-valuemax="100"
+                                                    />
+                                                </div>
+                                            </div>
+                                            <div className="info-start">
+                                                <span className="number">1</span>
+                                                <FontAwesomeIcon icon={faStar} className="start"/>
+                                                <div className="progress">
+                                                    <div 
+                                                        className="progress-bar bg-warning" 
+                                                        role="progressbar" 
+                                                        style={{width: "0%"}} 
+                                                        aria-valuenow="0" 
+                                                        aria-valuemin="0" 
+                                                        aria-valuemax="100"
+                                                    />
                                                 </div>
                                             </div>
                                         </div>
-                                        <div style={{display: 'flex'}}>
-                                            <div>4</div>
-                                            <div>
-                                                <FontAwesomeIcon icon={faStar} color="#ccc"/>
+                                        <div className="container-nota">
+                                            <p className="nota">4.9</p>
+                                            <div className="container-stars">
+                                                <FontAwesomeIcon icon={faStar} className="start"/>
+                                                <FontAwesomeIcon icon={faStar} className="start"/>
+                                                <FontAwesomeIcon icon={faStar} className="start"/>
+                                                <FontAwesomeIcon icon={faStar} className="start"/>
+                                                <FontAwesomeIcon icon={faStar} className="start"/>
                                             </div>
-                                        </div>
-                                        <div style={{display: 'flex'}}>
-                                            <div>3</div>
-                                            <div>
-                                                <FontAwesomeIcon icon={faStar} color="#ccc"/>
-                                            </div>
-                                        </div>
-                                        <div style={{display: 'flex'}}>
-                                            <div>2</div>
-                                            <div>
-                                                <FontAwesomeIcon icon={faStar} color="#ccc"/>
-                                            </div>
-                                        </div>
-                                        <div style={{display: 'flex'}}>
-                                            <div>1</div>
-                                            <div>
-                                                <FontAwesomeIcon icon={faStar} color="#ccc"/>
-                                            </div>
+                                            <p className="total-avaliacao">69 avaliações</p>
                                         </div>
                                     </div>
-                                    <div>
-                                        <p>4.9</p>
-                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>
