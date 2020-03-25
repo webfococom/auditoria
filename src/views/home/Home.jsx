@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import classNames from "classnames";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuestion, faCheckCircle, faTimesCircle, faCircle } from '@fortawesome/free-solid-svg-icons';
+import NumberFormat from 'react-number-format';
 
 let random = (Math.floor(((Math.random() * (10 - 1)) + 1)) % 2);
 
@@ -154,7 +155,7 @@ class Home extends React.Component {
                                 </div>
                                 <div className="card-body">
                                     <p>Combinações Possíveis</p>
-                                    <p className="destaque">{visaoGeral.combinacoes}</p>
+                                    <p className="destaque"><NumberFormat displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} value={visaoGeral.combinacoes} /></p>
                                 </div>
                                 <div className="card-footer">
                                     <button type="button" className="btn btn-outline-success btn-sm float-right">
@@ -210,31 +211,31 @@ class Home extends React.Component {
                             <div className="card">
                                 <div className="card-header border-0"></div>
                                 <div className="card-body">
-                                    <table className="table table-condensed tabela-campanhas">
+                                    <table className="table table-condensed tabela-campanhas" style={{border:'1px'}}>
                                         <thead>
                                             <tr>
                                                 <th>
                                                     <b>nome</b>
                                                 </th>
-                                                <th>
+                                                <th style={{ textAlign: 'right' }}>
                                                     <b>impressões</b>
                                                 </th>
-                                                <th>
+                                                <th style={{ textAlign: 'right' }}>
                                                     <b>cliques</b>
                                                 </th>
-                                                <th>
+                                                <th style={{ textAlign: 'right' }}>
                                                     <b>cpc</b>
                                                 </th>
-                                                <th>
+                                                <th style={{ textAlign: 'right' }}>
                                                     <b>conversões</b>
                                                 </th>
-                                                <th>
+                                                <th style={{ textAlign: 'right' }}>
                                                     <b>investimento</b>
                                                 </th>
-                                                <th>
+                                                <th style={{ textAlign: 'right' }}>
                                                     <b>alerta</b>
                                                 </th>
-                                                <th></th>
+                                                <th style={{ textAlign: 'right' }}></th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -242,15 +243,15 @@ class Home extends React.Component {
                                             return (
                                                 <tr key={key}>
                                                     <td>{element.nome}</td>
-                                                    <td>{element.impressoes}</td>
-                                                    <td>{element.cliques}</td>
-                                                    <td>{element.cpc}</td>
-                                                    <td>{element.conversoes}</td>
-                                                    <td>{element.investimento}</td>
-                                                    <td>
+                                                    <td style={{ textAlign: 'right' }}><NumberFormat displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} value={element.impressoes}/></td>
+                                                    <td style={{ textAlign: 'right' }}><NumberFormat displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} value={element.cliques}/></td>
+                                                    <td style={{ textAlign: 'right' }}><NumberFormat displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} value={element.cpc*100} suffix='%'/></td>
+                                                    <td style={{ textAlign: 'right' }}><NumberFormat displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} value={element.conversoes}/></td>
+                                                    <td style={{ textAlign: 'right' }}><NumberFormat displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} value={element.investimento} prefix='R$ ' suffix=',00' /></td>
+                                                    <td style={{ textAlign: 'right' }}>
                                                         {alertCampanha(element.alerta)}
                                                     </td>
-                                                    <td>
+                                                    <td style={{ textAlign: 'right' }}>
                                                         <Link to={`/painel/${element.route}`} className={classNames('btn btn-sm', (element.alerta === 'green') ? 'btn-outline-success' : "btn-outline-danger")}>
                                                             ir para o painel
                                                         </Link>

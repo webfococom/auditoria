@@ -41,7 +41,7 @@ class GoogleMeuNegocio extends React.Component {
 
                             <div className="card card-GMB">
                                 <div className="card-header border-0">
-                                    <p>Sua empresa está no google</p>
+                                    <p>Sua empresa está no Google</p>
                                 </div>
                                 <div className="card-body container-share-company">
                                     <ul>
@@ -198,7 +198,45 @@ class GoogleMeuNegocio extends React.Component {
                                             <p className="total-avaliacao">69 avaliações</p>
                                         </div>
                                     </div>
-                                    
+
+                                    <div className="container-messages">
+                                        <div className="message">
+                                            <div className="header">
+
+                                                <div className="container-img">
+                                                    <img 
+                                                        src={require('assets/images/user.jpg')}
+                                                        className="img-circle elevation-2"
+                                                        alt="Osmar Galani"
+                                                    />
+                                                </div>
+                                                <div className="info-user">
+                                                    <p>Osmar Galani</p>
+                                                    <div className="container-star-date">
+                                                        <div className="stars">
+                                                            <FontAwesomeIcon icon={faStar} className="start"/>
+                                                            <FontAwesomeIcon icon={faStar} className="start"/>
+                                                            <FontAwesomeIcon icon={faStar} className="start"/>
+                                                            <FontAwesomeIcon icon={faStar} className="start"/>
+                                                            <FontAwesomeIcon icon={faStar} className="start"/>
+                                                        </div>
+                                                        <span className="date">Há 3 semanas</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="body">
+                                                <p className="text-message">
+                                                    Um bom atendimento, educação e simpatia ...
+                                                </p>
+                                            </div>
+                                            <div className="footer">
+                                                <div className="container-btns">
+                                                    <button className="btn btn-default">Responder</button>
+                                                    <button className="btn">Pular</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>

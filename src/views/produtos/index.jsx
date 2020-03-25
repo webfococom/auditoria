@@ -44,7 +44,7 @@ class LandingPages extends React.Component {
                                         <Link to="/">Home</Link>
                                     </li>
                                     <li className="breadcrumb-item" aria-current="page">
-                                        <Link to="/">Produtos</Link>
+                                        <Link to="/produtos">Meus Produtos</Link>
                                     </li>
                                 </ol>
                             </nav>
@@ -53,7 +53,7 @@ class LandingPages extends React.Component {
 
                     <div className="row">
                         <div className="col-lg-12 col-md-12 col-sm-12">
-                            <h2 className="title-section">Listagem</h2>
+                            <h2 className="title-section">Meus Produtos Cadastrados</h2>
                         </div>
 
                         <div className="col-lg-3 col-md-3 col-sm-3">
@@ -76,7 +76,7 @@ class LandingPages extends React.Component {
               
                                 </div>
                                 <div className="card-body">
-                                    <p>Produtos anunciados</p>
+                                    <p>Produtos Anunciados Google</p>
                                     <p className="destaque">1</p>
                                 </div>
                                 <div className="card-header border-0">
@@ -101,7 +101,7 @@ class LandingPages extends React.Component {
                                 Novo Produto
                             </Link>&nbsp;
                             <Link to={`/produtos/anuncio/new`}  className="btn btn-success btn-sm btn-adicionar">
-                                Anunciar
+                                Anunciar no Google
                             </Link>
                         </div>
                         <div className="col-lg-12 col-md-12 col-sm-12">
