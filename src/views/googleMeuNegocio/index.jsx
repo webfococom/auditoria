@@ -41,7 +41,7 @@ class GoogleMeuNegocio extends React.Component {
 
                             <div className="card card-GMB">
                                 <div className="card-header border-0">
-                                    <p>Sua empresa está no google</p>
+                                    <p>Sua empresa está no Google</p>
                                 </div>
                                 <div className="card-body container-share-company">
                                     <ul>
