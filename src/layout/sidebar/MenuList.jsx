@@ -18,7 +18,7 @@ class MenuList extends React.Component {
         }
 
         return (
-            <Tabbordion blockElements={blockElements} mode="toggle" className="accordion" name="accordion" initialPanels={0}>
+            <Tabbordion blockElements={blockElements} mode="toggle" className="accordion" name="accordion" initialPanels={[{ checked: true, index: 0 }]}>
                 <TabPanel>
                     <TabLabel>
                         <FontAwesomeIcon icon={faTachometerAlt} /> Dashboard
@@ -30,7 +30,7 @@ class MenuList extends React.Component {
                             data-accordion="false"
                         >
                             <li className="nav-item">
-                                <Link to="/" className="nav-link">
+                                 <Link to="/" className="nav-link">
                                     <p>Visão Geral</p>
                                 </Link>
                             </li>
