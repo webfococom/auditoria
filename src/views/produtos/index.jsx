@@ -70,7 +70,7 @@ class LandingPages extends React.Component {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-lg-3 col-md-3 col-sm-3">
+                        <div className="col-lg-4 col-md-4 col-sm-4">
                             <div className="card card-home">
                                 <div className="card-header border-0">
               
@@ -145,9 +145,9 @@ class LandingPages extends React.Component {
                                                         <Link  to={`/produtos/${element.route}`}  className="btn btn-outline-success btn-sm btn-negativar">
                                                             Editar
                                                         </Link>&nbsp;
-                                                        <Link  className="btn btn-success btn-sm btn-adicionar">
+                                                        <a target="_blank" href="http://webfocosaopaulo.com.br/adsapp/lp/model1-produto/" className="btn btn-success btn-sm btn-adicionar">
                                                             Visualizar
-                                                        </Link>&nbsp;
+                                                        </a>&nbsp;
 
                                                     </td>
                                                 
