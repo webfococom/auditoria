@@ -9061,6 +9061,11 @@ react-stepzilla@^6.0.2:
   resolved "https://registry.yarnpkg.com/react-stepzilla/-/react-stepzilla-6.0.2.tgz#ba63bf7c125bf934c2c78b0f228843852b3d0518"
   integrity sha512-BVzTVj7BxITS5o4gQnb9R7oqbJ5ktzjAEFkFHg07aWL77TKah9aOa2IXGilkKDNrttMYiNfMddLoc5IZyL0Pmg==
 
+react-tabbordion@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/react-tabbordion/-/react-tabbordion-1.0.5.tgz#b166cffb6c07d863e9c71791663841fd5c65b252"
+  integrity sha512-6cidz/Ht5aYBXPDOMmrns+vJtwvHLfBvbHsqZvCDETswXM6y5lsS5Q5ws8oW67l5yqHtFGyWLZpGXCsdAg2uCA==
+
 react@^16.13.1, react@^16.4.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react/-/react-16.13.1.tgz#2e818822f1a9743122c063d6410d85c1e3afe48e"
