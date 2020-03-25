@@ -1,16 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import classNames from "classnames";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faQuestion, faCheckCircle, faTimesCircle, faCircle } from '@fortawesome/free-solid-svg-icons';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
-class GoogleMeuNegocio extends React.Component {
+class GMBProdutos extends React.Component {
     constructor(props){
         super(props);
     }
 
     componentDidMount() {
-        
+        if (this.props.localSelected === null) {
+            this.props.history.push('/google-meu-negocio/locais');
+        }
     }
 
     render() {
@@ -45,4 +46,10 @@ class GoogleMeuNegocio extends React.Component {
     }
 }
 
-export default GoogleMeuNegocio;
+const mapStateToProps = store => ({
+    localSelected: store.localSelectedState.selected
+});
+
+const mapDispatchToProps = dispatch => bindActionCreators({}, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(GMBProdutos);
