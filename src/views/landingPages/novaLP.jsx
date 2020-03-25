@@ -89,7 +89,7 @@ class NovaLandingPage extends React.Component {
                               </div>
 
                               <div class="form-group">
-                                <label for="exampleInputEmail1">Thema</label>
+                                <label for="exampleInputEmail1">Tema</label>
                                 
                                 <div className="row">
                              

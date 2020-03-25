@@ -40,7 +40,7 @@ class Header extends React.Component {
                         </div>
                         <div className="col-lg-6 col-md-6 col-sm-6 ">
                             <div class="vertical-center ">
-                                <Link to={`/produtos/`} class="btnAnunciar">Anúnciar agora</Link>
+                                <Link to={`/produtos/`} class="btnAnunciar">Publicar Agora</Link>
                             </div>
                         </div>
                     </div>        

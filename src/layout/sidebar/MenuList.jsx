@@ -70,7 +70,7 @@ class MenuList extends React.Component {
                             </li>
                             <li className="nav-item">
                                 <Link to="/google-meu-negocio/produtos" className="nav-link">
-                                    <p>Produtos</p>
+                                    <p>Meus Produtos</p>
                                 </Link>
                             </li>
                             <li className="nav-item">
@@ -118,7 +118,7 @@ class MenuList extends React.Component {
 
                 {/* PRODUTOS */}
                 <TabPanel>
-                    <TabLabel><FontAwesomeIcon icon={faStore} /> Produtos</TabLabel>
+                    <TabLabel><FontAwesomeIcon icon={faStore} />Meus Produtos</TabLabel>
                     <TabContent>
                         <ul className="nav nav-pills nav-sidebar flex-column"
                             data-widget="treeview-menu"
@@ -127,7 +127,7 @@ class MenuList extends React.Component {
                         >
                         <li className="nav-item">
                             <Link to="/produtos" className="nav-link">
-                                <p>Listagem</p>
+                                <p>Produtos cadastrados</p>
                             </Link>
                         </li>
                         <li className="nav-item">

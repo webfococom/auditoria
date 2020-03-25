@@ -44,7 +44,7 @@ class LandingPages extends React.Component {
                                         <Link to="/">Home</Link>
                                     </li>
                                     <li className="breadcrumb-item" aria-current="page">
-                                        <Link to="/">Produtos</Link>
+                                        <Link to="/produtos">Meus Produtos</Link>
                                     </li>
                                 </ol>
                             </nav>
@@ -53,7 +53,7 @@ class LandingPages extends React.Component {
 
                     <div className="row">
                         <div className="col-lg-12 col-md-12 col-sm-12">
-                            <h2 className="title-section">Listagem</h2>
+                            <h2 className="title-section">Meus Produtos Cadastrados</h2>
                         </div>
 
                         <div className="col-lg-3 col-md-3 col-sm-3">
@@ -101,7 +101,7 @@ class LandingPages extends React.Component {
                                 Novo Produto
                             </Link>&nbsp;
                             <Link to={`/produtos/anuncio/new`}  className="btn btn-success btn-sm btn-adicionar">
-                                Publicar
+                                Publicar no Google
                             </Link>
                         </div>
                         <div className="col-lg-12 col-md-12 col-sm-12">
@@ -145,9 +145,9 @@ class LandingPages extends React.Component {
                                                         <Link  to={`/produtos/${element.route}`}  className="btn btn-outline-success btn-sm btn-negativar">
                                                             Editar
                                                         </Link>&nbsp;
-                                                        <Link  className="btn btn-success btn-sm btn-adicionar">
+                                                        <a target="_blank" href="http://webfocosaopaulo.com.br/adsapp/lp/model1-produto/" className="btn btn-success btn-sm btn-adicionar">
                                                             Visualizar
-                                                        </Link>&nbsp;
+                                                        </a>&nbsp;
 
                                                     </td>
                                                 
