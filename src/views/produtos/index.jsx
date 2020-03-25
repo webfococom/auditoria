@@ -76,7 +76,7 @@ class LandingPages extends React.Component {
               
                                 </div>
                                 <div className="card-body">
-                                    <p>Produtos anunciados</p>
+                                    <p>Produtos Publicados</p>
                                     <p className="destaque">1</p>
                                 </div>
                                 <div className="card-header border-0">
@@ -101,7 +101,7 @@ class LandingPages extends React.Component {
                                 Novo Produto
                             </Link>&nbsp;
                             <Link to={`/produtos/anuncio/new`}  className="btn btn-success btn-sm btn-adicionar">
-                                Anunciar
+                                Publicar
                             </Link>
                         </div>
                         <div className="col-lg-12 col-md-12 col-sm-12">
