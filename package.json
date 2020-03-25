@@ -27,10 +27,11 @@
     "react-dom": "^16.13.1",
     "react-number-format": "^4.4.1",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.1.2",
+    "react-scripts": "^3.4.1",
     "react-simple-chatbot": "^0.6.1",
     "react-step-wizard": "^5.3.2",
     "react-stepzilla": "^6.0.2",
+    "react-tabbordion": "^1.0.5",
     "styled-components": "^5.0.1"
   },
   "scripts": {
