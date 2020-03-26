@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faRobot, faBriefcase,faAd,faFileWord,faStore} from '@fortawesome/free-solid-svg-icons';
+import { faTachometerAlt, faRobot, faBriefcase,faAd,faFileWord,faStore} from '@fortawesome/free-solid-svg-icons';
 
 
 import "./menuStyle.scss";
@@ -19,6 +19,25 @@ class MenuList extends React.Component {
 
         return (
             <Tabbordion blockElements={blockElements} mode="toggle" className="accordion" name="accordion" initialPanels={0}>
+                <TabPanel>
+                    <TabLabel>
+                        <FontAwesomeIcon icon={faTachometerAlt} /> Dashboard
+                    </TabLabel>
+                    <TabContent> 
+                        <ul className="nav nav-pills nav-sidebar flex-column"
+                            data-widget="treeview-menu"
+                            role="menu"
+                            data-accordion="false"
+                        >
+                            <li className="nav-item">
+                                <Link to="/" className="nav-link">
+                                    <p>Visão Geral</p>
+                                </Link>
+                            </li>
+                        </ul>
+                    </TabContent>
+                </TabPanel>
+
                  {/* GOOGLE MEU NEGOCIO */}
                 <TabPanel>
                     <TabLabel><FontAwesomeIcon icon={faBriefcase} /> Google Meu Negócio</TabLabel>
@@ -89,7 +108,7 @@ class MenuList extends React.Component {
 
                 {/* GOOGLE ADS */}
                 <TabPanel>
-                    <TabLabel><FontAwesomeIcon icon={faAd} /> Google Ads</TabLabel>
+                    <TabLabel><FontAwesomeIcon icon={faAd} /> Meus Anúncios</TabLabel>
                     <TabContent>
                        
                         <ul className="nav nav-pills nav-sidebar flex-column"
@@ -164,7 +183,7 @@ class MenuList extends React.Component {
                 </TabPanel>
 
                 {/* CHATBOT */}
-                <TabPanel>
+                {/* <TabPanel>
                     <TabLabel><FontAwesomeIcon icon={faRobot} /> Chatbot</TabLabel>
                     <TabContent>
                       
@@ -181,7 +200,7 @@ class MenuList extends React.Component {
                         </li>
                     </ul>
                     </TabContent>
-                </TabPanel>
+                </TabPanel> */}
             </Tabbordion>
         );
     }
