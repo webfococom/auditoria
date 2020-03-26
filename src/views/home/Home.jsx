@@ -3,97 +3,10 @@ import { Link } from "react-router-dom";
 import classNames from "classnames";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuestion, faCheckCircle, faTimesCircle, faCircle } from '@fortawesome/free-solid-svg-icons';
-import NumberFormat from 'react-number-format';
 
-let random = (Math.floor(((Math.random() * (10 - 1)) + 1)) % 2);
 
-let visaoGeral = {
-    performace: Math.floor(Math.random() * (100 - 1)) + 1,
-    combinacoes: Math.floor(Math.random() * (5000 - 1)) + 1,
-    saldo: Math.floor(Math.random() * (1000 - 1)) + 1,
-    siteOnline: (random === 1) ? true : false
-};
 
-let campanhas = [
-    {
-        nome: 'Campanha A',
-        route: 'campanha-a',
-        impressoes: 29856,
-        cliques: 1897,
-        cpc: 0.98,
-        conversoes: 14659,
-        investimento: 60.00,
-        alerta: 'red',
-    },
-    {
-        nome: 'Campanha B',
-        route: 'campanha-b',
-        impressoes: 29856,
-        cliques: 1897,
-        cpc: 0.98,
-        conversoes: 14659,
-        investimento: 60.00,
-        alerta: 'green',
-    },
-    {
-        nome: 'Campanha C',
-        route: 'campanha-c',
-        impressoes: 29856,
-        cliques: 1897,
-        cpc: 0.98,
-        conversoes: 14659,
-        investimento: 60.00,
-        alerta: 'green',
-    },
-    {
-        nome: 'Campanha D',
-        route: 'campanha-d',
-        impressoes: 29856,
-        cliques: 1897,
-        cpc: 0.98,
-        conversoes: 14659,
-        investimento: 60.00,
-        alerta: 'red',
-    },
-    {
-        nome: 'Campanha E',
-        route: 'campanha-e',
-        impressoes: 29856,
-        cliques: 1897,
-        cpc: 0.98,
-        conversoes: 14659,
-        investimento: 60.00,
-        alerta: 'green',
-    }
-];
-
-var iconSiteOnline = (isOnline) => {
-    if (isOnline === true) {
-        return (
-            <FontAwesomeIcon
-                icon={faCheckCircle}
-                className="ico-green"
-            />
-        );
-    }
-
-    return (<FontAwesomeIcon icon={faTimesCircle} className="ico-red" />);
-};
-
-var alertCampanha = (status) => {
-    if (status === 'red') {
-        return (
-            <FontAwesomeIcon
-                icon={faCircle}
-                className="campanha-status red"
-            />
-        );
-    }
-
-    return (<FontAwesomeIcon icon={faCircle} className="campanha-status green" />);
-};
-
-class Home extends React.Component {
+class GoogleAds extends React.Component {
     constructor(props){
         super(props);
     }
@@ -113,6 +26,9 @@ class Home extends React.Component {
                                     <li className="breadcrumb-item" aria-current="page">
                                         <Link to="/">Home</Link>
                                     </li>
+                                    <li className="breadcrumb-item" aria-current="page">
+                                        <Link to="/">Minhas Soluções</Link>
+                                    </li>
                                 </ol>
                             </nav>
                         </div>
@@ -120,10 +36,12 @@ class Home extends React.Component {
 
                     <div className="row">
                         <div className="col-lg-12 col-md-12 col-sm-12">
-                            <h2 className="title-section">Visão Geral</h2>
+                            <h2 className="title-section">Dashboard</h2>
                         </div>
+                    </div>
 
-                        <div className="col-lg-3 col-md-3 col-sm-3">
+                     <div className="row">
+                        <div className="col-lg-4 col-md-4 col-sm-4">
                             <div className="card card-home">
                                 <div className="card-header border-0">
                                     <FontAwesomeIcon
@@ -132,20 +50,20 @@ class Home extends React.Component {
                                     />
                                 </div>
                                 <div className="card-body">
-                                    <p>Nota de Performance</p>
+                                    <p>Produtos criados</p>
                                     <p>
-                                        <span className="destaque">{visaoGeral.performace}</span>/100
+                                        <span className="destaque">50</span>
                                     </p>
                                 </div>
                                 <div className="card-footer">
-                                    <button type="button" className="btn btn-outline-success btn-sm float-right">
-                                        ver raio-x
-                                    </button>
+                                    <Link to="/produtos" type="button" className="btn btn-outline-success btn-sm float-right">
+                                        ver mais
+                                    </Link>
                                 </div>
                             </div>
                         </div>
 
-                        <div className="col-lg-3 col-md-3 col-sm-3">
+                        <div className="col-lg-4 col-md-4 col-sm-4">
                             <div className="card card-home">
                                 <div className="card-header border-0">
                                     <FontAwesomeIcon
@@ -154,18 +72,21 @@ class Home extends React.Component {
                                     />
                                 </div>
                                 <div className="card-body">
-                                    <p>Combinações Possíveis</p>
-                                    <p className="destaque"><NumberFormat displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} value={visaoGeral.combinacoes} /></p>
+                                    <p>Google Meu negócio</p>
+                                    <p>
+                                        <span className="destaque">1</span><small>/1000 visitas no mapa</small>
+                                    </p>
+
                                 </div>
                                 <div className="card-footer">
-                                    <button type="button" className="btn btn-outline-success btn-sm float-right">
-                                        ver palavras
-                                    </button>
+                                    <Link to="google-meu-negocio/locais" type="button" className="btn btn-outline-success btn-sm float-right">
+                                        ver mais
+                                    </Link>
                                 </div>
                             </div>
                         </div>
 
-                        <div className="col-lg-3 col-md-3 col-sm-3">
+                        <div className="col-lg-4 col-md-4 col-sm-4">
                             <div className="card card-home">
                                 <div className="card-header border-0">
                                     <FontAwesomeIcon
@@ -174,104 +95,90 @@ class Home extends React.Component {
                                     />
                                 </div>
                                 <div className="card-body">
-                                    <p>Saldo Atual</p>
-                                    <p className="destaque">R$ {visaoGeral.saldo}</p>
+                                    <p>LP criadas</p>
+                                    <p>
+                                        <span className="destaque">2</span><small>/10k visitas</small>
+                                    </p>
+
                                 </div>
-                                <div className="card-footer border-0"></div>
+                                <div className="card-footer border-0">
+                                    <Link to="landing-pages" type="button" className="btn btn-outline-success btn-sm float-right">
+                                        ver mais
+                                    </Link>
+                                </div>
                             </div>
                         </div>
 
-                        <div className="col-lg-3 col-md-3 col-sm-3">
-                            <div className="card card-home">
-                                <div className="card-header border-0">
-                                    <FontAwesomeIcon
-                                        icon={faQuestion}
-                                        className="fa-pull-right"
-                                    />
-                                </div>
-
-                                <div className="card-body">
-                                    <div className="site-is-online">
-                                        {iconSiteOnline(visaoGeral.siteOnline)}
-                                        <p>
-                                            {(visaoGeral.siteOnline === true) ? 'Site no Ar!' : 'Site fora do Ar!'}
-                                        </p>
-                                    </div>
-                                </div>
-                                <div className="card-footer border-0"></div>
-                            </div>
-                        </div>
                     </div>
+
+{/**/}
 
                     <div className="row">
-                        <div className="col-lg-12 col-md-12 col-sm-12">
-                            <h2 className="title-section">Campanhas</h2>
-                        </div>
-                        <div className="col-lg-12 col-md-12 col-sm-12">
-                            <div className="card">
-                                <div className="card-header border-0"></div>
+                        <div className="col-lg-4 col-md-4 col-sm-4">
+                            <div className="card card-home">
+                                <div className="card-header border-0">
+                                    <FontAwesomeIcon
+                                        icon={faQuestion}
+                                        className="fa-pull-right"
+                                    />
+                                </div>
                                 <div className="card-body">
-                                    <table className="table table-condensed tabela-campanhas" style={{border:'1px'}}>
-                                        <thead>
-                                            <tr>
-                                                <th>
-                                                    <b>nome</b>
-                                                </th>
-                                                <th style={{ textAlign: 'right' }}>
-                                                    <b>impressões</b>
-                                                </th>
-                                                <th style={{ textAlign: 'right' }}>
-                                                    <b>cliques</b>
-                                                </th>
-                                                <th style={{ textAlign: 'right' }}>
-                                                    <b>cpc</b>
-                                                </th>
-                                                <th style={{ textAlign: 'right' }}>
-                                                    <b>conversões</b>
-                                                </th>
-                                                <th style={{ textAlign: 'right' }}>
-                                                    <b>investimento</b>
-                                                </th>
-                                                <th style={{ textAlign: 'right' }}>
-                                                    <b>alerta</b>
-                                                </th>
-                                                <th style={{ textAlign: 'right' }}></th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                        {campanhas.map((element, key) => {
-                                            return (
-                                                <tr key={key}>
-                                                    <td>{element.nome}</td>
-                                                    <td style={{ textAlign: 'right' }}><NumberFormat displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} value={element.impressoes}/></td>
-                                                    <td style={{ textAlign: 'right' }}><NumberFormat displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} value={element.cliques}/></td>
-                                                    <td style={{ textAlign: 'right' }}><NumberFormat displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} value={element.cpc*100} suffix='%'/></td>
-                                                    <td style={{ textAlign: 'right' }}><NumberFormat displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} value={element.conversoes}/></td>
-                                                    <td style={{ textAlign: 'right' }}><NumberFormat displayType={'text'} thousandSeparator={'.'} decimalSeparator={','} value={element.investimento} prefix='R$ ' suffix=',00' /></td>
-                                                    <td style={{ textAlign: 'right' }}>
-                                                        {alertCampanha(element.alerta)}
-                                                    </td>
-                                                    <td style={{ textAlign: 'right' }}>
-                                                        <Link to={`/painel/${element.route}`} className={classNames('btn btn-sm', (element.alerta === 'green') ? 'btn-outline-success' : "btn-outline-danger")}>
-                                                            ir para o painel
-                                                        </Link>
-                                                        {/*<button className={classNames('btn btn-sm', (element.alerta === 'green') ? 'btn-outline-success' : "btn-outline-danger")}>
-                                                            ir para o painel
-                                                        </button>*/}
-                                                    </td>
-                                                </tr>
-                                            )
-                                        })}
-                                        </tbody>
-                                    </table>
+                                    <p>Anuncios Google shopping</p>
+                                    <p>
+                                        <span className="destaque">1000</span> <small>Visitas</small>
+                                    </p>
+                                    <br/>
                                 </div>
                             </div>
                         </div>
+
+                        <div className="col-lg-4 col-md-4 col-sm-4">
+                            <div className="card card-home">
+                                <div className="card-header border-0">
+                                    <FontAwesomeIcon
+                                        icon={faQuestion}
+                                        className="fa-pull-right"
+                                    />
+                                </div>
+                                <div className="card-body">
+                                    <p>Anuncios Google Pesquisa</p>
+                                    <p>
+                                        <span className="destaque">1000</span> <small>visualizações</small>
+                                    </p>
+                                    <br/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="col-lg-4 col-md-4 col-sm-4">
+                            <div className="card card-home">
+                                <div className="card-header border-0">
+                                    <FontAwesomeIcon
+                                        icon={faQuestion}
+                                        className="fa-pull-right"
+                                    />
+                                </div>
+                                <div className="card-body">
+                                    <p>Contatos Gerados</p>
+                                    <p>
+                                        <span className="destaque">5300</span>
+                                    </p>
+
+                                    <br/>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        
                     </div>
+
+
+                    
                 </div>
             </div>
         );
     }
 }
 
-export default Home;
+export default GoogleAds;
