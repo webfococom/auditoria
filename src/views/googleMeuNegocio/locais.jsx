@@ -111,7 +111,7 @@ class GMBLocais extends React.Component {
                             <h2 className="title-section">Gerenciar locais</h2>
                         </div>
                         <div className="col-lg-4 col-md-4 col-sm-4">
-                            <button className="btn btn-primary float-right">Criar grupo de locais</button>
+                            <button className="btn btn-success float-right">Criar grupo de locais</button>
                         </div>
                     </div>
 
@@ -161,7 +161,7 @@ class GMBLocais extends React.Component {
                                             </div>
 
                                             <div class="dropdown">
-                                                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                     Adicionar Local
                                                 </button>
                                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left" aria-labelledby="dropdownMenu2">

@@ -38,7 +38,7 @@ class Sidebar extends React.Component {
             <aside className="main-sidebar sidebar-collapse sidebar-ads">
                 <Link className="brand-link toggle-menu" onClick={this.openCloseMenu}>
                     <Link to="/" style={{width: '100%',display:'inline-block',textAlign:'center'}}>
-                        <img src={require('assets/images/logo-cielo-ads.png')} style={{width: '130px', justifyItems:'center'}}/>
+                        <img src={require('assets/images/g14.png')} style={{width: '130px', justifyItems:'center'}}/>
                     </Link>
                 </Link>
 

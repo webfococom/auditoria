@@ -47,7 +47,7 @@ class NovaLandingPage extends React.Component {
                                         
                                       <div class="form-group">
                                         <label for="exampleInputEmail1">Nome do produto</label>
-                                        <input type="text" class="form-control" placeholder="Nome do produto" value="Cielo Flash"/>
+                                        <input type="text" class="form-control" placeholder="Nome do produto" value="Tênis Nike Air Vapormax Flyknit 3"/>
                                         
                                       </div>
 
@@ -55,7 +55,7 @@ class NovaLandingPage extends React.Component {
                                   <div className="col-lg-4 col-md-4 col-sm-4">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Imagem do produto</label><br/>
-                                        <Link to={`/landing-pages`} class="btn btn-primary">Enviar Imagem</Link>
+                                        <Link to={`/landing-pages`} class="btn btn-success">Enviar Imagem</Link>
 
                                         </div>
                                     </div>
@@ -80,14 +80,14 @@ class NovaLandingPage extends React.Component {
                                         
                                       <div class="form-group">
                                         <label >Preço R$</label>
-                                        <input type="text" class="form-control" placeholder="Preço" value="418,80"/>
+                                        <input type="text" class="form-control" placeholder="Preço" value="649,99"/>
                                         
                                       </div>
 
                                   </div>
                               </div>
 
-                               <Link to={`/landing-pages`} class="btn btn-primary">Atualizar Produto</Link>
+                               <Link to={`/landing-pages`} class="btn btn-success">Atualizar Produto</Link>
                               <br/>
                               <br/>
 

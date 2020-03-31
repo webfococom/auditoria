@@ -47,7 +47,7 @@ class EditLandingPage extends React.Component {
                                         
                                       <div class="form-group">
                                         <label for="exampleInputEmail1">Nome</label>
-                                        <input type="text" class="form-control" placeholder="Nome" value="Maquina de cartão com bobina"/>
+                                        <input type="text" class="form-control" placeholder="Nome" value="Tênis Nike"/>
                                         <small class="form-text text-muted">Insira um nome para identificação da landing page</small>
                                       </div>
 
@@ -141,7 +141,7 @@ class EditLandingPage extends React.Component {
                               </div>
                          
                             </form>
-                              <Link to={`/landing-pages`} class="btn btn-primary">Criar</Link>
+                              <Link to={`/landing-pages`} class="btn btn-success">Criar</Link>
                               <br/>
                               <br/>
                         </div>

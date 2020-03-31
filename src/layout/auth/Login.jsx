@@ -57,7 +57,7 @@ class Login extends React.Component {
                     <div className="user_options-forms" id="user_options-forms">
                         <div className="user_forms-login">
                             
-                            <img src={require('assets/images/logo-cielo-ads.png')} style={{width: '200px', justifyItems:'center'}} />
+                            <img src={require('assets/images/logo-adsapp-1.png')} style={{width: '200px', justifyItems:'center'}} />
 
                             <h2 className="forms_title">Login</h2>
 

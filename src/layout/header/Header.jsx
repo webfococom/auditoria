@@ -8,7 +8,7 @@ class Header extends React.Component {
             <nav className="main-header navbar navbar-expand navbar-ads">
                 <div class="dropdown drop-cielo">
                     <button class="btn btn-primary btn-primary-cielo dropdown-toggle" type="button" id="btn-empresas-cielo" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Cielo Ads
+                        AdsApp
                     </button>
 
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
