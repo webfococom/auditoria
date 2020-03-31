@@ -65,3 +65,69 @@
 
     }
 }
+
+.container-messages {
+    margin-top: 30px;
+
+    .message{
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px;
+        box-shadow: 0px 0px 5px #ccc;
+        
+        .header {
+            display: flex;
+            max-height: 70px;
+            justify-content: start;
+            margin-bottom: 10px;
+
+            .container-img {
+                width: 60px;
+                img {
+                    width: 100%;
+                }
+            }
+            .info-user {
+                text-align: left;
+                margin-left: 10px;
+
+                p {
+                    color: #101010;
+                }
+
+                .container-star-date{
+                    display: flex;
+                    font-size: 14px;
+
+                    .stars{
+                        font-size: 14px;
+                        color: #ffc107;
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+
+        .body {
+            min-height: 80px;
+            text-align: left;
+            color: #101010;
+        }
+
+        .footer{
+            .container-btns {
+                display: flex;
+
+                .btn {
+                    background: transparent;
+                    color: #2196F3;
+
+                    &:first-child{
+                        border-color: #ccc;
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+    }
+}

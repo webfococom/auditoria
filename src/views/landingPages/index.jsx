@@ -10,14 +10,14 @@ let landingpages = [
     {
         nome: 'Maquina de cartão com bobina',
         route: 'edit',
-        visitas: 1234,
-        leads: 1897,
+        visitas: 1.234,
+        leads: 1.897,
     },
     {
         nome: 'Maquina de cartão sem bobina',
         route: 'edit',
-        visitas: 29856,
-        leads: 2985,
+        visitas: 29.856,
+        leads: 2.985,
     }
 ]
 
@@ -64,7 +64,7 @@ class LandingPages extends React.Component {
                                 </div>
                                 <div className="card-body">
                                     <p>Total de visitas</p>
-                                    <p className="destaque">31090</p>
+                                    <p className="destaque">31.090</p>
                                 </div>
                                 <div className="card-footer">
                                   
@@ -82,7 +82,7 @@ class LandingPages extends React.Component {
                                 </div>
                                 <div className="card-body">
                                     <p>Total de leads</p>
-                                    <p className="destaque">11090</p>
+                                    <p className="destaque">11.090</p>
                                 </div>
                                 <div className="card-footer">
                                     

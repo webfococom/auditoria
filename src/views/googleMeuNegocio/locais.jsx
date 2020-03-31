@@ -1,15 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import classNames from "classnames";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExclamationCircle, faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import "./style.scss";
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { selecionarLocal } from '../../redux/actions';
 
 const locais = [
     {
         name: 'Barbearia em São Paulo',
         endereco: 'Avenida nações unidas, 3344 - Vila nova cidade universitária',
         status: {
+            enable: true,
             color: 'green',
             text: 'Confirmado (1 atualização)',
             icon: <FontAwesomeIcon icon={faCheckCircle} color="green"/>,
@@ -23,6 +26,7 @@ const locais = [
         name: 'Barbearia em São Paulo',
         endereco: 'Avenida nações unidas, 3344 - Vila nova cidade universitária',
         status: {
+            enable: false,
             color: 'red',
             text: 'Cópia',
             icon: <FontAwesomeIcon icon={faExclamationCircle} color="red"/>,
@@ -36,6 +40,7 @@ const locais = [
         name: 'Barbearia em São Caetano',
         endereco: 'Alameda São Caetano, 1021 - São Caetano do Sul - SP',
         status: {
+            enable: true,
             color: 'green',
             text: 'Confirmado',
             icon: <FontAwesomeIcon icon={faCheckCircle} color="green"/>,
@@ -49,6 +54,7 @@ const locais = [
         name: 'Tapeçaria SP Delivery: Reforma de estofados, sofá e cadeiras',
         endereco: 'Rua Belas-Artes, 52 - Ipiranga - SP, 04276-010',
         status: {
+            enable: false,
             color: 'red',
             text: 'Suspensos',
             icon: <FontAwesomeIcon icon={faExclamationCircle} color="red"/>,
@@ -60,13 +66,25 @@ const locais = [
     },
 ];
 
-class GoogleMeuNegocioLocais extends React.Component {
+class GMBLocais extends React.Component {
     constructor(props){
         super(props);
     }
 
     componentDidMount() {
-        
+        // if (this.props.localSelected === null) {
+        //     this.props.history.push('/google-meu-negocio/locais');
+        // }
+    }
+
+    goToIndex = (status) => {
+        if (status) {
+            this.props.selecionarLocal(true);
+
+            setTimeout(() => {
+                this.props.history.push('/google-meu-negocio/');
+            }, 500);
+        }
     }
 
     render() {
@@ -178,8 +196,10 @@ class GoogleMeuNegocioLocais extends React.Component {
                                                         </div>
                                                     </td>
                                                     <td>
-                                                        <b>{element.name}</b><br/>
-                                                        {element.endereco}
+                                                        <a href="#" onClick={() => this.goToIndex(element.status.enable)}>
+                                                            <b>{element.name}</b><br/>
+                                                            {element.endereco}
+                                                        </a>
                                                     </td>
                                                     <td>
                                                         {element.status.icon} {element.status.text}
@@ -204,4 +224,13 @@ class GoogleMeuNegocioLocais extends React.Component {
     }
 }
 
-export default GoogleMeuNegocioLocais;
+const mapStateToProps = store => ({
+    localSelected: store.localSelectedState.selected
+});
+
+const mapDispatchToProps = dispatch => 
+    bindActionCreators({ 
+        selecionarLocal 
+    }, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(GMBLocais);

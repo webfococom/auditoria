@@ -190,7 +190,7 @@ let createChartConversoesTime = () => {
         options: {
             title: {
                 display: true,
-                text: 'Population growth (millions): Europe & Africa'
+                text: 'Conversões por Campanha'
             },
             legend: { display: false }
         }

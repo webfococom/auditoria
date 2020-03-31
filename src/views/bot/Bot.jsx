@@ -79,17 +79,30 @@ Review.propTypes = {
 Review.defaultProps = {
   steps: undefined,
 };
+
+
 class Bot extends React.Component {
   constructor(props) {
     super(props);
+
+    console.log(props);
   }
+
+  goToDash = () => {
+    this.props.logarUsuario(true);
+
+    setTimeout(() => {
+      window.location.href = document.location.origin
+    }, 500);
+  };
 
   render() {
     return (
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={theme} {...this.props}>
         <ChatBot
-          /* botAvatar="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAH4AAAB+CAMAAADV/VW6AAAAkFBMVEUAre////8AAAAAq+8Aqe4Ap+53y/X8//8AsfBcwPOQ0vbo9/2a1/f5/f+EzvXg8/3w+v695vrW8PzO7Pum3PhmxfRKvvImtvG44flRvPJ1xvM7tvGu3/gAou0AsvYBqegEf60Dj8QCCg0DWXoDYYQDJzUDMkQAvf8DO1EBT20BoN0EdJ4CFRwDQ1wCHScCh7o0SPNFAAAHQUlEQVRogcWbi3bbIAxASYD4Fb/tJI5Tt12Xbs3W7f//bmDe2JndNg46pztrQn2RLIQQAFYflyzNq7De7X3Qi7/f1WGVp9knHgU+1jwuDpvGhxBBCIEU2H/gN5tDES+Hz/KkAUjnmkI6AZok/4gVZuPj8rgnj58UBPfHcrYNZuKjcI+vaj2wAt6H0Q3xZTCfLXoQlLfBe2UNPgjvOwDq0vs6vgjQjDc+JggFxRfxUfJZOOtAMuED/8dX4AvwvgOg+jQ+bb8I7zvQpp/Ce6fPeNxQIDhdd8Gr+Ky+gepMUH01EF7DF/ub0Ql/f20IXMHn6CaGFwJR/hH89oaqM0Hb+fjkpqozgclc/ObmulNBm3n44yJ0wj/OwS+je88f6j/AJ4vRCX/w/m38dgGvUwJt/7fw+YK6U7HHv4kvFqYTfnEdn+0XNT0VuM+u4b3bzTLXBdXeFfzpDnTCP43j03vAqaSj+HbxF88EtmP46i6mp4KqIT66F5xKNMAvGWxtUcFX4JcPOAa/MPFecF984Bn48q50wi8N/D3inYGvdXx5XziVUsMHd4o4SmCg8BG+Nx0AHEl8eHflifqhwMf7qbYdeCQ/MwRRmcffxxxfTtm++37+9vr0Y/KJcFdtibSz8Ljk+OOE7bufayrfJ/XnmfQ8R4ZHhs8mbN89rZlcbooHNO0i+HxK+TeOf5pS/2N4mPf4qbluKTyd98AqbiaaLWV80MQEXwyfgjGtUWNhFa7+L0N5iMkIIy11013Bd10n/zWkIPiDaXsI2+OpSNO0OB3lCHo5/37V6RD5dSUaqRL3KL57fP7+/no+/3x7upg9QAeC3xiNUXtS6wCZ+3bgoocd1FaqXJgdGqHACL57/HVeS3l71vlwQ/CNjseVXgtnhhmUefDWrFTFIksd4run32tD3jQDwGYFMl/rDjRLgDT1hkFxxHpYhGhYq458NIrv3te2/L4ovp+BVHUVtmYFtg/GNDbGW1XfhP5YlTLrG8zBr9fqBcAU6EFHrT692ON1DrYmiE/yT0qzkXATH46+e8H/pvB/pP4wB2p1IRdfcZ4ETZDk/YeiIFCyZ8olgtc32uTCV2hlYOTdg1cC/Pnr+fL890W4wVngUQXkXC/Sr1XZYuJtkE2cSHpZ2P/ecIUL3gi3whpHZOH79t3jnz/PdMiTH/+F88UYhiGoBf6Bv9PqQfezVo6EjH7+wGEH5YwPoSe+N/Bo09K/6C6+fNc/RPzk7g5rsON4nnzpD2Y6bMS+FNVmzy0tG0Hcbvn3NTTwbeYdWmsPSMRvof4OiNmWv/lokCsgsGMqky6jkPu56DNsDvLt5EjHw03vsY3FZ6nDO8fvgRj2iNl+O5L54FDiWUd4HQLBo1apiStDe3xgjmQ+r3tm4+CR/apijs9MOJYoIYmHLDDQQQ6xv9XCRBr62Hj33JXsEmn3zRr73IxsfEdjc7/C8z5CMtUFeomsrJEddh56h4x31rN+vPb4vza+6f9ydKGr8K3HfTzRrB6dWp7dGsbnXmLj30Yzl3n4PjleZVst7kZJK+ekOfj38cSJB9exREUzvr0pk9d6vmEYP1P/16Q7jxofgPHmJh4Z0012ssa1gWeDxB5JF563CbzwfcyajxV1NfxBwYtkkAnoeD5ZRFYTNvDOEi7DDqu3jFU2tYEndgTiMhjZzDeiXhOPqt9nPy8y7Oxk91jojrTyHmTqKTzAzPWrRimudcOM+exFxXrZhn5B0i857HdqysF8vs1a0V/cFH1fdPyWHiVAJMLIRm06yPUeoPqFzAUPHIF9ljWodKNWEy7wRRCrWpJAY5JPcltoeACqgPo6qnPeiPQnC8xcb5X3m+4yKcubvqkfxlYMJhOulm7IrZ64yE85O4SSkSzGwLMIQ5JCL1WNuP48eDC/JIFUDlPalE2cuc4n6YaWbI1u9ZEp0MDzvzMbZWJikwOTerxMYHSp9AM3uZ5qDp7aSwgHeNjae9KVEXVX3OFHt+60nTKSauqJNsCJ/Vxvg0e0t5PdUGRImBswZsEWB4PTC/r+LEm0zWUGanO9A15O59YB3j8Yvcxb9UJRc6DvWKzcIDTWLauy0d49XWZYiyyImipiD48jPrxhEhHRzUQapeyxXnQKjOAHURtGKzXYSTJWcBeMDoFx5KlfZFlLTBpGmnqTbOpGBlUf2EIatVYj/btA/x1B2jQhTa1A2S8xhwtsOrrwdIHqP43sj+lqfWQuK+aUFxaTvrxw140EXVhxZbK0tJTw0tJUYW0p4YW1ybLiMiLKitNF1UVEFlWnS8pLiCwpOy6ou95OcLyZ4noryfFGmuttRMebqI63kF1voLs+PuD48ITroyOuD844Pjbk+tCU4yNjrg/MuT4u6PqwpOujoq4Pyro+Juz6kLTrI+KuD8i7vh7g+nKE66shri/GrBxfC6Li9FLUyvWVsJXjC3Er19cBqbi8DNmL06ugVJxehO3F5TVgJi4vQQu54RXwfyStbM86S8UzAAAAAElFTkSuQmCC"
-           */
+          {...this.props}
+          // handleEnd={this.handleEnd}
+          botAvatar="data:image/png;base64,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"
           style={styled}
           headerTitle="Cadastre-se, no AdsApp"
           steps={[
@@ -313,7 +326,15 @@ class Bot extends React.Component {
             {
               id:"22",
               delay:1000,
-              component:(<div><Link to='/'>Acessar Dashboard</Link></div>),
+              component:(
+                <div>
+                    <button type="button" onClick={this.goToDash}>
+                      Acessar Dashboard
+                    </button>
+                    <a href="#" ></a>
+                    {/* <Link to='/'>Acessar Dashboard</Link> */}
+                </div>
+              ),
               end:true
             },
           ]}
@@ -323,4 +344,11 @@ class Bot extends React.Component {
   }
 }
 
-export default Bot;
+const mapStateToProps = store => ({});
+
+const mapDispatchToProps = dispatch => 
+  bindActionCreators({ 
+      logarUsuario 
+  }, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(Bot);

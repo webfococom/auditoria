@@ -76,7 +76,7 @@ class LandingPages extends React.Component {
               
                                 </div>
                                 <div className="card-body">
-                                    <p>Produtos Anunciados Google</p>
+                                    <p>Produtos Publicados</p>
                                     <p className="destaque">1</p>
                                 </div>
                                 <div className="card-header border-0">
@@ -101,7 +101,7 @@ class LandingPages extends React.Component {
                                 Novo Produto
                             </Link>&nbsp;
                             <Link to={`/produtos/anuncio/new`}  className="btn btn-success btn-sm btn-adicionar">
-                                Anunciar no Google
+                                Publicar no Google
                             </Link>
                         </div>
                         <div className="col-lg-12 col-md-12 col-sm-12">
@@ -145,9 +145,9 @@ class LandingPages extends React.Component {
                                                         <Link  to={`/produtos/${element.route}`}  className="btn btn-outline-success btn-sm btn-negativar">
                                                             Editar
                                                         </Link>&nbsp;
-                                                        <Link  className="btn btn-success btn-sm btn-adicionar">
+                                                        <a target="_blank" href="http://webfocosaopaulo.com.br/adsapp/lp/model1-produto/" className="btn btn-success btn-sm btn-adicionar">
                                                             Visualizar
-                                                        </Link>&nbsp;
+                                                        </a>&nbsp;
 
                                                     </td>
                                                 
