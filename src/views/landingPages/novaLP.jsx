@@ -139,7 +139,7 @@ class NovaLandingPage extends React.Component {
                               </div>
                          
                             </form>
-                              <Link to={`/landing-pages`} class="btn btn-primary ">Criar</Link>
+                              <Link to={`/landing-pages`} class="btn btn-success ">Criar</Link>
                               <br/>
                               <br/>
                         </div>

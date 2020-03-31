@@ -8,13 +8,13 @@ import { faQuestion, faCheckCircle, faTimesCircle, faCircle } from '@fortawesome
 
 let landingpages = [
     {
-        nome: 'Maquina de cartão com bobina',
+        nome: 'Tênis Nike',
         route: 'edit',
         visitas: 1.234,
         leads: 1.897,
     },
     {
-        nome: 'Maquina de cartão sem bobina',
+        nome: 'Camisa Jordan',
         route: 'edit',
         visitas: 29.856,
         leads: 2.985,

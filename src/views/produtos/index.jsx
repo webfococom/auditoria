@@ -8,17 +8,17 @@ import "./assets/css/style.scss";
 
 let landingpages = [
     {
-        nome: 'Cielo FLASH',
+        nome: 'Tênis Nike Air Vapormax Flyknit 3',
         route: 'edit',
-        thumb: 'cieloflash.jpg',
-        price: '418,80',
+        thumb: 'Tenis-nike.png',
+        price: '649,99',
         leads: 1897,
     },
     {
-        nome: 'Maquina de cartão sem bobina',
+        nome: 'Camisa Jordan x PSG 2019/20',
         route: 'edit',
-        thumb: 'cielozip.jpg',
-        price: '298,80',
+        thumb: 'camisa-psg.jpg',
+        price: '299,00',
         leads: 2985,
     }
 ]
@@ -135,7 +135,7 @@ class LandingPages extends React.Component {
                                                 <tr key={key}>
                                                     <td class="thumb">
                                                      
-                                                        <img src={`${process.env.PUBLIC_URL}/uploads/products/${element.thumb}`}  /> 
+                                                        <img src={require(`assets/images/${element.thumb}`)}  />
                                                      
                                                     </td>
                                                     <td>{element.nome}</td>

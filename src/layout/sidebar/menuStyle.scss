@@ -40,7 +40,7 @@
     user-select: none;
     margin:0px;
 }.tabs-title:hover {
-    color: #00aeef;
+    color: #55b5a2;
 }
 
 .tabs-title--checked {
@@ -95,7 +95,7 @@
 
 .tabs-title--checked {
     /*background: #eee;*/
-    color: #00aeef;
+    color: #55b5a2;
 }
 
 .tabs-title--checked:before {
@@ -105,7 +105,7 @@
 
 .tabs-title:active:before,
 [data-state="tabbordion"]:focus ~ .tabs-title:before {
-    color: #00aeef;
+    color: #55b5a2;
 }
 
 .tabs-animator {
@@ -182,7 +182,7 @@
 .tabs-content li{
     border-left: 1px solid #ccc;
 }.tabs-content li:hover a{
-    color: #00aeef !important;
+    color: #55b5a2 !important;
 }
 
 

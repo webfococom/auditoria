@@ -55,7 +55,7 @@ class NovaLandingPage extends React.Component {
                                   <div className="col-lg-4 col-md-4 col-sm-4">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Imagem do produto</label><br/>
-                                        <Link to={`/landing-pages`} class="btn btn-primary">Enviar Imagem</Link>
+                                        <Link to={`/landing-pages`} class="btn btn-success">Enviar Imagem</Link>
 
                                         </div>
                                     </div>
@@ -85,7 +85,7 @@ class NovaLandingPage extends React.Component {
                                   </div>
                               </div>
 
-                               <Link to={`/landing-pages`} class="btn btn-primary">Cadastrar Produto</Link>
+                               <Link to={`/landing-pages`} class="btn btn-success">Cadastrar Produto</Link>
                               <br/>
                               <br/>
 
