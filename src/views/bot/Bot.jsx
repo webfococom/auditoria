@@ -12,10 +12,10 @@ import { logarUsuario } from '../../redux/actions';
 // all available props
 const theme = {
   background: "#f5f8fb",
-  headerBgColor: "#00AEEF",
+  headerBgColor: "#55b5a2",
   headerFontColor: "#fff",
   headerFontSize: "18px",
-  botBubbleColor: "#22cfEF",
+  botBubbleColor: "#55b5a2",
   botFontColor: "#fff",
   userBubbleColor: "#fff",
   userFontColor: "#4a4a4a"
