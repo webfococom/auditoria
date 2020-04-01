@@ -17,13 +17,13 @@ class Header extends React.Component {
                             <div className="row">
                                 <div className="col-lg-5 col-md-5 col-sm-5">
                                     <div class="thumbMiddle mb-3">
-                                        <img src={`${process.env.PUBLIC_URL}/uploads/products/cieloflash.jpg`}  /> 
+                                        <img src={require(`assets/images/camisa-psg.jpg`)}  /> 
                                     </div>  
                                 </div>
                                 <div className="col-lg-7 col-md-7 col-sm-7">
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Nome do produto</label>
-                                        <p>Cielo FLASH</p>
+                                        <p>Camisa Jordan x PSG 2019/20</p>
                                         <label for="exampleInputEmail1">Região de anúncio</label>
                                         <p>São Caetano</p>
                                         <label for="exampleInputEmail1">Valor de investimento</label>
