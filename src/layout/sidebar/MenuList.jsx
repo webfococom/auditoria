@@ -154,6 +154,11 @@ class MenuList extends React.Component {
                                 <p>Cadastrar Produtos</p>
                             </Link>
                         </li>
+                        <li className="nav-item">
+                            <Link to="/produtos/categorias" className="nav-link">
+                                <p>Categorias</p>
+                            </Link>
+                        </li>
                     </ul>
                     </TabContent>
                 </TabPanel>

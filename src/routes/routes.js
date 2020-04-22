@@ -34,6 +34,10 @@ import PRODUTOSNew from "views/produtos/new";
 import PRODUTOSEdit from "views/produtos/edit";
 import PRODUTOSAnuncioNew from "views/produtos/anuncio/new";
 
+import CATEGORIASIndex from "views/produtos/categorias";
+import CATEGORIASNew from "views/produtos/categorias/new";
+import CATEGORIASEdit from "views/produtos/categorias/edit";
+
 let routes = [
     {
         name: "Home",
@@ -208,7 +212,7 @@ let routes = [
         component: PRODUTOSNew,
     },{
         name: "Editar produto",
-        path: "/produtos/edit",
+        path: "/produtos/edit/:companyID/:productID",
         exact: true,
         component: PRODUTOSEdit,
     },{
@@ -216,6 +220,23 @@ let routes = [
         path: "/produtos/anuncio/new",
         exact: true,
         component: PRODUTOSAnuncioNew,
+    },
+
+    {
+        name: "Categorias",
+        path: "/produtos/categorias",
+        exact: true,
+        component: CATEGORIASIndex,
+    },{
+        name: "Nova Categoria",
+        path: "/produtos/categorias/new",
+        exact: true,
+        component: CATEGORIASNew,
+    },{
+        name: "Editar Categoria",
+        path: "/produtos/categorias/edit/:companyID/:categoryID",
+        exact: true,
+        component: CATEGORIASEdit,
     }
 ];
 

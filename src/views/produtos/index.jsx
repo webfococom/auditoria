@@ -3,38 +3,82 @@ import { Link } from "react-router-dom";
 import classNames from "classnames";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuestion, faCheckCircle, faTimesCircle, faCircle } from '@fortawesome/free-solid-svg-icons';
+import LoadingIcon  from '../../layout/loading/LoadingIcon';
+
+import {api} from '../../services/api';
+import {config} from '../../services/config';
 
 import "./assets/css/style.scss";
 
-let landingpages = [
-    {
-        nome: 'Tênis Nike Air Vapormax Flyknit 3',
-        route: 'edit',
-        thumb: 'Tenis-nike.png',
-        price: '649,99',
-        leads: 1897,
-    },
-    {
-        nome: 'Camisa Jordan x PSG 2019/20',
-        route: 'edit',
-        thumb: 'camisa-psg.jpg',
-        price: '299,00',
-        leads: 2985,
-    }
-]
+class Product extends React.Component {
 
-class LandingPages extends React.Component {
+    state = {       
+        companyID:'97c1adfc-18a1-4f18-bfae-9a6b2edc2210',
+        products: []
+    };
+
     constructor(props){
         super(props);
     }
 
     componentDidMount() {
-        
+        this.getProducts();
+    }
+
+    async getProducts(){
+        let self = this;
+        let companyID = this.state.companyID;
+        const resp = await api.get('/products/'+companyID, {})
+        .then((resp) => resp.data)
+
+        // captura o nome da categoria do produto
+        .then( async function(resp){
+            for(var key in resp){
+                var element = resp[key];
+                var category = await self.getCategoryItem(element.category_id);            
+                    resp[key].categoryName = category.title;
+            }
+            return resp;
+        })
+
+        .then( (products) => this.setState({products}) );
+    }
+
+   async getCategoryItem(categoryID){
+        let companyID = this.state.companyID;
+
+        try {
+            const resp = await api.get('/categories/'+companyID+'/'+categoryID, {})
+            .then((resp) => resp.data)
+            .then( function(response){
+                return (response);
+            });
+            return resp;
+        } catch (error) {
+          return {title:""};
+        }
+    }
+
+    
+    loadingCountProducts(){
+        if(this.state.products.length)
+            return this.state.products.length;
+        else
+            return <LoadingIcon/>;    
+    }
+
+    loadingProducts(){
+        if(this.state.products.length)
+            return '';
+        else
+            return <LoadingIcon/>;    
     }
 
     render() {
+  
         return (
             <div className="content-header content-ads">
+                
                 <div className="container-fluid">
                     <div className="row">
                         <div className="col-lg-12 col-md-12 col-sm-12">
@@ -63,7 +107,11 @@ class LandingPages extends React.Component {
                                 </div>
                                 <div className="card-body">
                                     <p>Total de produtos</p>
-                                    <p className="destaque">2</p>
+                                    <p className="destaque">
+
+                                    {this.loadingCountProducts()}
+                                  
+                                    </p>
                                 </div>
                                 <div className="card-header border-0">
                                   
@@ -73,7 +121,7 @@ class LandingPages extends React.Component {
                         <div className="col-lg-3 col-md-3 col-sm-3">
                             <div className="card card-home">
                                 <div className="card-header border-0">
-              
+                                
                                 </div>
                                 <div className="card-body">
                                     <p>Produtos Publicados</p>
@@ -109,7 +157,9 @@ class LandingPages extends React.Component {
                             
 
                             <div className="card">
-                                <div className="card-header border-0"></div>
+                                <div className="card-header border-0">
+                                    {this.loadingProducts()}
+                                </div>
                                 <div className="card-body">
                                     <table className="table table-condensed tabela-campanhas">
                                         <thead>
@@ -117,6 +167,9 @@ class LandingPages extends React.Component {
                                                 <th></th>
                                                 <th>
                                                     <b>nome</b>
+                                                </th>
+                                                <th>
+                                                    <b>Categoria</b>
                                                 </th>
                                                 <th>
                                                     <b>Preço</b>
@@ -130,24 +183,43 @@ class LandingPages extends React.Component {
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        {landingpages.map((element, key) => {
+
+
+                                        {this.state.products.map((element, key) => {
+
+                                            const images = JSON.parse(element.image);
+
+                                            const itemImage = images[0];
+
+                                            let img = '';
+
+                                            if(itemImage === undefined)
+                                                img = ' ';
+                                            else
+                                                img = config.product.storageUrl+'/products/'+element.uuid+'/'+itemImage;
+                                          
+                                            const linkEdit = '/produtos/edit/'+this.state.companyID+'/'+element.uuid;
+                                            const linkUrl = element.url;
+
                                             return (
                                                 <tr key={key}>
-                                                    <td class="thumb">
-                                                     
-                                                        <img src={require(`assets/images/${element.thumb}`)}  />
+                                                    <td class="thumb"  >
+                                                        
+
+                                                    <img src={img}/>
                                                      
                                                     </td>
-                                                    <td>{element.nome}</td>
+                                                    <td>{element.title}</td>
+                                                    <td>{element.categoryName}</td>
                                                     <td>R$ {element.price}</td>                                                                                                       
                                                     <td>
 
-                                                        <Link  to={`/produtos/${element.route}`}  className="btn btn-outline-success btn-sm btn-negativar">
+                                                        <Link  to={linkEdit}  className="btn btn-outline-success btn-sm btn-negativar">
                                                             Editar
                                                         </Link>&nbsp;
-                                                        <a target="_blank" href="http://webfocosaopaulo.com.br/adsapp/lp/model1-produto/" className="btn btn-success btn-sm btn-adicionar">
+                                                        <Link  to={linkUrl}  className="btn btn-success btn-sm btn-adicionar">
                                                             Visualizar
-                                                        </a>&nbsp;
+                                                        </Link>&nbsp;
 
                                                     </td>
                                                 
@@ -168,4 +240,4 @@ class LandingPages extends React.Component {
     }
 }
 
-export default LandingPages;
+export default Product;
