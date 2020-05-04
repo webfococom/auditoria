@@ -13,7 +13,6 @@ import "./assets/css/style.scss";
 class Product extends React.Component {
 
     state = {       
-        companyID:'97c1adfc-18a1-4f18-bfae-9a6b2edc2210',
         products: []
     };
 
@@ -27,7 +26,7 @@ class Product extends React.Component {
 
     async getProducts(){
         let self = this;
-        let companyID = this.state.companyID;
+        let companyID = config.mock.companyID;
         const resp = await api.get('/products/'+companyID, {})
         .then((resp) => resp.data)
 
@@ -45,7 +44,7 @@ class Product extends React.Component {
     }
 
    async getCategoryItem(categoryID){
-        let companyID = this.state.companyID;
+        let companyID = config.mock.companyID;
 
         try {
             const resp = await api.get('/categories/'+companyID+'/'+categoryID, {})
@@ -60,7 +59,7 @@ class Product extends React.Component {
     }
 
     
-    loadingCountProducts(){
+    loadingCountProducts(){                
         if(this.state.products.length)
             return this.state.products.length;
         else
@@ -198,7 +197,7 @@ class Product extends React.Component {
                                             else
                                                 img = config.product.storageUrl+'/products/'+element.uuid+'/'+itemImage;
                                           
-                                            const linkEdit = '/produtos/edit/'+this.state.companyID+'/'+element.uuid;
+                                            const linkEdit = '/produtos/edit/'+config.mock.companyID+'/'+element.uuid;
                                             const linkUrl = element.url;
 
                                             return (

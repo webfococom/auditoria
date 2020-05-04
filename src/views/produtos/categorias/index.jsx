@@ -4,6 +4,7 @@ import classNames from "classnames";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuestion, faCheckCircle, faTimesCircle, faCircle } from '@fortawesome/free-solid-svg-icons';
 
+import {config} from '../../../services/config';
 import {api} from '../../../services/api';
 
 
@@ -15,7 +16,6 @@ import "./assets/css/style.scss";
 class CategoryIndex extends React.Component {
 
     state = {        
-        companyID:'97c1adfc-18a1-4f18-bfae-9a6b2edc2210',
         categories: []
     };
 
@@ -27,8 +27,8 @@ class CategoryIndex extends React.Component {
         this.getCategories();
     }
 
-    getCategories(){
-        let companyID = this.state.companyID;
+    getCategories(){        
+        let companyID = config.mock.companyID;
         const resp = api.get('/categories/'+companyID, {})
         .then((resp) => resp.data)
         .then( (categories) => this.setState({categories}) );
@@ -141,7 +141,7 @@ class CategoryIndex extends React.Component {
 
                                         {this.state.categories.map((element, key) => {
 
-                                            const linkEdit = '/produtos/categorias/edit/'+this.state.companyID+'/'+element.uuid;
+                                            const linkEdit = '/produtos/categorias/edit/'+config.mock.companyID+'/'+element.uuid;
 
                                             return (
                                                 <tr key={key}>
